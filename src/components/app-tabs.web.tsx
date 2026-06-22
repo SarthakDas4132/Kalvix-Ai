@@ -77,6 +77,7 @@ export function CustomTabList(props: TabListProps) {
 
 const styles = StyleSheet.create({
   tabListContainer: {
+    display: 'none', // Hide default bottom tabs on web to match Framer landing page layout
     position: 'absolute',
     width: '100%',
     padding: Spacing.three,
