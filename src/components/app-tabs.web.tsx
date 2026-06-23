@@ -17,8 +17,8 @@ import { Colors, MaxContentWidth, Spacing } from '@/constants/theme';
 
 export default function AppTabs() {
   return (
-    <Tabs>
-      <TabSlot style={{ height: '100%' }} />
+    <Tabs style={{ height: 'auto', minHeight: '100%', overflow: 'visible' }}>
+      <TabSlot style={{ flex: 1, height: 'auto', minHeight: '100%', overflow: 'visible' }} />
       <TabList asChild>
         <CustomTabList>
           <TabTrigger name="home" href="/" asChild>

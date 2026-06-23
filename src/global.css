@@ -256,3 +256,10 @@ html, body {
   }
 }
 
+/* Force parent React Native Web layout containers to allow scroll on mobile */
+html, body, #root, [data-reactroot] {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow: visible !important;
+}
+
