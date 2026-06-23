@@ -545,7 +545,7 @@ export function Process() {
               gap: isMobile ? '32px' : '48px',
               padding: isMobile ? '24px 16px' : isTablet ? '36px' : '52px',
               alignItems: 'center',
-              minHeight: isMobile ? 'auto' : '420px',
+              minHeight: isMobile ? '800px' : isTablet ? '660px' : '520px',
               position: 'relative',
               overflow: 'hidden',
             }}
@@ -635,37 +635,35 @@ export function Process() {
                 </div>
 
                 {/* Next step button */}
-                {activeStep < STEPS.length && (
-                  <button
-                    onClick={() => setActiveStep(activeStep + 1)}
-                    style={{
-                      alignSelf: 'flex-start',
-                      marginTop: '8px',
-                      fontFamily: 'var(--font-oswald)',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      fontSize: '13px',
-                      letterSpacing: '0.5px',
-                      border: '2px solid var(--color-dark)',
-                      borderRadius: '999px',
-                      padding: '10px 24px',
-                      cursor: 'pointer',
-                      backgroundColor: 'transparent',
-                      color: 'var(--color-dark)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      transition: 'background 0.2s ease',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(24,26,18,0.06)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                  >
-                    Next: {STEPS[activeStep].label}
-                    <svg viewBox="0 0 16 16" width="14" height="14">
-                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                )}
+                <button
+                  onClick={() => setActiveStep(activeStep === STEPS.length ? 1 : activeStep + 1)}
+                  style={{
+                    alignSelf: 'flex-start',
+                    marginTop: '8px',
+                    fontFamily: 'var(--font-oswald)',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    fontSize: '13px',
+                    letterSpacing: '0.5px',
+                    border: '2px solid var(--color-dark)',
+                    borderRadius: '999px',
+                    padding: '10px 24px',
+                    cursor: 'pointer',
+                    backgroundColor: 'transparent',
+                    color: 'var(--color-dark)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    transition: 'background 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(24,26,18,0.06)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+                >
+                  {activeStep === STEPS.length ? 'Restart Tour' : `Next: ${STEPS[activeStep].label}`}
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
               </motion.div>
             </AnimatePresence>
 

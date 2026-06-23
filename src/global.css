@@ -36,6 +36,8 @@ body {
   color: var(--color-dark);
   font-family: var(--font-satoshi), sans-serif;
   overflow-x: hidden;
+  overflow-y: scroll; /* Always show scrollbar track — prevents layout shift when content loads */
+  scrollbar-gutter: stable; /* Reserves space for scrollbar even when not scrolling */
 }
 
 /* Custom Typography Classes */

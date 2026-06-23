@@ -54,7 +54,7 @@ export function Footer() {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none', backgroundImage: 'radial-gradient(rgba(212, 160, 23, 0.4) 2px, transparent 2px)', backgroundSize: '10px 10px' }} />
       
       {/* 1. Large Quote Request Card Container */}
-      <div id="footer-contact" style={{ width: '100%', maxWidth: '100%', margin: '0 auto 16px auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+      <div id="footer-contact" style={{ width: '100%', maxWidth: '1200px', margin: '0 auto 16px auto', padding: isMobile ? '0 16px' : '0 24px' }}>
         <div
           className="footer-card"
           style={{

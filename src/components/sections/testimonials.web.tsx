@@ -85,7 +85,7 @@ export function Testimonials() {
                   width: '100%',
                   maxWidth: '650px',
                   textAlign: 'center',
-                  minHeight: isMobile ? 'auto' : '200px',
+                  minHeight: isMobile ? '250px' : '200px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
