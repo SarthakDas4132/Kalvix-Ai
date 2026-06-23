@@ -12,12 +12,14 @@ function StickerBadge({
   shape,
   delay,
   style,
+  isInline = false,
 }: {
   label: string;
   color: string;
   shape: 'blob' | 'flower' | 'star';
   delay: number;
   style?: React.CSSProperties;
+  isInline?: boolean;
 }) {
   const getBorderRadius = () => {
     if (shape === 'blob') return '60% 40% 55% 45% / 45% 55% 45% 55%';
@@ -28,8 +30,8 @@ function StickerBadge({
   return (
     <motion.div
       animate={{
-        y: [0, -5, 0, -3, 0],
-        rotate: [0, 2, -2, 1, 0],
+        y: isInline ? [0, -3, 0, -1.5, 0] : [0, -5, 0, -3, 0],
+        rotate: isInline ? [0, 1.5, -1.5, 1, 0] : [0, 2, -2, 1, 0],
       }}
       transition={{
         duration: 4,
@@ -38,7 +40,7 @@ function StickerBadge({
         delay: delay + 0.5,
       }}
       style={{
-        position: 'absolute',
+        position: isInline ? 'relative' : 'absolute',
         zIndex: 3,
         ...style,
       }}
@@ -57,14 +59,14 @@ function StickerBadge({
           backgroundColor: color,
           border: '2px solid var(--color-dark)',
           borderRadius: getBorderRadius(),
-          padding: '8px 18px',
+          padding: isInline ? '4px 12px' : '8px 18px',
           fontFamily: 'var(--font-satoshi), sans-serif',
           fontWeight: 900,
-          fontSize: '14px',
+          fontSize: isInline ? '11px' : '14px',
           textTransform: 'uppercase',
           letterSpacing: '0px',
           color: 'var(--color-dark)',
-          boxShadow: '2px 2px 0 0 var(--color-dark)',
+          boxShadow: isInline ? '1.5px 1.5px 0 0 var(--color-dark)' : '2px 2px 0 0 var(--color-dark)',
           whiteSpace: 'nowrap',
         }}
       >
@@ -346,6 +348,15 @@ export function Hero() {
             />
           )}
         </div>
+
+        {/* ── 2b. Inline Sticker Badges row for Mobile & Tablet ── */}
+        {(isMobile || isTablet) && (
+          <div style={{ display: 'flex', flexDirection: 'row', gap: '8px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '24px', position: 'relative', zIndex: 3 }}>
+            <StickerBadge label="AI-Powered" color="var(--color-green)" shape="flower" delay={0.55} isInline={true} />
+            <StickerBadge label="Multi-Platform" color="var(--color-pink)" shape="blob" delay={0.72} isInline={true} />
+            <StickerBadge label="Smart CRM" color="var(--color-purple)" shape="star" delay={0.9} isInline={true} />
+          </div>
+        )}
 
         {/* ── 3. Sub-headline ── */}
         <motion.h2
