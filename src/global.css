@@ -260,7 +260,8 @@ html, body {
 html, body {
   height: auto !important;
   min-height: 100% !important;
-  overflow: visible !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
 }
 
 /* Override absolute positioning and height constraints on Expo Router web layout shell containers to prevent scroll-locking */
@@ -272,6 +273,7 @@ html, body {
   position: relative !important;
   height: auto !important;
   min-height: 100% !important;
-  overflow: visible !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
 }
 
