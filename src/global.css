@@ -256,8 +256,20 @@ html, body {
   }
 }
 
-/* Force parent React Native Web layout containers to allow scroll on mobile */
-html, body, #root, [data-reactroot] {
+/* Force parent React Native Web root and window-level containers to allow scroll */
+html, body {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow: visible !important;
+}
+
+/* Override absolute positioning and height constraints on Expo Router web layout shell containers to prevent scroll-locking */
+#root,
+#root > div,
+#root > div > div,
+#root > div > div > div,
+#root > div > div > div > div {
+  position: relative !important;
   height: auto !important;
   min-height: 100% !important;
   overflow: visible !important;

@@ -145,7 +145,7 @@ export function ScrollWheel() {
           height: '100vh',
           width: '32px', // wider trigger zone so it's easy to hit
           zIndex: 9998,
-          pointerEvents: window.scrollY > 80 ? 'auto' : 'none',
+          pointerEvents: typeof window !== 'undefined' && window.scrollY > 80 ? 'auto' : 'none',
           cursor: 'default',
         }}
       />
