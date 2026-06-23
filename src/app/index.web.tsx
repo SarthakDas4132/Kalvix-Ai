@@ -23,6 +23,38 @@ export default function HomeScreenWeb() {
   useEffect(() => {
     // Check if we are running in the browser
     if (typeof window !== 'undefined') {
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isMobileOrTablet = window.innerWidth < 1024;
+
+      // Disable Lenis on mobile/tablet or touchscreens to prioritize buttery-smooth native momentum touch scroll
+      if (isTouchDevice || isMobileOrTablet) {
+        const handleHashClick = (e: MouseEvent) => {
+          const target = e.target as HTMLAnchorElement;
+          if (target && target.hash && target.origin === window.location.origin) {
+            e.preventDefault();
+            const element = document.querySelector(target.hash);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              const scrollTop = window.scrollY || document.documentElement.scrollTop;
+              window.scrollTo({
+                top: rect.top + scrollTop - 90,
+                behavior: 'smooth'
+              });
+            }
+          }
+        };
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          (anchor as HTMLAnchorElement).addEventListener('click', handleHashClick);
+        });
+
+        return () => {
+          document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            (anchor as HTMLAnchorElement).removeEventListener('click', handleHashClick);
+          });
+        };
+      }
+
       const lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
