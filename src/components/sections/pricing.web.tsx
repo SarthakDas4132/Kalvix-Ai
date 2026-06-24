@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { ScrollReveal } from '../ui/scroll-reveal.web';
+import { TextReveal } from '../ui/text-reveal.web';
 
 const PLANS = [
   {
@@ -80,22 +82,25 @@ export function Pricing() {
       >
         <div className="bg-dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.04, pointerEvents: 'none' }} />
 
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
           
           {/* Header */}
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '32px' : '40px', position: 'relative' }}>
-            <div
-              className="badge-sticker purple"
-              style={{
-                display: 'inline-flex',
-                marginBottom: '16px',
-                transform: 'rotate(-4deg)',
-                color: 'var(--color-dark)',
-              }}
-            >
-              Pricing
-            </div>
-            <h2
+            <ScrollReveal delay={0}>
+              <div
+                className="badge-sticker purple"
+                style={{
+                  display: 'inline-flex',
+                  marginBottom: '16px',
+                  transform: 'rotate(-4deg)',
+                  color: 'var(--color-dark)',
+                }}
+              >
+                Pricing
+              </div>
+            </ScrollReveal>
+            <TextReveal
+              delay={100}
               style={{
                 fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
@@ -107,7 +112,7 @@ export function Pricing() {
               }}
             >
               Pick your flavor
-            </h2>
+            </TextReveal>
           </div>
 
           {/* Global Billing Switcher */}
@@ -122,11 +127,13 @@ export function Pricing() {
                 padding: '4px',
                 position: 'relative',
                 boxShadow: isMobile ? '3px 3px 0 0 var(--color-dark)' : '4px 4px 0 0 var(--color-dark)',
+                minWidth: isMobile ? '220px' : '280px',
               }}
             >
               <button
                 onClick={() => setBillingCycle('monthly')}
                 style={{
+                  flex: 1,
                   padding: isMobile ? '6px 14px' : '8px 24px',
                   borderRadius: '9999px',
                   border: 'none',
@@ -138,13 +145,33 @@ export function Pricing() {
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
+                  whiteSpace: 'nowrap',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: isMobile ? '4px' : '8px',
                 }}
               >
                 Monthly
+                {/* Invisible placeholder to match the Yearly button width */}
+                <span
+                  aria-hidden="true"
+                  style={{
+                    visibility: 'hidden',
+                    fontSize: isMobile ? '7px' : '10px',
+                    fontWeight: 800,
+                    padding: isMobile ? '1px 4px' : '2px 8px',
+                    borderRadius: '9999px',
+                    fontFamily: 'var(--font-satoshi)',
+                  }}
+                >
+                  -30%
+                </span>
               </button>
               <button
                 onClick={() => setBillingCycle('yearly')}
                 style={{
+                  flex: 1,
                   padding: isMobile ? '6px 14px' : '8px 24px',
                   borderRadius: '9999px',
                   border: 'none',
@@ -158,7 +185,9 @@ export function Pricing() {
                   transition: 'all 0.2s ease',
                   display: 'flex',
                   alignItems: 'center',
+                  justifyContent: 'center',
                   gap: isMobile ? '4px' : '8px',
+                  whiteSpace: 'nowrap',
                 }}
               >
                 Yearly
@@ -260,11 +289,10 @@ export function Pricing() {
                           /{plan.period}
                         </span>
                       </div>
-                      {isYearly && (
-                        <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-dark-purple)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                          Billed annually (${price * 12}/yr)
-                        </div>
-                      )}
+                      {/* Always reserve space — just toggle visibility so card height never changes */}
+                      <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-dark-purple)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.5px', visibility: isYearly ? 'visible' : 'hidden' }}>
+                        Billed annually (${Math.round(plan.basePrice * 0.7) * 12}/yr)
+                      </div>
                     </div>
 
                     {/* Plan Badge Header */}

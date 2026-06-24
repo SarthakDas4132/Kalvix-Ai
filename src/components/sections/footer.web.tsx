@@ -54,15 +54,15 @@ export function Footer() {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none', backgroundImage: 'radial-gradient(rgba(212, 160, 23, 0.4) 2px, transparent 2px)', backgroundSize: '10px 10px' }} />
       
       {/* 1. Large Quote Request Card Container */}
-      <div id="footer-contact" style={{ width: '100%', maxWidth: '1200px', margin: '0 auto 16px auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+      <div id="footer-contact" style={{ width: '100%', maxWidth: '1400px', margin: '0 auto 16px auto', padding: isMobile ? '0 16px' : '0 24px' }}>
         <div
           className="footer-card"
           style={{
             backgroundColor: 'var(--bg-cream)',
             display: 'grid',
-            gridTemplateColumns: isMobile || isTablet ? '1fr' : '1fr 1.2fr',
+            gridTemplateColumns: isMobile || isTablet ? '1fr' : '1fr 1fr',
             gap: isMobile ? '32px' : '64px',
-            padding: isMobile ? '24px 16px' : isTablet ? '40px' : '64px',
+            padding: isMobile ? '24px 16px' : isTablet ? '40px' : '64px 72px',
             borderRadius: '32px',
             alignItems: 'center',
             position: 'relative',
@@ -70,15 +70,18 @@ export function Footer() {
           }}
         >
           {/* Left illustration & texts */}
-          <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '24px' }}>
-            <FooterIllustration />
-            <div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '24px' : '32px', fontWeight: 800, color: 'var(--color-dark)' }}>
-                Need a custom quote?
-              </h3>
-              <p style={{ fontSize: '15px', lineHeight: 1.5, opacity: 0.8, marginTop: '8px', maxWidth: '300px', margin: '8px auto 0 auto' }}>
-                Don't let your ideas sit idle—slide into our inbox and let's make magic!
-              </p>
+          <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            {/* Group image + text so image centers over the text width */}
+            <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
+              <FooterIllustration />
+              <div style={{ textAlign: 'left' }}>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '24px' : '32px', fontWeight: 800, color: 'var(--color-dark)' }}>
+                  Need a custom quote?
+                </h3>
+                <p style={{ fontSize: '15px', lineHeight: 1.5, opacity: 0.8, marginTop: '8px', maxWidth: '300px' }}>
+                  Don't let your ideas sit idle—slide into our inbox and let's make magic!
+                </p>
+              </div>
             </div>
           </div>
 
@@ -179,49 +182,70 @@ export function Footer() {
         style={{
           backgroundColor: 'var(--color-dark-purple)', // Dark burgundy footer
           color: 'var(--color-peach)',
-          paddingTop: isMobile ? '40px' : '64px',
-          paddingBottom: '0',
+          borderRadius: isMobile ? '24px' : '48px',
+          margin: isMobile ? '32px 16px 16px 16px' : '48px 24px 24px 24px',
+          padding: isMobile ? '48px 24px 48px 24px' : '80px 80px 60px 80px',
+          minHeight: isMobile ? '500px' : '900px',
           position: 'relative',
           overflow: 'hidden',
-          borderRadius: '24px 24px 0 0',
-          borderTop: '2px solid var(--color-dark)',
+          border: '3px solid var(--color-dark)',
+          boxShadow: '4px 4px 0 0 var(--color-dark)',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px 40px 16px' : '0 24px 64px 24px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : 'repeat(auto-fit, minmax(200px, 1fr))', gap: isMobile ? '32px' : '40px' }} className="footer-links-grid">
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : '1.8fr 1fr 1fr', gap: isMobile ? '32px' : '48px' }} className="footer-links-grid">
           {/* Col 1: Contact Details */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div>
-              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: '18px', textTransform: 'uppercase', marginBottom: '4px' }}>Phone</div>
-              <div style={{ fontSize: '15px', fontWeight: 500 }}>(217) 555-0134</div>
+              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Phone</div>
+              <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', fontWeight: 500, color: 'var(--bg-white-pure)' }}>
+                <a href="tel:2175550134" style={{ textDecoration: 'none', color: 'inherit' }}>(217) 555-0134</a>
+              </div>
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: '18px', textTransform: 'uppercase', marginBottom: '4px' }}>Email</div>
-              <div style={{ fontSize: '15px', fontWeight: 500 }}>contact@kalvix.ai</div>
+              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Email</div>
+              <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', fontWeight: 500, color: 'var(--bg-white-pure)' }}>
+                <a href="mailto:contact@kalvix.ai" style={{ textDecoration: 'none', color: 'inherit' }}>contact@kalvix.ai</a>
+              </div>
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: '18px', textTransform: 'uppercase', marginBottom: '4px' }}>Address</div>
-              <div style={{ fontSize: '14px', lineHeight: 1.3, fontWeight: 500 }}>123 Main Street, Suite 200,<br />Austin, TX 78701</div>
+              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Address</div>
+              <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', lineHeight: 1.5, fontWeight: 500, color: 'var(--bg-white-pure)' }}>
+                123 Main Street, Suite 200,<br />Austin, TX 78701
+              </div>
             </div>
             <div>
-              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: '18px', textTransform: 'uppercase', marginBottom: '4px' }}>Opening Hours</div>
-              <div style={{ fontSize: '14px', lineHeight: 1.3, fontWeight: 500 }}>Mon to Sat: 9.00am - 8.30pm<br />Sun: Closed</div>
+              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Opening Hours</div>
+              <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', lineHeight: 1.5, fontWeight: 500, color: 'var(--bg-white-pure)' }}>
+                Mon to Sat: 9.00am - 8.30pm<br />Sun: Closed
+              </div>
             </div>
           </div>
 
           {/* Col 2: Navigation links */}
           <div>
-            <h4 style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: '20px', textTransform: 'uppercase', color: 'var(--bg-white-pure)', marginBottom: '16px' }}>
-              Directory
-            </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '16px', fontWeight: 600, paddingLeft: 0, margin: 0 }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', paddingLeft: 0, margin: 0 }}>
               {['services', 'benefits', 'portfolio', 'process', 'reviews', 'about'].map((item) => (
-                <li key={item}>
+                <li key={item} style={{ lineHeight: 1 }}>
                   <a
                     href={`#${item}`}
                     onClick={(e) => handleLinkClick(e, item)}
-                    style={{ textDecoration: 'none', color: 'inherit', opacity: 0.85 }}
+                    style={{
+                      fontFamily: 'var(--font-oswald)',
+                      fontSize: isMobile ? '20px' : '24px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      textDecoration: 'none',
+                      color: 'var(--bg-white-pure)',
+                      letterSpacing: '0.05em',
+                      transition: 'opacity 0.2s ease',
+                      opacity: 0.8,
+                      display: 'inline-block',
+                    }}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.85')}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
                   >
                     {item}
                   </a>
@@ -232,17 +256,25 @@ export function Footer() {
 
           {/* Col 3: Social Links */}
           <div>
-            <h4 style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: '20px', textTransform: 'uppercase', color: 'var(--bg-white-pure)', marginBottom: '16px' }}>
-              Socials
-            </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '16px', fontWeight: 600, paddingLeft: 0, margin: 0 }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', paddingLeft: 0, margin: 0 }}>
               {['Linkedin', 'Facebook', 'Twitter', 'Instagram', 'Youtube'].map((social) => (
-                <li key={social}>
+                <li key={social} style={{ lineHeight: 1 }}>
                   <a
                     href="#"
-                    style={{ textDecoration: 'none', color: 'inherit', opacity: 0.85 }}
+                    style={{
+                      fontFamily: 'var(--font-oswald)',
+                      fontSize: isMobile ? '20px' : '24px',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      textDecoration: 'none',
+                      color: 'var(--bg-white-pure)',
+                      letterSpacing: '0.05em',
+                      transition: 'opacity 0.2s ease',
+                      opacity: 0.8,
+                      display: 'inline-block',
+                    }}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.85')}
+                    onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
                   >
                     {social}
                   </a>
@@ -252,35 +284,62 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Giant bottom word mark "KALVIX" flowing off screen */}
+        {/* Giant bottom word mark "KALVIX" - fills container width edge-to-edge like agenius reference site */}
         <div
           style={{
-            textAlign: 'center',
-            width: '100%',
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
             overflow: 'hidden',
-            lineHeight: 0.7,
+            lineHeight: 1,
             userSelect: 'none',
             pointerEvents: 'none',
+            zIndex: 1,
           }}
         >
           <span
             style={{
-              fontSize: isMobile ? '80px' : 'min(22vw, 260px)',
-              fontWeight: 800,
+              fontSize: isMobile ? '18vw' : '22vw',
+              fontWeight: 900,
               fontFamily: 'var(--font-display)',
               textTransform: 'uppercase',
               display: 'block',
+              textAlign: 'center',
               margin: '0',
               padding: '0',
-              background: 'linear-gradient(180deg, rgba(254, 250, 231, 0.15) 0%, rgba(254, 250, 231, 0.01) 100%)',
+              lineHeight: 0.85,
+              background: 'linear-gradient(180deg, rgba(250, 224, 190, 0.28) 0%, rgba(250, 224, 190, 0.05) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              letterSpacing: isMobile ? '-3px' : '-10px',
-              transform: isMobile ? 'translateY(12px)' : 'translateY(24px)',
+              letterSpacing: isMobile ? '0.02em' : '0.03em',
             }}
           >
-            Kalvix
+            KALVIX
           </span>
+        </div>
+
+        {/* Bottom copyright and metadata info overlaid at the bottom - sits over the KALVIX watermark */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: isMobile ? '12px' : '24px',
+            left: isMobile ? '24px' : '80px',
+            right: isMobile ? '24px' : '80px',
+            display: 'flex',
+            flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: '14px',
+            fontFamily: 'var(--font-satoshi)',
+            color: 'var(--color-peach)',
+            opacity: 0.6,
+            zIndex: 2,
+            gap: isMobile ? '12px' : '0',
+          }}
+        >
+          <div>© 2026 Kalvix.ai. All rights reserved.</div>
+          <div>Built with passion.</div>
         </div>
 
       </div>

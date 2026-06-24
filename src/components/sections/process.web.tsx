@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { ScrollReveal } from '../ui/scroll-reveal.web';
+import { TextReveal } from '../ui/text-reveal.web';
 
 // ── Per-step inline SVG illustrations ────────────────────────────────────────
 
@@ -405,17 +407,20 @@ export function Process() {
           zIndex: 2,
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
 
           {/* ── Header ── */}
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '36px' : '60px' }}>
-            <div
-              className="badge-sticker green"
-              style={{ display: 'inline-flex', marginBottom: '16px', transform: 'rotate(-4deg)' }}
-            >
-              How it works
-            </div>
-            <h2
+            <ScrollReveal delay={0}>
+              <div
+                className="badge-sticker green"
+                style={{ display: 'inline-flex', marginBottom: '16px', transform: 'rotate(-4deg)' }}
+              >
+                How it works
+              </div>
+            </ScrollReveal>
+            <TextReveal
+              delay={100}
               style={{
                 fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
@@ -424,23 +429,25 @@ export function Process() {
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '640px',
+                maxWidth: '1200px',
                 margin: '0 auto',
               }}
             >
-              Up and running<br />in five steps.
-            </h2>
-            <p style={{
-              fontFamily: 'var(--font-satoshi)',
-              fontSize: isMobile ? '15px' : '17px',
-              fontWeight: 500,
-              opacity: 0.65,
-              maxWidth: '460px',
-              margin: '16px auto 0',
-              lineHeight: 1.6,
-            }}>
-              From first login to fully automated campaigns — Kalvix.ai gets you moving fast.
-            </p>
+              Up and running in five steps.
+            </TextReveal>
+            <ScrollReveal delay={200}>
+              <p style={{
+                fontFamily: 'var(--font-satoshi)',
+                fontSize: isMobile ? '15px' : '17px',
+                fontWeight: 500,
+                opacity: 0.65,
+                maxWidth: '460px',
+                margin: '16px auto 0',
+                lineHeight: 1.6,
+              }}>
+                From first login to fully automated campaigns — Kalvix.ai gets you moving fast.
+              </p>
+            </ScrollReveal>
           </div>
 
           {/* ── Step number switcher ── */}

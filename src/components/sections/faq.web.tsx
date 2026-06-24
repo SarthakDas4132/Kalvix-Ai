@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { ScrollReveal } from '../ui/scroll-reveal.web';
+import { TextReveal } from '../ui/text-reveal.web';
 
 const FAQS = [
   {
@@ -64,22 +66,25 @@ export function FAQ() {
       >
         <div className="bg-dot-grid" style={{ position: 'absolute', inset: 0, opacity: 0.05, pointerEvents: 'none' }} />
 
-        <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '900px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
           
           {/* Header */}
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '32px' : '56px', position: 'relative' }}>
-            <div
-              className="badge-sticker yellow"
-              style={{
-                display: 'inline-flex',
-                marginBottom: '16px',
-                transform: 'rotate(5deg)',
-                color: 'var(--color-dark)',
-              }}
-            >
-              FAQ
-            </div>
-            <h2
+            <ScrollReveal delay={0}>
+              <div
+                className="badge-sticker yellow"
+                style={{
+                  display: 'inline-flex',
+                  marginBottom: '16px',
+                  transform: 'rotate(5deg)',
+                  color: 'var(--color-dark)',
+                }}
+              >
+                FAQ
+              </div>
+            </ScrollReveal>
+            <TextReveal
+              delay={100}
               style={{
                 fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
@@ -91,7 +96,7 @@ export function FAQ() {
               }}
             >
               Got questions?
-            </h2>
+            </TextReveal>
           </div>
 
           {/* Messaging Chat Thread */}

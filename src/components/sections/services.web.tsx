@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { ScrollReveal } from '../ui/scroll-reveal.web';
+import { TextReveal } from '../ui/text-reveal.web';
 
 const SERVICES = [
   {
@@ -124,17 +126,20 @@ export function Services() {
           zIndex: 2,
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
 
           {/* ── Section Header ── */}
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '36px' : '64px' }}>
-            <div
-              className="badge-sticker blue"
-              style={{ display: 'inline-block', marginBottom: '20px', transform: 'rotate(-3deg)' }}
-            >
-              What's inside
-            </div>
-            <h2
+            <ScrollReveal delay={0}>
+              <div
+                className="badge-sticker blue"
+                style={{ display: 'inline-block', marginBottom: '20px', transform: 'rotate(-3deg)' }}
+              >
+                What's inside
+              </div>
+            </ScrollReveal>
+            <TextReveal
+              delay={100}
               style={{
                 fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
@@ -143,12 +148,12 @@ export function Services() {
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '640px',
+                maxWidth: '1200px',
                 margin: '0 auto',
               }}
             >
               Everything your brand needs — built in.
-            </h2>
+            </TextReveal>
             <p
               style={{
                 fontFamily: 'var(--font-satoshi)',

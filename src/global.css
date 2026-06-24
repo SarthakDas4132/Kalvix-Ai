@@ -279,3 +279,30 @@ html, body {
   overflow-x: hidden !important;
 }
 
+/* ============================================================
+   SCROLL REVEAL ANIMATION — agenius-style slide-up text reveal
+   ============================================================ */
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base hidden state — applied before element enters viewport */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: transform, opacity;
+}
+
+/* Triggered state — applied by IntersectionObserver when in view */
+.reveal.in-view {
+  animation: reveal-up 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}

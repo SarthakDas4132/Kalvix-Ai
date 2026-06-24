@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { TextReveal } from '../ui/text-reveal.web';
 
 // ── Platform cards with inline SVG icons ───────────────────────────────────
 const PLATFORM_CARDS = [
@@ -375,7 +376,10 @@ export function Features() {
 
 
             {/* The Text (z-index 1 so it's behind the lens) */}
-            <h2
+            <TextReveal
+              as="h2"
+              delay={100}
+              stagger={20}
               style={{
                 position: 'relative',
                 zIndex: 1,
@@ -389,10 +393,8 @@ export function Features() {
                 margin: 0,
               }}
             >
-              We built the
-              <br />
-              rocket, they flew
-            </h2>
+              {"We built the\nrocket, they flew"}
+            </TextReveal>
           </div>
         </div>
 
@@ -439,7 +441,7 @@ export function Features() {
           style={{
             position: 'relative',
             zIndex: 1,
-            maxWidth: '1200px',
+            maxWidth: '1400px',
             margin: isMobile ? '16px auto 0' : '32px auto 0',
             padding: isMobile ? '0 16px' : '0 24px',
           }}
@@ -547,7 +549,7 @@ export function Features() {
           position: 'relative',
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '36px' : '56px' }}>
             <div className="badge-sticker blue" style={{ display: 'inline-block', marginBottom: '16px', transform: 'rotate(2deg)' }}>
               Everything included
@@ -561,7 +563,7 @@ export function Features() {
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '700px',
+                maxWidth: '1200px',
                 margin: '0 auto',
               }}
             >

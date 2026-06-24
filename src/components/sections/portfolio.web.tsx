@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { ScrollReveal } from '../ui/scroll-reveal.web';
+import { TextReveal } from '../ui/text-reveal.web';
 
 // ── Case study data ───────────────────────────────────────────────────────────
 
@@ -250,17 +252,20 @@ export function Portfolio() {
           zIndex: 2,
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
 
           {/* ── Header ── */}
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '36px' : '60px' }}>
-            <div
-              className="badge-sticker purple"
-              style={{ display: 'inline-flex', marginBottom: '16px', transform: 'rotate(-3deg)' }}
-            >
-              Case Studies
-            </div>
-            <h2
+            <ScrollReveal delay={0}>
+              <div
+                className="badge-sticker purple"
+                style={{ display: 'inline-flex', marginBottom: '16px', transform: 'rotate(-3deg)' }}
+              >
+                Case Studies
+              </div>
+            </ScrollReveal>
+            <TextReveal
+              delay={100}
               style={{
                 fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
@@ -269,23 +274,25 @@ export function Portfolio() {
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '700px',
+                maxWidth: '1200px',
                 margin: '0 auto',
               }}
             >
-              Real brands.<br />Real results.
-            </h2>
-            <p style={{
-              fontFamily: 'var(--font-satoshi)',
-              fontSize: isMobile ? '15px' : '17px',
-              fontWeight: 500,
-              opacity: 0.65,
-              maxWidth: '460px',
-              margin: '16px auto 0',
-              lineHeight: 1.6,
-            }}>
-              See how teams use Kalvix.ai to grow faster, save time and run campaigns that actually convert.
-            </p>
+              Real brands. Real results.
+            </TextReveal>
+            <ScrollReveal delay={200}>
+              <p style={{
+                fontFamily: 'var(--font-satoshi)',
+                fontSize: isMobile ? '15px' : '17px',
+                fontWeight: 500,
+                opacity: 0.65,
+                maxWidth: '460px',
+                margin: '16px auto 0',
+                lineHeight: 1.6,
+              }}>
+                See how teams use Kalvix.ai to grow faster, save time and run campaigns that actually convert.
+              </p>
+            </ScrollReveal>
           </div>
 
           {/* ── Tab selector ── */}

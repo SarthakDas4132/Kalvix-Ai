@@ -1,5 +1,6 @@
 import React from 'react';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { ScrollReveal } from '../ui/scroll-reveal.web';
 
 const TEAM = [
   {
@@ -10,11 +11,12 @@ const TEAM = [
     cardBg: '#f9e1c3', // Light orange
     stickerColor: '#cfcbff', // Light blue
     maskElements: (
-      <g transform="rotate(45 50 50)">
-        <circle cx="50" cy="24" r="30" fill="white" />
-        <circle cx="76" cy="50" r="30" fill="white" />
-        <circle cx="50" cy="76" r="30" fill="white" />
-        <circle cx="24" cy="50" r="30" fill="white" />
+      // 4-leaf clover: 4 circles in diagonal 2x2 arrangement
+      <g>
+        <circle cx="34" cy="34" r="27" fill="white" />
+        <circle cx="66" cy="34" r="27" fill="white" />
+        <circle cx="34" cy="66" r="27" fill="white" />
+        <circle cx="66" cy="66" r="27" fill="white" />
       </g>
     ),
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
@@ -26,7 +28,8 @@ const TEAM = [
     sticker: 'Pixel Wizard',
     cardBg: '#fac2f8', // Pink
     stickerColor: '#bbf1b6', // Light green
-    maskPath: 'M50,10 L58,22 L72,16 L74,30 L88,32 L82,46 L90,58 L78,66 L78,80 L64,80 L56,90 L44,90 L36,80 L22,80 L22,66 L10,58 L18,46 L12,32 L26,30 L28,16 L42,22 Z',
+    // 12-point star filling most of 100x100
+    maskPath: 'M50,5 L56,20 L72,14 L66,30 L82,34 L70,46 L82,58 L66,62 L72,78 L56,72 L50,88 L44,72 L28,78 L34,62 L18,58 L30,46 L18,34 L34,30 L28,14 L44,20 Z',
     image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=300&q=80',
   },
   {
@@ -36,7 +39,8 @@ const TEAM = [
     sticker: 'Detail Ninja',
     cardBg: '#ccb1f5', // Purple
     stickerColor: '#f9e1c3', // Light orange
-    maskPath: 'M35,12 L65,12 L65,35 L88,35 L88,65 L65,65 L65,88 L35,88 L35,65 L12,65 L12,35 L35,35 Z',
+    // Cross/plus shape — expanded to fill 100x100
+    maskPath: 'M32,5 L68,5 L68,32 L95,32 L95,68 L68,68 L68,95 L32,95 L32,68 L5,68 L5,32 L32,32 Z',
     image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80',
   },
   {
@@ -46,7 +50,8 @@ const TEAM = [
     sticker: '!!!!',
     cardBg: '#bbf1b6', // Light green
     stickerColor: '#ffe96b', // Yellow
-    maskPath: 'M50,12 C60,10 75,18 78,32 C81,46 92,52 86,66 C80,80 68,88 50,86 C32,88 20,80 14,66 C8,52 19,46 22,32 C25,18 40,10 50,12 Z',
+    // Organic blob expanded to fill 100x100
+    maskPath: 'M50,5 C65,3 82,14 86,30 C90,46 96,55 88,70 C80,85 65,95 50,93 C35,95 20,85 12,70 C4,55 10,46 14,30 C18,14 35,3 50,5 Z',
     isHiring: true,
   }
 ];
@@ -69,43 +74,45 @@ export function About() {
           zIndex: 2,
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
           
           {/* Header Text block */}
           <div style={{ textAlign: 'left', marginBottom: isMobile ? '32px' : '56px', position: 'relative' }}>
-            <div
-              className="badge-sticker pink"
-              style={{
-                display: 'inline-flex',
-                marginBottom: '20px',
-                transform: 'rotate(-3deg)',
-              }}
-            >
-              About us
-            </div>
-            <h2
+            <ScrollReveal delay={0}>
+              <div
+                className="badge-sticker pink"
+                style={{
+                  display: 'inline-flex',
+                  marginBottom: '20px',
+                  transform: 'rotate(-3deg)',
+                }}
+              >
+                About us
+              </div>
+            </ScrollReveal>
+            <p
               style={{
                 fontSize: isMobile ? '18px' : isTablet ? '24px' : 'min(5.5vw, 36px)',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 600,
                 lineHeight: 1.35,
                 color: 'var(--color-dark)',
-                maxWidth: '1200px',
+                maxWidth: '1400px',
                 margin: 0,
               }}
             >
               We started at a kitchen table with coffee, chaos, and a shared love for bold ideas. Now we’re a small team doing big things—branding, designing, and creating work that actually makes people feel something. No fluff, no fuss, just fun, friendly, scroll-stopping creativity.
-            </h2>
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : 'repeat(4, 1fr)', gap: isMobile ? '24px' : '16px' }} className="team-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : 'repeat(4, 1fr)', gap: isMobile ? '24px' : '24px' }} className="team-grid">
             {TEAM.map((member, idx) => (
               <div
                 key={idx}
                 style={{
                   backgroundColor: member.cardBg,
                   borderRadius: '32px',
-                  padding: isMobile ? '20px 16px' : '24px',
+                  padding: isMobile ? '20px 16px' : isTablet ? '24px' : '32px 20px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -138,8 +145,8 @@ export function About() {
                 {/* Masked Photo Placeholder */}
                 <div
                   style={{
-                    width: isMobile ? '180px' : '240px',
-                    height: isMobile ? '180px' : '240px',
+                    width: isMobile ? '180px' : isTablet ? '220px' : '280px',
+                    height: isMobile ? '180px' : isTablet ? '220px' : '280px',
                     position: 'relative',
                     marginBottom: '24px',
                   }}
@@ -172,14 +179,14 @@ export function About() {
 
                 {/* Info Details */}
                 <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '26px', fontWeight: 800, color: 'var(--color-dark)', lineHeight: 1 }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 800, color: 'var(--color-dark)', lineHeight: 1 }}>
                     {member.firstName}
                   </h3>
-                  <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 700, color: 'var(--color-dark)', lineHeight: 1.2, marginBottom: '12px' }}>
+                  <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', fontWeight: 700, color: 'var(--color-dark)', lineHeight: 1.2, marginBottom: '12px' }}>
                     {member.lastName}
                   </h4>
                   
-                  <p style={{ fontSize: '10px', fontFamily: 'var(--font-oswald)', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-dark)', letterSpacing: '0.5px' }}>
+                  <p style={{ fontSize: '10.5px', fontFamily: 'var(--font-oswald)', fontWeight: 700, textTransform: 'uppercase', color: 'var(--color-dark)', letterSpacing: '0.5px' }}>
                     {member.role}
                   </p>
 

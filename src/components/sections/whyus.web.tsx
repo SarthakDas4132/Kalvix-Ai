@@ -160,7 +160,7 @@ export function WhyUs() {
       >
         <div
           style={{
-            maxWidth: '1200px',
+            maxWidth: '1400px',
             margin: '0 auto',
             padding: isMobile ? '40px 16px 0' : '60px 32px 0',
             position: 'relative',

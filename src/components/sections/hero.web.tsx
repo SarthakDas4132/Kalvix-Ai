@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { TextReveal } from '../ui/text-reveal.web';
 
 // Rotating words for the sub-headline typewriter effect
 const ROTATING_WORDS = ['Campaigns', 'Creators', 'Analytics', 'Contracts', 'Payments', 'Ads'];
@@ -229,7 +230,7 @@ export function Hero() {
       <div
         style={{
           width: '100%',
-          maxWidth: '1200px',
+          maxWidth: '1400px',
           margin: '0 auto',
           padding: isMobile ? '0 16px' : '0 32px',
           textAlign: 'center',
@@ -292,29 +293,26 @@ export function Hero() {
           }}
         >
           {/* Clip mask for text rise */}
-          <div style={{ overflow: 'hidden' }}>
-            <motion.h1
-              variants={clipReveal}
-              initial="hidden"
-              animate="visible"
-              custom={0.1}
-              style={{
-                fontSize: isMobile ? '48px' : isTablet ? '84px' : 'min(15vw, 180px)',
-                fontWeight: 900,
-                fontFamily: 'var(--font-satoshi), sans-serif',
-                color: 'var(--color-dark)',
-                lineHeight: 0.88,
-                letterSpacing: isMobile ? '-2px' : isTablet ? '-4px' : '-6px',
-                textTransform: 'uppercase',
-                margin: 0,
-                display: 'block',
-                textAlign: 'center',
-                userSelect: 'none',
-              }}
-            >
-              Kalvix<span style={{ color: 'var(--color-pink)' }}>.ai</span>
-            </motion.h1>
-          </div>
+          <TextReveal
+            as="h1"
+            delay={100}
+            stagger={25}
+            style={{
+              fontSize: isMobile ? '48px' : isTablet ? '84px' : 'min(15vw, 180px)',
+              fontWeight: 900,
+              fontFamily: 'var(--font-satoshi), sans-serif',
+              color: 'var(--color-dark)',
+              lineHeight: 0.88,
+              letterSpacing: isMobile ? '-2px' : isTablet ? '-4px' : '-6px',
+              textTransform: 'uppercase',
+              margin: 0,
+              display: 'block',
+              textAlign: 'center',
+              userSelect: 'none',
+            }}
+          >
+            Kalvix.ai
+          </TextReveal>
 
           {/* Sticker 1 — left (AI-Powered) — pops in at 0.55s */}
           {!isMobile && !isTablet && (

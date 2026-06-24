@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
+import { ScrollReveal } from '../ui/scroll-reveal.web';
+import { TextReveal } from '../ui/text-reveal.web';
 
 const TEXT_TESTIMONIALS = [
   {
@@ -39,21 +41,24 @@ export function Testimonials() {
           zIndex: 2,
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
+        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
           
           {/* Header */}
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '32px' : '48px', position: 'relative' }}>
-            <div
-              className="badge-sticker green"
-              style={{
-                display: 'inline-flex',
-                marginBottom: '16px',
-                transform: 'rotate(-3deg)',
-              }}
-            >
-              Reviews
-            </div>
-            <h2
+            <ScrollReveal delay={0}>
+              <div
+                className="badge-sticker green"
+                style={{
+                  display: 'inline-flex',
+                  marginBottom: '16px',
+                  transform: 'rotate(-3deg)',
+                }}
+              >
+                Reviews
+              </div>
+            </ScrollReveal>
+            <TextReveal
+              delay={100}
               style={{
                 fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
@@ -64,8 +69,8 @@ export function Testimonials() {
                 color: 'var(--color-dark)',
               }}
             >
-              Real stories from<br />beloved clients
-            </h2>
+              Real stories from beloved clients
+            </TextReveal>
           </div>
 
           {/* Text Testimonial Slider */}
