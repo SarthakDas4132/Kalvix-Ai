@@ -278,7 +278,7 @@ export function Hero() {
                   display: 'inline-block',
                 }}
               />
-              All-in-One Creator &amp; Marketing Platform
+              All-in-One Marketing & Creators Platform
             </span>
           </motion.div>
         </div>
@@ -367,7 +367,7 @@ export function Hero() {
             textAlign: 'center',
           }}
         >
-          Your brand deserves to be{' '}
+           Create. Advertise. Sell. Scale. Connect {' '}
           <span
             style={{
               color: 'var(--color-dark)',
@@ -415,8 +415,7 @@ export function Hero() {
             textAlign: 'center',
           }}
         >
-          Post across every social platform, discover top creators, manage contracts &amp; payments,
-          and run Meta &amp; Google Ads — all from one AI-powered dashboard.
+          Generate content, publish everywhere, launch ads, capture leads, automate follow-ups, manage sales and collaborate with creators - all from one AI-powered platform.
         </motion.p>
 
         {/* ── 5. CTA Buttons ── */}
@@ -439,8 +438,8 @@ export function Hero() {
           <button
             onClick={handleScrollToQuote}
             className="neo-btn"
-            style={{ 
-              fontSize: isMobile ? '16px' : '18px', 
+            style={{
+              fontSize: isMobile ? '16px' : '18px',
               padding: isMobile ? '12px 28px' : '16px 44px',
               width: '100%',
             }}
@@ -498,7 +497,7 @@ export function Hero() {
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 10%, black 50%, black 100%)',
           zIndex: 0,
         }} />
-        
+
         {/* Circular Video Placeholder */}
         <motion.div
           variants={fadeUp}
@@ -522,7 +521,7 @@ export function Hero() {
           }}
         >
           <div style={{ position: 'absolute', inset: 0, backgroundColor: 'var(--color-dark)', opacity: 0.8, zIndex: 1 }} />
-          
+
           <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? '8px' : '16px' }}>
             <div style={{
               width: isMobile ? '60px' : '80px', height: isMobile ? '60px' : '80px', borderRadius: '50%', backgroundColor: 'var(--color-pink)',

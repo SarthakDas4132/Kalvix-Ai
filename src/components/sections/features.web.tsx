@@ -117,10 +117,10 @@ const PLATFORM_CARDS = [
 
 // ── Stats data ──────────────────────────────────────────────────────────────
 const STATS = [
-  { num: '10M+', label: 'Creators Indexed' },
-  { num: '7+',   label: 'Platforms Supported' },
-  { num: '3×',   label: 'Faster Campaign Setup' },
-  { num: '91%',  label: 'Client Satisfaction' },
+  { num: '50K+', label: 'Creators Indexed' },
+  { num: '15+',   label: 'Platforms Integrated' },
+  { num: '3×',   label: 'Faster Campaign launches' },
+  { num: '40%',  label: 'higher team productivity' },
 ];
 
 // ── Platform card — larger, rollercoaster-style ───────────────────────────
@@ -142,8 +142,8 @@ function PlatformCard({
       onMouseLeave={() => setHovered(false)}
       style={{
         position: 'relative',
-        width: isMobile ? '110px' : '140px',
-        height: isMobile ? '86px' : '108px',
+        width: isMobile ? '64px' : '140px',
+        height: isMobile ? '50px' : '108px',
         flexShrink: 0,
         cursor: 'pointer',
       }}
@@ -154,7 +154,7 @@ function PlatformCard({
           width: '100%',
           height: '100%',
           backgroundColor: bg,
-          borderRadius: isMobile ? '18px' : '26px',
+          borderRadius: isMobile ? '12px' : '26px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -168,7 +168,7 @@ function PlatformCard({
         }}
       >
         {/* Icon — scaled up */}
-        <div style={{ transform: isMobile ? 'scale(1)' : 'scale(1.35)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ transform: isMobile ? 'scale(0.75)' : 'scale(1.35)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {icon}
         </div>
 
@@ -177,7 +177,7 @@ function PlatformCard({
           style={{
             position: 'absolute',
             inset: 0,
-            borderRadius: isMobile ? '18px' : '26px',
+            borderRadius: isMobile ? '12px' : '26px',
             backdropFilter: hovered ? 'blur(12px) saturate(1.4)' : 'blur(0px)',
             backgroundColor: hovered ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0)',
             display: 'flex',
@@ -192,7 +192,7 @@ function PlatformCard({
             style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 800,
-              fontSize: isMobile ? '11px' : '13px',
+              fontSize: isMobile ? '8px' : '13px',
               color: '#181a12',
               textAlign: 'center',
               padding: '0 10px',
@@ -287,8 +287,8 @@ function TrackCard({
   setWidth: number;
 }) {
   const { isMobile } = useBreakpoint();
-  const amplitude = isMobile ? 32 : 60;
-  const maxRotate = isMobile ? 8 : 14;
+  const amplitude = isMobile ? 16 : 60;
+  const maxRotate = isMobile ? 6 : 14;
 
   // Global screen X position of the card.
   const screenX = useTransform(containerX, (v: number) => v + index * itemWidth);
@@ -315,7 +315,7 @@ function TrackCard({
 export function Features() {
   const { isMobile, isTablet } = useBreakpoint();
   const containerX = useMotionValue(0);
-  const itemWidth = isMobile ? 122 : 158; // 110px card width + 12px gap vs 140px card width + 18px gap
+  const itemWidth = isMobile ? 72 : 158; // 64px card width + 8px gap vs 140px card width + 18px gap
   const setWidth = itemWidth * PLATFORM_CARDS.length;
 
   useEffect(() => {
@@ -393,9 +393,22 @@ export function Features() {
                 margin: 0,
               }}
             >
-              {"We built the\nrocket, they flew"}
+              {"One Dashboard,\nEvery Growth Channel."}
             </TextReveal>
           </div>
+          <p
+            style={{
+              fontFamily: 'var(--font-satoshi), sans-serif',
+              fontSize: isMobile ? '16px' : '20px',
+              color: '#26091c',
+              opacity: 0.8,
+              maxWidth: '650px',
+              margin: '24px auto 0',
+              lineHeight: 1.6,
+            }}
+          >
+            Most businesses use 5–10 different tools to manage marketing and sales, Kalvix brings everything together into one intelligent growth platform.
+          </p>
         </div>
 
         {/* ── Rollercoaster sine-wave track (A-Genius style) ── */}
@@ -407,8 +420,8 @@ export function Features() {
             position: 'relative',
             zIndex: 1,
             width: '100%',
-            height: isMobile ? '200px' : '320px',
-            paddingTop: isMobile ? '50px' : '90px',
+            height: isMobile ? '120px' : '320px',
+            paddingTop: isMobile ? '30px' : '90px',
             maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
           }}
@@ -417,7 +430,7 @@ export function Features() {
             style={{
               x: containerX,
               position: 'absolute',
-              top: isMobile ? '50px' : '90px',
+              top: isMobile ? '30px' : '90px',
               left: 0,
               display: 'flex',
               alignItems: 'flex-start',
@@ -575,38 +588,38 @@ export function Features() {
             <FeatureCard
               accentColor="var(--color-yellow)" tag="Core"
               icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>}
-              title="Cross-Platform Publishing"
-              description="Write once, publish everywhere. Schedule and post to Instagram, TikTok, YouTube, LinkedIn, X, and more — simultaneously, from one place."
+              title="AI Content Studio"
+              description="Create images, videos, captions and marketing copy from a single prompt using AI."
             />
             <FeatureCard
-              accentColor="var(--color-purple)" tag="Discover"
+              accentColor="var(--color-purple)" tag="Publish"
               icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8a3 3 0 100 6 3 3 0 000-6z"/></svg>}
-              title="Creator Discovery"
-              description="Find top influencers and content creators across every platform ranked by reach, engagement, niche, and audience demographics."
+              title="Cross-Platform Publishing"
+              description="Publish and schedule content to Instagram, TikTok, YouTube, LinkedIn, X and Facebook from one calendar."
             />
             <FeatureCard
               accentColor="var(--color-green)" tag="AI"
               icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>}
-              title="AI Lead & CRM Engine"
-              description="AI automatically identifies, scores and routes leads into your CRM. Track the full customer journey from first touch to closed deal."
+              title="AI CRM & Lead Management"
+              description="Capture leads automatically and run WhatsApp, SMS, email and calling automations to close more deals."
             />
             <FeatureCard
-              accentColor="var(--color-pink)"
+              accentColor="var(--color-pink)" tag="Creators"
               icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>}
-              title="Contracts & Collaboration"
-              description="Send, sign and manage creator collaboration contracts right inside the platform. No PDF back-and-forth, no missed clauses."
+              title="Creator Marketplace"
+              description="Discover top creators, manage contracts, automate outreach and handle payments directly inside the platform."
             />
             <FeatureCard
               accentColor="var(--color-blue)" tag="Ads"
               icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>}
               title="Meta & Google Ads"
-              description="Launch, manage and optimise Meta and Google ad campaigns without leaving the dashboard. Connect your ad accounts in seconds."
+              description="Launch, optimize and manage your paid campaigns without switching to complex ad managers."
             />
             <FeatureCard
-              accentColor="var(--color-peach)"
+              accentColor="var(--color-peach)" tag="Analytics"
               icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>}
-              title="Payments & Analytics"
-              description="Pay creators, track invoices, and get quantitative analytics on every campaign — impressions, conversions, ROAS and beyond."
+              title="Revenue & Analytics Hub"
+              description="Track campaign performance, conversion rates, creator ROI and marketing spend from one unified dashboard."
             />
           </div>
         </div>

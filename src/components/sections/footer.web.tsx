@@ -88,7 +88,7 @@ export function Footer() {
           {/* Right Form inputs */}
           <form onSubmit={handleSubmit} style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', gap: isMobile ? '20px' : '32px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: 'var(--font-oswald)', fontWeight: 600, fontSize: '14px', color: 'var(--color-dark)' }}>Name</label>
+              <label style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px', color: 'var(--color-dark)' }}>Name</label>
               <input
                 type="text"
                 value={form.name}
@@ -109,7 +109,7 @@ export function Footer() {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: 'var(--font-oswald)', fontWeight: 600, fontSize: '14px', color: 'var(--color-dark)' }}>Email</label>
+              <label style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px', color: 'var(--color-dark)' }}>Email</label>
               <input
                 type="email"
                 value={form.email}
@@ -130,7 +130,7 @@ export function Footer() {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: 'var(--font-oswald)', fontWeight: 600, fontSize: '14px', color: 'var(--color-dark)' }}>Phone</label>
+              <label style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px', color: 'var(--color-dark)' }}>Phone</label>
               <input
                 type="tel"
                 value={form.phone}
@@ -150,7 +150,7 @@ export function Footer() {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ fontFamily: 'var(--font-oswald)', fontWeight: 600, fontSize: '14px', color: 'var(--color-dark)' }}>Message</label>
+              <label style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '24px', color: 'var(--color-dark)' }}>Message</label>
               <textarea
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -170,8 +170,30 @@ export function Footer() {
               />
             </div>
 
-            <button type="submit" className="neo-btn" style={{ width: '100%', marginTop: '8px' }}>
-              Submit Message
+            <button
+              type="submit"
+              className="neo-btn"
+              style={{
+                width: '100%',
+                marginTop: '16px',
+                backgroundColor: 'var(--color-yellow)',
+                border: '2.5px solid var(--color-dark)',
+                borderRadius: '9999px',
+                padding: '12px 24px',
+                fontFamily: 'var(--font-oswald)',
+                fontSize: '24px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                color: 'var(--color-dark)',
+                boxShadow: '0 4px 0 0 var(--color-dark)',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                letterSpacing: '0.5px',
+              }}
+            >
+              SUBMIT MESSAGE
             </button>
           </form>
         </div>
@@ -184,7 +206,7 @@ export function Footer() {
           color: 'var(--color-peach)',
           borderRadius: isMobile ? '24px' : '48px',
           margin: isMobile ? '32px 16px 16px 16px' : '48px 24px 24px 24px',
-          padding: isMobile ? '48px 24px 48px 24px' : '80px 80px 60px 80px',
+          padding: isMobile ? '48px 24px 110px 24px' : '80px 80px 60px 80px',
           minHeight: isMobile ? '500px' : '900px',
           position: 'relative',
           overflow: 'hidden',
@@ -195,37 +217,66 @@ export function Footer() {
           justifyContent: 'space-between',
         }}
       >
-        <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : '1.8fr 1fr 1fr', gap: isMobile ? '32px' : '48px' }} className="footer-links-grid">
+        <div
+          style={{
+            width: '100%',
+            maxWidth: '1400px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : '1fr auto auto',
+            columnGap: isMobile ? '32px' : isTablet ? '48px' : 'clamp(48px, 12vw, 160px)',
+            rowGap: isMobile ? '0px' : '48px'
+          }}
+          className="footer-links-grid"
+        >
           {/* Col 1: Contact Details */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div>
               <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Phone</div>
               <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', fontWeight: 500, color: 'var(--bg-white-pure)' }}>
-                <a href="tel:2175550134" style={{ textDecoration: 'none', color: 'inherit' }}>(217) 555-0134</a>
+                <a 
+                  href="tel:+919209552809" 
+                  style={{ textDecoration: 'none', color: 'inherit', transition: 'opacity 0.2s ease', opacity: 0.8 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
+                >
+                  +91-9209552809
+                </a>
               </div>
             </div>
             <div>
               <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Email</div>
               <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', fontWeight: 500, color: 'var(--bg-white-pure)' }}>
-                <a href="mailto:contact@kalvix.ai" style={{ textDecoration: 'none', color: 'inherit' }}>contact@kalvix.ai</a>
+                <a 
+                  href="mailto:jmdsolutionbeyond@gmail.com" 
+                  style={{ textDecoration: 'none', color: 'inherit', transition: 'opacity 0.2s ease', opacity: 0.8 }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
+                >
+                  jmdsolutionbeyond@gmail.com
+                </a>
               </div>
             </div>
             <div>
               <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Address</div>
               <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', lineHeight: 1.5, fontWeight: 500, color: 'var(--bg-white-pure)' }}>
-                123 Main Street, Suite 200,<br />Austin, TX 78701
+                <a 
+                  href="https://maps.google.com/?q=12th+floor,+One+West,+Balewadi+High+St,+Balewadi,+Pune,+Maharashtra+411045" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', color: 'inherit', transition: 'opacity 0.2s ease', opacity: 0.8, display: 'inline-block' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+                  onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
+                >
+                  12th floor, One West, Balewadi High St,<br />Balewadi, Pune, Maharashtra 411045
+                </a>
               </div>
             </div>
-            <div>
-              <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Opening Hours</div>
-              <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', lineHeight: 1.5, fontWeight: 500, color: 'var(--bg-white-pure)' }}>
-                Mon to Sat: 9.00am - 8.30pm<br />Sun: Closed
-              </div>
-            </div>
+
           </div>
 
           {/* Col 2: Navigation links */}
-          <div>
+          <div style={{ marginTop: isMobile ? '40px' : '0' }}>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', paddingLeft: 0, margin: 0 }}>
               {['services', 'benefits', 'portfolio', 'process', 'reviews', 'about'].map((item) => (
                 <li key={item} style={{ lineHeight: 1 }}>
@@ -255,12 +306,20 @@ export function Footer() {
           </div>
 
           {/* Col 3: Social Links */}
-          <div>
+          <div style={{ marginTop: isMobile ? '40px' : '0' }}>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', paddingLeft: 0, margin: 0 }}>
-              {['Linkedin', 'Facebook', 'Twitter', 'Instagram', 'Youtube'].map((social) => (
-                <li key={social} style={{ lineHeight: 1 }}>
+              {[
+                { name: 'Linkedin', url: 'https://www.linkedin.com/company/jmd-solutions-and-beyond/posts/?feedView=all' },
+                { name: 'Facebook', url: 'https://www.facebook.com/share/1aib9wbX6V/' },
+                { name: 'Twitter', url: 'https://x.com/jmd_sol_beyond?s=21' },
+                { name: 'Instagram', url: 'https://www.instagram.com/jmd_solutions_beyond?igsh=dzVseWNzYXU5aXNs&utm_source=qr' },
+                { name: 'Youtube', url: 'https://youtube.com/@jmdsolutionbeyond?si=UUOXooZ6-wAbl_hb' }
+              ].map((social) => (
+                <li key={social.name} style={{ lineHeight: 1 }}>
                   <a
-                    href="#"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       fontFamily: 'var(--font-oswald)',
                       fontSize: isMobile ? '20px' : '24px',
@@ -276,7 +335,7 @@ export function Footer() {
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
                     onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
                   >
-                    {social}
+                    {social.name}
                   </a>
                 </li>
               ))}
@@ -300,7 +359,7 @@ export function Footer() {
         >
           <span
             style={{
-              fontSize: isMobile ? '18vw' : '22vw',
+              fontSize: isMobile ? '20vw' : '23vw',
               fontWeight: 900,
               fontFamily: 'var(--font-display)',
               textTransform: 'uppercase',
@@ -309,10 +368,10 @@ export function Footer() {
               margin: '0',
               padding: '0',
               lineHeight: 0.85,
-              background: 'linear-gradient(180deg, rgba(250, 224, 190, 0.28) 0%, rgba(250, 224, 190, 0.05) 100%)',
+              background: 'linear-gradient(180deg, rgba(250, 224, 190, 0.48) 0%, rgba(250, 224, 190, 0.15) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              letterSpacing: isMobile ? '0.02em' : '0.03em',
+              letterSpacing: isMobile ? '-0.05em' : '-0.06em',
             }}
           >
             KALVIX
@@ -327,15 +386,15 @@ export function Footer() {
             left: isMobile ? '24px' : '80px',
             right: isMobile ? '24px' : '80px',
             display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
+            flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            fontSize: '14px',
+            fontSize: isMobile ? '11px' : '14px',
             fontFamily: 'var(--font-satoshi)',
             color: 'var(--color-peach)',
             opacity: 0.6,
             zIndex: 2,
-            gap: isMobile ? '12px' : '0',
+            gap: '12px',
           }}
         >
           <div>© 2026 Kalvix.ai. All rights reserved.</div>

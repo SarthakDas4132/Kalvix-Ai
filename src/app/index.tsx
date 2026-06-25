@@ -54,7 +54,7 @@ export default function HomeScreen() {
         {/* Contact Info Footer */}
         <View style={styles.footer}>
           <Text style={styles.footerText}>© 2026 Kalvix.ai Creative Agency</Text>
-          <Text style={styles.footerSubText}>Austin, TX • contact@kalvix.ai</Text>
+          <Text style={styles.footerSubText}>Pune, MH • jmdsolutionbeyond@gmail.com</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

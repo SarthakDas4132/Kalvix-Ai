@@ -8,97 +8,116 @@ const SERVICES = [
   {
     id: 'publishing',
     number: '01',
-    title: 'Cross-Platform Publishing',
-    subtitle: 'One post. Every platform. Zero tab-switching.',
+    title: 'AI Content Studio',
+    subtitle: 'Create images, videos, reels, captions, hashtags, ad creatives, and marketing content from a single prompt.',
     color: 'var(--color-yellow)',
     tag: 'Core',
     items: [
-      'Post simultaneously to Instagram, TikTok, YouTube, LinkedIn, X & more',
-      'Visual content calendar with drag-and-drop scheduling',
-      'Bulk upload & auto-schedule posts in seconds',
-      'Platform-specific format optimisation (reels, shorts, carousels)',
-      'Multi-account management across brands',
-      'Real-time publish status & failure alerts',
+      'AI image generation',
+      'AI video creation',
+      'Captions & hashtags',
+      'Ad copy generation',
+      'Brand content templates',
+      'Multi-platform content formats',
     ],
   },
   {
     id: 'creators',
     number: '02',
-    title: 'Creator & Influencer Discovery',
-    subtitle: 'Find the exact creators your audience already trusts.',
+    title: 'Cross-Platform Publishing',
+    subtitle: 'Publish, schedule, and manage content across every major social platform from one dashboard.',
     color: 'var(--color-purple)',
     tag: 'Discover',
     items: [
-      'Search 10M+ creators across every major platform',
-      'Filter by niche, follower count, engagement rate & location',
-      'Audience demographic deep-dives (age, gender, geo)',
-      'Fake follower & engagement fraud detection',
-      'Direct outreach and collaboration requests in-app',
-      'Saved creator lists and pipeline tracking',
+      'Instagram publishing',
+      'Facebook publishing',
+      'LinkedIn publishing',
+      'X (Twitter) publishing',
+      'YouTube scheduling',
+      'Content calendar & approvals',
     ],
   },
   {
     id: 'contracts',
     number: '03',
-    title: 'Contracts & Collaboration',
-    subtitle: 'Close deals without leaving the dashboard.',
+    title: 'Creator Marketplace',
+    subtitle: 'Discover, connect, and collaborate with creators who match your audience, goals, and budget.',
     color: 'var(--color-peach)',
     tag: 'Legal',
     items: [
-      'Send legally-binding collaboration contracts to creators',
-      'E-signature support — signed in minutes, not days',
-      'Custom contract templates for different deal types',
-      'Automatic reminders for unsigned or expiring contracts',
-      'Content approval workflows before publishing',
-      'Revision tracking and version history',
+      'Creator discovery',
+      'AI creator matching',
+      'Category-based search',
+      'Engagement analytics',
+      'Campaign management',
+      'Contract & payment workflows ',
     ],
   },
   {
     id: 'ads',
     number: '04',
     title: 'Meta & Google Ads',
-    subtitle: 'Run paid campaigns without switching platforms.',
+    subtitle: 'Launch, manage, and optimize ad campaigns without navigating complicated ad managers.',
     color: 'var(--color-blue)',
     tag: 'Ads',
     items: [
-      'Connect Meta Ads Manager & Google Ads accounts',
-      'Create and launch ad campaigns directly from the dashboard',
-      'Audience targeting synced with your CRM data',
-      'A/B test ad creatives and copy at scale',
-      'Unified ad spend reporting across Meta & Google',
-      'Conversion tracking and attribution analysis',
+      'Meta Ads integration',
+      'Google Ads integration',
+      'AI campaign creation',
+      'Audience targeting',
+      'A/B testing',
+      'Unified performance reporting',
     ],
   },
   {
     id: 'crm',
     number: '05',
     title: 'AI CRM & Lead Management',
-    subtitle: 'Your sales pipeline — automated end to end.',
+    subtitle: 'Capture, qualify, nurture, and convert leads automatically with AI-powered workflows.',
     color: 'var(--color-green)',
     tag: 'AI',
     items: [
-      'AI automatically scores and prioritises inbound leads',
-      'Full contact & company profiles with timeline views',
-      'Pipeline stages: Lead → Qualified → Negotiation → Closed',
-      'AI-generated follow-up email drafts and suggestions',
-      'Integration with your existing email and calendar tools',
-      'Deal forecasting and revenue probability scoring',
+      'Lead capture automation',
+      'AI lead scoring',
+      'WhatsApp automation',
+      'SMS automation',
+      'AI calling workflows',
+      'Sales pipeline management',
     ],
   },
   {
     id: 'analytics',
     number: '06',
-    title: 'Analytics & Payments',
-    subtitle: 'Measure everything. Pay everyone. Instantly.',
+    title: 'Revenue & Analytics Hub',
+    subtitle: 'Track every campaign, lead, sale, creator collaboration, and marketing dollar from a single source of truth.',
     color: 'var(--color-pink)',
     tag: 'Data',
     items: [
-      'Unified analytics dashboard across all platforms and campaigns',
-      'Quantitative metrics: reach, impressions, CTR, ROAS, CPM',
-      'Creator performance scorecards post-campaign',
-      'Pay creators directly via bank transfer or UPI',
-      'Auto-generate invoices and expense reports',
-      'ROI tracking across organic and paid efforts',
+      'Marketing analytics',
+      'Sales analytics',
+      'ROI tracking',
+      'Conversion reporting',
+      'Revenue attribution',
+      'Business performance dashboards',
+    ],
+  },
+  {
+    id: 'marketplace',
+    number: '07',
+    title: 'Influencer Marketing Platform',
+    subtitle: 'Launch creator campaigns, connect with the right influencers, automate outreach, and track results from one place.',
+    color: 'var(--color-pink)',
+    tag: 'Marketplace',
+    items: [
+      'Creator discovery & search',
+      'AI creator recommendations',
+      'Budget-based creator matching',
+      'Campaign management',
+      'Outreach & collaboration workflows',
+      'Contract management',
+      'Payment management',
+      'Campaign performance tracking',
+      'ROI & sales attribution'
     ],
   },
 ];
@@ -152,7 +171,7 @@ export function Services() {
                 margin: '0 auto',
               }}
             >
-              Everything your brand needs — built in.
+              Everything your business needs - built in.
             </TextReveal>
             <p
               style={{
@@ -165,7 +184,7 @@ export function Services() {
                 lineHeight: 1.6,
               }}
             >
-              Six core modules. One platform. No subscriptions to five separate tools.
+              From content creation to customer acquisition, sales automation and creator partnerships, Kalvix brings your entire growth engine into one AI-powered platform.
             </p>
           </div>
 
@@ -180,8 +199,8 @@ export function Services() {
                     border: 'var(--border-width) solid var(--color-dark)',
                     borderRadius: isMobile ? '18px' : '24px',
                     backgroundColor: isExpanded ? service.color : 'var(--bg-white-pure)',
-                    boxShadow: isExpanded 
-                      ? (isMobile ? '4px 4px 0 0 var(--color-dark)' : '8px 8px 0 0 var(--color-dark)') 
+                    boxShadow: isExpanded
+                      ? (isMobile ? '4px 4px 0 0 var(--color-dark)' : '8px 8px 0 0 var(--color-dark)')
                       : (isMobile ? '3px 3px 0 0 var(--color-dark)' : '4px 4px 0 0 var(--color-dark)'),
                     overflow: 'hidden',
                     cursor: 'pointer',

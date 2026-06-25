@@ -60,9 +60,16 @@ const PLANS = [
 ];
 
 export function Pricing() {
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
-  const isYearly = billingCycle === 'yearly';
+  const [billingCycles, setBillingCycles] = useState<Record<string, 'monthly' | 'yearly'>>({
+    starter: 'monthly',
+    growth: 'monthly',
+    scale: 'monthly',
+  });
   const { isMobile, isTablet } = useBreakpoint();
+
+  const toggleCycle = (planId: string, value: 'monthly' | 'yearly') => {
+    setBillingCycles((prev) => ({ ...prev, [planId]: value }));
+  };
 
   return (
     <>
@@ -115,100 +122,6 @@ export function Pricing() {
             </TextReveal>
           </div>
 
-          {/* Global Billing Switcher */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: isMobile ? '32px' : '56px' }}>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                backgroundColor: 'rgba(254, 250, 231, 0.05)',
-                border: isMobile ? '2px solid var(--bg-white-pure)' : '2.5px solid var(--bg-white-pure)',
-                borderRadius: '9999px',
-                padding: '4px',
-                position: 'relative',
-                boxShadow: isMobile ? '3px 3px 0 0 var(--color-dark)' : '4px 4px 0 0 var(--color-dark)',
-                minWidth: isMobile ? '220px' : '280px',
-              }}
-            >
-              <button
-                onClick={() => setBillingCycle('monthly')}
-                style={{
-                  flex: 1,
-                  padding: isMobile ? '6px 14px' : '8px 24px',
-                  borderRadius: '9999px',
-                  border: 'none',
-                  backgroundColor: !isYearly ? 'var(--color-yellow)' : 'transparent',
-                  color: !isYearly ? 'var(--color-dark)' : 'var(--bg-white-pure)',
-                  fontFamily: 'var(--font-oswald)',
-                  fontWeight: 700,
-                  fontSize: isMobile ? '12px' : '14px',
-                  textTransform: 'uppercase',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  whiteSpace: 'nowrap',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: isMobile ? '4px' : '8px',
-                }}
-              >
-                Monthly
-                {/* Invisible placeholder to match the Yearly button width */}
-                <span
-                  aria-hidden="true"
-                  style={{
-                    visibility: 'hidden',
-                    fontSize: isMobile ? '7px' : '10px',
-                    fontWeight: 800,
-                    padding: isMobile ? '1px 4px' : '2px 8px',
-                    borderRadius: '9999px',
-                    fontFamily: 'var(--font-satoshi)',
-                  }}
-                >
-                  -30%
-                </span>
-              </button>
-              <button
-                onClick={() => setBillingCycle('yearly')}
-                style={{
-                  flex: 1,
-                  padding: isMobile ? '6px 14px' : '8px 24px',
-                  borderRadius: '9999px',
-                  border: 'none',
-                  backgroundColor: isYearly ? 'var(--color-yellow)' : 'transparent',
-                  color: isYearly ? 'var(--color-dark)' : 'var(--bg-white-pure)',
-                  fontFamily: 'var(--font-oswald)',
-                  fontWeight: 700,
-                  fontSize: isMobile ? '12px' : '14px',
-                  textTransform: 'uppercase',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: isMobile ? '4px' : '8px',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                Yearly
-                <span
-                  style={{
-                    backgroundColor: 'var(--color-pink)',
-                    color: 'var(--color-dark)',
-                    fontSize: isMobile ? '7px' : '10px',
-                    fontWeight: 800,
-                    padding: isMobile ? '1px 4px' : '2px 8px',
-                    borderRadius: '9999px',
-                    fontFamily: 'var(--font-satoshi)',
-                    textTransform: 'none',
-                  }}
-                >
-                  -30%
-                </span>
-              </button>
-            </div>
-          </div>
-
           {/* 3-Column Plan Grid */}
           <div
             style={{
@@ -216,10 +129,12 @@ export function Pricing() {
               gridTemplateColumns: isMobile || isTablet ? '1fr' : 'repeat(3, 1fr)',
               gap: isMobile ? '32px' : '24px',
               alignItems: 'stretch',
+              marginTop: isMobile ? '32px' : '56px',
             }}
           >
             {PLANS.map((plan) => {
-              // Apply 30% discount for yearly billing
+              const cycle = billingCycles[plan.id] || 'monthly';
+              const isYearly = cycle === 'yearly';
               const price = isYearly 
                 ? Math.round(plan.basePrice * 0.7) 
                 : plan.basePrice;
@@ -230,12 +145,11 @@ export function Pricing() {
                   key={plan.id}
                   className="neo-card pricing-card"
                   style={{
-                    padding: isMobile ? '32px 20px' : '40px 28px',
+                    padding: isMobile ? '20px' : '28px',
                     backgroundColor: plan.cardBg,
                     display: 'flex',
                     flexDirection: 'column',
-                    overflow: 'visible', // Change to visible to let the floating badge overlap the top border
-                    borderRadius: '24px',
+                    borderRadius: '32px',
                     border: isFeatured ? '3px solid var(--color-dark)' : '2.5px solid var(--color-dark)',
                     boxShadow: isMobile 
                       ? '4px 4px 0 0 var(--color-dark)' 
@@ -276,32 +190,27 @@ export function Pricing() {
                     </div>
                   )}
 
-                  {/* Header / Info Section */}
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '16px' }}>
-                    
-                    {/* Price at the Top */}
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center' }}>
-                        <span style={{ fontSize: isMobile ? '48px' : '56px', fontFamily: 'var(--font-display)', fontWeight: 900, lineHeight: 1, color: 'var(--color-dark)' }}>
-                          ${price}
-                        </span>
-                        <span style={{ fontSize: '16px', fontFamily: 'var(--font-oswald)', fontWeight: 700, textTransform: 'uppercase', opacity: 0.7, marginLeft: '4px', color: 'var(--color-dark)' }}>
-                          /{plan.period}
-                        </span>
-                      </div>
-                      {/* Always reserve space — just toggle visibility so card height never changes */}
-                      <div style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-dark-purple)', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.5px', visibility: isYearly ? 'visible' : 'hidden' }}>
-                        Billed annually (${Math.round(plan.basePrice * 0.7) * 12}/yr)
-                      </div>
-                    </div>
-
+                  {/* Inner White Container Box */}
+                  <div
+                    style={{
+                      backgroundColor: 'var(--bg-white-pure)',
+                      border: '2.5px solid var(--color-dark)',
+                      borderRadius: '24px',
+                      padding: isMobile ? '20px 16px' : '28px 24px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      textAlign: 'center',
+                      gap: '16px',
+                    }}
+                  >
                     {/* Plan Badge Header */}
                     <div
                       className="badge-sticker"
                       style={{
                         backgroundColor: plan.badgeColor,
-                        fontSize: '15px',
-                        transform: 'rotate(2deg)',
+                        fontSize: '14px',
+                        transform: 'rotate(-2deg)',
                         color: 'var(--color-dark)',
                         fontWeight: 800,
                         border: '2px solid var(--color-dark)',
@@ -312,29 +221,102 @@ export function Pricing() {
                       {plan.title}
                     </div>
 
+                    {/* Price */}
+                    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center' }}>
+                      <span style={{ fontSize: isMobile ? '44px' : '52px', fontFamily: 'var(--font-display)', fontWeight: 900, lineHeight: 1, color: 'var(--color-dark)' }}>
+                        ${price}
+                      </span>
+                      <span style={{ fontSize: '15px', fontFamily: 'var(--font-oswald)', fontWeight: 700, textTransform: 'uppercase', opacity: 0.7, marginLeft: '4px', color: 'var(--color-dark)' }}>
+                        /{plan.period}
+                      </span>
+                    </div>
+
+                    {/* Switcher capsule */}
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        backgroundColor: 'var(--bg-white-pure)',
+                        border: '2px solid var(--color-dark)',
+                        borderRadius: '9999px',
+                        padding: '3px',
+                        position: 'relative',
+                        minWidth: '160px',
+                      }}
+                    >
+                      <button
+                        onClick={() => toggleCycle(plan.id, 'monthly')}
+                        style={{
+                          flex: 1,
+                          padding: '6px 12px',
+                          borderRadius: '9999px',
+                          border: !isYearly ? '1.5px solid var(--color-dark)' : '1.5px solid transparent',
+                          backgroundColor: !isYearly ? 'var(--color-yellow)' : 'transparent',
+                          color: 'var(--color-dark)',
+                          fontFamily: 'var(--font-oswald)',
+                          fontWeight: 700,
+                          fontSize: '11px',
+                          textTransform: 'uppercase',
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease',
+                        }}
+                      >
+                        Monthly
+                      </button>
+                      <button
+                        onClick={() => toggleCycle(plan.id, 'yearly')}
+                        style={{
+                          flex: 1,
+                          padding: '6px 12px',
+                          borderRadius: '9999px',
+                          border: isYearly ? '1.5px solid var(--color-dark)' : '1.5px solid transparent',
+                          backgroundColor: isYearly ? 'var(--color-yellow)' : 'transparent',
+                          color: 'var(--color-dark)',
+                          fontFamily: 'var(--font-oswald)',
+                          fontWeight: 700,
+                          fontSize: '11px',
+                          textTransform: 'uppercase',
+                          cursor: 'pointer',
+                          transition: 'all 0.15s ease',
+                        }}
+                      >
+                        Yearly
+                      </button>
+                    </div>
+
+                    {/* Helper text */}
+                    <span style={{ fontSize: '11px', fontWeight: 800, color: 'var(--color-dark-purple)', opacity: 0.8, textTransform: 'uppercase', letterSpacing: '0.3px', minHeight: '14px' }}>
+                      {isYearly 
+                        ? `Billed annually ($${price * 12}/yr)` 
+                        : 'Save up to 30% by paying yearly'
+                      }
+                    </span>
+
+                    {/* Dashed divider */}
+                    <div style={{ borderTop: '2px dashed var(--color-dark)', opacity: 0.15, width: '100%', margin: '4px 0' }} />
+
                     {/* Desc */}
-                    <p style={{ fontSize: '13.5px', lineHeight: 1.45, opacity: 0.85, margin: 0, fontWeight: 500, color: 'var(--color-dark)' }}>
+                    <p style={{ fontSize: '13.5px', lineHeight: 1.45, opacity: 0.85, margin: 0, fontWeight: 500, color: 'var(--color-dark)', minHeight: isMobile ? 'auto' : '60px', display: 'flex', alignItems: 'center' }}>
                       {plan.desc}
                     </p>
                   </div>
 
-                  {/* Divider line between top section and features */}
-                  <div style={{ height: '2.5px', backgroundColor: 'var(--color-dark)', opacity: 0.15, width: '100%' }} />
-
                   {/* Features & Button container */}
-                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '28px', flex: 1 }}>
-                    <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: isMobile ? '12px' : '14px', paddingLeft: 0, margin: 0 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '24px', flex: 1 }}>
+                    <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0', paddingLeft: 0, margin: 0, minHeight: isMobile ? 'auto' : '330px' }}>
                       {plan.features.map((feature, idx) => (
                         <li
                           key={idx}
                           style={{
                             display: 'flex',
-                            alignItems: 'flex-start',
+                            alignItems: 'center',
                             gap: '12px',
                             fontSize: isMobile ? '13px' : '14px',
                             fontWeight: 700,
                             lineHeight: 1.35,
                             color: 'var(--color-dark)',
+                            padding: '12px 0',
+                            borderBottom: idx < plan.features.length - 1 ? '1.5px solid rgba(24, 26, 18, 0.15)' : 'none',
                           }}
                         >
                           <div
@@ -347,7 +329,6 @@ export function Pricing() {
                               alignItems: 'center',
                               justifyContent: 'center',
                               flexShrink: 0,
-                              marginTop: '2px',
                             }}
                           >
                             <svg viewBox="0 0 12 12" width="8" height="8" fill="none">
@@ -359,34 +340,36 @@ export function Pricing() {
                       ))}
                     </ul>
 
-                    <button
-                      className="neo-btn"
-                      onClick={() => {
-                        const el = document.getElementById('footer-contact');
-                        if (el) {
-                          if ((window as any).lenis) {
-                            (window as any).lenis.scrollTo(el, { offset: -90 });
-                          } else {
-                            el.scrollIntoView({ behavior: 'smooth' });
+                    <div style={{ transform: (isFeatured && !isMobile && !isTablet) ? 'translateY(-11px)' : 'none' }}>
+                      <button
+                        className="neo-btn"
+                        onClick={() => {
+                          const el = document.getElementById('footer-contact');
+                          if (el) {
+                            if ((window as any).lenis) {
+                              (window as any).lenis.scrollTo(el, { offset: -90 });
+                            } else {
+                              el.scrollIntoView({ behavior: 'smooth' });
+                            }
                           }
-                        }
-                      }}
-                      style={{
-                        width: '100%',
-                        backgroundColor: 'var(--color-yellow)',
-                        border: '2.5px solid var(--color-dark)',
-                        boxShadow: '0 4px 0 0 var(--color-dark)',
-                        padding: '12px 24px',
-                        borderRadius: '9999px',
-                        fontFamily: 'var(--font-oswald)',
-                        fontSize: '15px',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        cursor: 'pointer',
-                      }}
-                    >
-                      Start Free Trial
-                    </button>
+                        }}
+                        style={{
+                          width: '100%',
+                          backgroundColor: 'var(--color-yellow)',
+                          border: '2.5px solid var(--color-dark)',
+                          boxShadow: '0 4px 0 0 var(--color-dark)',
+                          padding: '12px 24px',
+                          borderRadius: '9999px',
+                          fontFamily: 'var(--font-oswald)',
+                          fontSize: '15px',
+                          fontWeight: 700,
+                          textTransform: 'uppercase',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        Start Free Trial
+                      </button>
+                    </div>
                   </div>
                 </div>
               );

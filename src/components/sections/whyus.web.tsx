@@ -96,25 +96,25 @@ function IlloOnStop() {
 const CARDS = [
   {
     id: 'fast-delivery',
-    title: 'Fast & Reliable Results',
+    title: 'Faster Execution',
     description:
-      'We move at the speed of AI — and strategy. Your campaigns go live on time, every time, across every platform.',
+      'Generate content, launch campaigns, automate follow-ups and close deals in minutes instead of days.',
     illustration: <IlloRocket />,
     accentColor: 'var(--color-green)',
   },
   {
     id: 'clear-pricing',
-    title: 'Clear, No-Surprise Pricing',
+    title: 'AI Does The Heavy Lifting',
     description:
-      'No hidden fees, no sneaky charges — just transparent, honest pricing and results that speak for themselves.',
+      'From captions and creatives to lead qualification and sales automation, AI works behind the scenes so your team can focus on growth.',
     illustration: <IlloPricing />,
     accentColor: 'var(--color-purple)',
   },
   {
     id: 'one-platform',
-    title: 'Everything, Under One Roof',
+    title: 'One Platform. Complete Visibility',
     description:
-      'Creators? Campaigns? Analytics? Contracts? All of it, inside one AI-powered dashboard built for modern brands.',
+      'Track every post, ad, lead, conversation, deal and creator collaboration from a single dashboard.',
     illustration: <IlloOnStop />,
     accentColor: 'var(--color-yellow)',
   },

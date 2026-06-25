@@ -310,67 +310,76 @@ const STEPS = [
     title: 'Connect All Your Accounts',
     accentColor: 'var(--color-yellow)',
     description:
-      'Link every social media profile and ad account in minutes. Instagram, TikTok, YouTube, LinkedIn, X, Facebook, Google Ads and Meta Ads all connect with a single OAuth tap — no API keys, no developer required.',
+      'Link your social media accounts, advertising platforms, WhatsApp, website and CRM to create a single source of truth for your growth operations.',
     detail: [
-      'One-click OAuth for every platform',
-      'Unlimited account & brand workspaces',
-      'Instant sync of existing posts & data',
+      'Connect Instagram, Facebook, LinkedIn & YouTube',
+      'Connect Meta Ads & Google Ads',
+      'Connect WhatsApp Business',
+      'Import existing leads & customers',
     ],
     illustration: ConnectIllustration,
   },
   {
     num: 2,
-    label: 'Discover',
-    title: 'Discover the Right Creators',
+    label: 'Create',
+    title: 'Create Content & Campaigns',
     accentColor: 'var(--color-purple)',
     description:
-      'Use our creator search engine to find the perfect collaborators — filter by platform, niche, follower count, engagement rate, audience location and fraud score. Outreach and invite them directly from the dashboard.',
+      'Generate images, videos, captions, ads and marketing campaigns using AI. Build weeks of content in minutes.',
     detail: [
-      '10M+ creators indexed across all platforms',
-      'AI-ranked by relevance to your brand',
-      'Built-in outreach & collaboration requests',
+      'AI image generation',
+      'AI video creation',
+      'Captions & hashtags',
+      'Ad creatives & copy',
+      'Content calendar',
     ],
     illustration: DiscoverIllustration,
   },
   {
     num: 3,
-    label: 'Create & Schedule',
-    title: 'Build & Schedule Campaigns',
+    label: 'Publish',
+    title: 'Launch Across Every Channel',
     accentColor: 'var(--color-green)',
     description:
-      'Write once and publish everywhere. Use the visual content calendar to schedule posts across every platform at the optimal time. Attach creator content, manage approvals and send contracts — all from one place.',
+      'Publish content, activate ad campaigns and collaborate with creators from one dashboard.',
     detail: [
-      'Cross-platform scheduling with one click',
-      'Content approval workflows for creators',
-      'Contract & e-signature built in',
+      'Cross-platform publishing',
+      'Meta & Google Ads',
+      'Influencer campaign management',
+      'Campaign scheduling',
+      'Performance tracking',
     ],
     illustration: CampaignIllustration,
   },
   {
     num: 4,
-    label: 'Analyse',
-    title: 'Track Performance in Real Time',
+    label: 'Convert',
+    title: 'Turn Engagement Into Revenue',
     accentColor: 'var(--color-blue)',
     description:
-      'Get a single unified analytics dashboard covering all platforms, campaigns and paid ads. See reach, impressions, ROAS, CPM, conversions and creator performance — all in one view, updated live.',
+      'Automatically collect leads, qualify prospects and follow up through AI-powered automation.',
     detail: [
-      'Unified metrics across organic & paid',
-      'Creator performance scorecards',
-      'Auto-generated campaign reports',
+      'Lead capture automation',
+      'AI lead scoring',
+      'WhatsApp automation',
+      'SMS & email follow-ups',
+      'AI calling workflows',
     ],
     illustration: AnalyticsIllustration,
   },
   {
     num: 5,
     label: 'Scale',
-    title: 'Scale with AI & Automation',
+    title: 'Optimize What Works',
     accentColor: 'var(--color-pink)',
     description:
-      'Let the AI CRM score leads, draft follow-ups and move deals through your pipeline automatically. Pay creators instantly, run Meta and Google Ads side-by-side, and keep growing — all without switching apps.',
+      'Track revenue, campaign performance, creator ROI and sales activity to continuously improve results.',
     detail: [
-      'AI lead scoring & CRM automation',
-      'In-app creator payments & invoices',
-      'Meta & Google Ads in one dashboard',
+      'Revenue analytics',
+      'Sales dashboards',
+      'Creator performance tracking',
+      'Marketing attribution',
+      'Growth recommendations',
     ],
     illustration: ScaleIllustration,
   },
@@ -445,7 +454,7 @@ export function Process() {
                 margin: '16px auto 0',
                 lineHeight: 1.6,
               }}>
-                From first login to fully automated campaigns — Kalvix.ai gets you moving fast.
+                From your first campaign to automated lead generation and sales growth, Kalvix helps you launch, manage, and scale from one platform.
               </p>
             </ScrollReveal>
           </div>
