@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react';
 function getBreakpoint() {
   if (typeof window === 'undefined') {
     // SSR: default to desktop
-    return { isMobile: false, isTablet: false, isDesktop: true };
+    return { isMobile: false, isTablet: false, isTabletLarge: false, isDesktop: true };
   }
   const width = window.innerWidth;
   return {
     isMobile: width <= 639,
-    isTablet: width >= 640 && width <= 1023,
-    isDesktop: width >= 1024,
+    isTablet: width >= 640 && width <= 1023,       // iPad Mini (768) + iPad Air (820)
+    isTabletLarge: width >= 1024 && width <= 1179, // iPad Pro (1024)
+    isDesktop: width >= 1180,
   };
 }
 

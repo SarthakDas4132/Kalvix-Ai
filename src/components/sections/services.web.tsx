@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { ScrollReveal } from '../ui/scroll-reveal.web';
 import { TextReveal } from '../ui/text-reveal.web';
@@ -123,11 +123,44 @@ const SERVICES = [
 ];
 
 export function Services() {
-  const [expandedId, setExpandedId] = useState<string | null>('publishing');
+  const [expandedId, setExpandedId] = useState<string | null>(null);
   const { isMobile, isTablet } = useBreakpoint();
+  const ref = React.useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref as any, { once: true, margin: '-100px' });
+
+  React.useEffect(() => {
+    if (isInView) {
+      const timer = setTimeout(() => {
+        setExpandedId('publishing');
+      }, 1400); // Trigger smooth opening after staggered entrance slide-up is complete
+      return () => clearTimeout(timer);
+    }
+  }, [isInView]);
 
   const toggle = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
+  };
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.65,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
   };
 
   return (
@@ -160,18 +193,18 @@ export function Services() {
             <TextReveal
               delay={100}
               style={{
-                fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
+                fontSize: isMobile ? '30px' : isTablet ? '52px' : 'min(6.5vw, 76px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
                 fontWeight: 900,
-                lineHeight: 0.95,
+                lineHeight: 1.02,
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '1200px',
+                maxWidth: '1300px',
                 margin: '0 auto',
               }}
             >
-              Everything your business needs - built in.
+              {"Everything your business needs\n- built in."}
             </TextReveal>
             <p
               style={{
@@ -179,7 +212,7 @@ export function Services() {
                 fontSize: isMobile ? '15px' : '17px',
                 fontWeight: 500,
                 opacity: 0.65,
-                maxWidth: '480px',
+                maxWidth: '650px',
                 margin: '20px auto 0',
                 lineHeight: 1.6,
               }}
@@ -189,12 +222,19 @@ export function Services() {
           </div>
 
           {/* ── Accordion List ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? 'visible' : 'hidden'}
+            style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
+          >
             {SERVICES.map((service) => {
               const isExpanded = expandedId === service.id;
               return (
-                <div
+                <motion.div
                   key={service.id}
+                  variants={itemVariants}
                   style={{
                     border: 'var(--border-width) solid var(--color-dark)',
                     borderRadius: isMobile ? '18px' : '24px',
@@ -391,10 +431,10 @@ export function Services() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* ── Bottom CTA ── */}
           <div style={{ textAlign: 'center', marginTop: isMobile ? '36px' : '56px' }}>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { TextReveal } from '../ui/text-reveal.web';
 
@@ -122,6 +122,56 @@ const STATS = [
   { num: '3×',   label: 'Faster Campaign launches' },
   { num: '40%',  label: 'higher team productivity' },
 ];
+
+function parseStatValue(numStr: string) {
+  const match = numStr.match(/^([\d.]+)(.*)$/);
+  if (match) {
+    return {
+      value: parseFloat(match[1]),
+      suffix: match[2],
+    };
+  }
+  return { value: 0, suffix: numStr };
+}
+
+function AnimatedStatNumber({ valueStr }: { valueStr: string }) {
+  const ref = React.useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref as any, { once: true, margin: '-50px' });
+  const [displayValue, setDisplayValue] = useState('0');
+  const [trigger, setTrigger] = useState(0);
+  const { value, suffix } = parseStatValue(valueStr);
+
+  useEffect(() => {
+    if (isInView) {
+      let timeoutId: any;
+      const controls = animate(0, value, {
+        duration: 2.2,
+        ease: 'easeOut', // smooth deceleration towards the end
+        onUpdate: (latest) => {
+          setDisplayValue(Math.floor(latest).toString());
+        },
+        onComplete: () => {
+          timeoutId = setTimeout(() => {
+            setDisplayValue('0');
+            setTrigger((prev) => prev + 1);
+          }, 4000); // 4-second timeout before starting the next loop
+        },
+      });
+      return () => {
+        controls.stop();
+        if (timeoutId) clearTimeout(timeoutId);
+      };
+    }
+  }, [isInView, value, trigger]);
+
+  return (
+    <span ref={ref}>
+      {displayValue}
+      {suffix}
+    </span>
+  );
+}
+
 
 // ── Platform card — larger, rollercoaster-style ───────────────────────────
 function PlatformCard({
@@ -328,6 +378,31 @@ export function Features() {
     return controls.stop;
   }, [containerX, setWidth]);
 
+  const gridRef = React.useRef<HTMLDivElement>(null);
+  const isGridInView = useInView(gridRef as any, { once: true, margin: '-100px' });
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.75,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
     <>
       {/* ═══════════════════════════════════════════════════════════
@@ -383,11 +458,11 @@ export function Features() {
               style={{
                 position: 'relative',
                 zIndex: 1,
-                fontSize: isMobile ? '40px' : isTablet ? '68px' : 'min(12vw, 110px)',
+                fontSize: isMobile ? '30px' : isTablet ? '52px' : 'min(6.5vw, 76px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
                 fontWeight: 900,
                 color: '#26091c',
-                lineHeight: 0.95,
+                lineHeight: 1.02,
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 margin: 0,
@@ -514,7 +589,7 @@ export function Features() {
                     lineHeight: 1,
                   }}
                 >
-                  {stat.num}
+                  <AnimatedStatNumber valueStr={stat.num} />
                 </div>
                 <div
                   style={{
@@ -565,63 +640,83 @@ export function Features() {
         <div style={{ width: '100%', maxWidth: '1400px', margin: '0 auto', padding: isMobile ? '0 16px' : '0 24px' }}>
           <div style={{ textAlign: 'center', marginBottom: isMobile ? '36px' : '56px' }}>
             <div className="badge-sticker blue" style={{ display: 'inline-block', marginBottom: '16px', transform: 'rotate(2deg)' }}>
-              Everything included
+              The Complete AI Growth OS
             </div>
-            <h2
+            <TextReveal
+              as="h2"
+              delay={100}
               style={{
-                fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
+                fontSize: isMobile ? '28px' : isTablet ? '48px' : 'min(5.5vw, 68px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
                 fontWeight: 900,
-                lineHeight: 0.95,
+                lineHeight: 1.02,
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '1200px',
+                maxWidth: '1300px',
                 margin: '0 auto',
               }}
             >
-              Every tool your brand needs, built in.
-            </h2>
+              {"Everything your marketing, sales,\nand growth teams need to scale."}
+            </TextReveal>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', gap: isMobile ? '16px' : '28px' }}>
-            <FeatureCard
-              accentColor="var(--color-yellow)" tag="Core"
-              icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>}
-              title="AI Content Studio"
-              description="Create images, videos, captions and marketing copy from a single prompt using AI."
-            />
-            <FeatureCard
-              accentColor="var(--color-purple)" tag="Publish"
-              icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8a3 3 0 100 6 3 3 0 000-6z"/></svg>}
-              title="Cross-Platform Publishing"
-              description="Publish and schedule content to Instagram, TikTok, YouTube, LinkedIn, X and Facebook from one calendar."
-            />
-            <FeatureCard
-              accentColor="var(--color-green)" tag="AI"
-              icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>}
-              title="AI CRM & Lead Management"
-              description="Capture leads automatically and run WhatsApp, SMS, email and calling automations to close more deals."
-            />
-            <FeatureCard
-              accentColor="var(--color-pink)" tag="Creators"
-              icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>}
-              title="Creator Marketplace"
-              description="Discover top creators, manage contracts, automate outreach and handle payments directly inside the platform."
-            />
-            <FeatureCard
-              accentColor="var(--color-blue)" tag="Ads"
-              icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>}
-              title="Meta & Google Ads"
-              description="Launch, optimize and manage your paid campaigns without switching to complex ad managers."
-            />
-            <FeatureCard
-              accentColor="var(--color-peach)" tag="Analytics"
-              icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>}
-              title="Revenue & Analytics Hub"
-              description="Track campaign performance, conversion rates, creator ROI and marketing spend from one unified dashboard."
-            />
-          </div>
+          <motion.div
+            ref={gridRef}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isGridInView ? 'visible' : 'hidden'}
+            style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', gap: isMobile ? '16px' : '28px' }}
+          >
+            <motion.div variants={cardVariants}>
+              <FeatureCard
+                accentColor="var(--color-yellow)" tag="Core"
+                icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>}
+                title="AI Content Studio"
+                description="Create images, videos, captions and marketing copy from a single prompt using AI."
+              />
+            </motion.div>
+            <motion.div variants={cardVariants}>
+              <FeatureCard
+                accentColor="var(--color-purple)" tag="Publish"
+                icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8a3 3 0 100 6 3 3 0 000-6z"/></svg>}
+                title="Cross-Platform Publishing"
+                description="Publish and schedule content to Instagram, TikTok, YouTube, LinkedIn, X and Facebook from one calendar."
+              />
+            </motion.div>
+            <motion.div variants={cardVariants}>
+              <FeatureCard
+                accentColor="var(--color-green)" tag="AI"
+                icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zM2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>}
+                title="AI CRM & Lead Management"
+                description="Capture leads automatically and run WhatsApp, SMS, email and calling automations to close more deals."
+              />
+            </motion.div>
+            <motion.div variants={cardVariants}>
+              <FeatureCard
+                accentColor="var(--color-pink)" tag="Creators"
+                icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>}
+                title="Creator Marketplace"
+                description="Discover top creators, manage contracts, automate outreach and handle payments directly inside the platform."
+              />
+            </motion.div>
+            <motion.div variants={cardVariants}>
+              <FeatureCard
+                accentColor="var(--color-blue)" tag="Ads"
+                icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>}
+                title="Meta & Google Ads"
+                description="Launch, optimize and manage your paid campaigns without switching to complex ad managers."
+              />
+            </motion.div>
+            <motion.div variants={cardVariants}>
+              <FeatureCard
+                accentColor="var(--color-peach)" tag="Analytics"
+                icon={<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--color-dark)" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>}
+                title="Revenue & Analytics Hub"
+                description="Track campaign performance, conversion rates, creator ROI and marketing spend from one unified dashboard."
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>

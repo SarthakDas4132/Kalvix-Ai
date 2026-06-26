@@ -389,7 +389,8 @@ const STEPS = [
 
 export function Process() {
   const [activeStep, setActiveStep] = useState(1);
-  const { isMobile, isTablet } = useBreakpoint();
+  const { isMobile, isTablet, isTabletLarge } = useBreakpoint();
+  const isTabletAny = isTablet || isTabletLarge;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -431,18 +432,18 @@ export function Process() {
             <TextReveal
               delay={100}
               style={{
-                fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
+                fontSize: isMobile ? '30px' : isTablet ? '52px' : 'min(6.5vw, 76px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
                 fontWeight: 900,
-                lineHeight: 0.95,
+                lineHeight: 1.02,
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '1200px',
+                maxWidth: '1300px',
                 margin: '0 auto',
               }}
             >
-              Up and running in five steps.
+              {"Up and running\nin five steps."}
             </TextReveal>
             <ScrollReveal delay={200}>
               <p style={{
@@ -557,11 +558,12 @@ export function Process() {
             style={{
               backgroundColor: 'var(--bg-white-pure)',
               display: 'grid',
-              gridTemplateColumns: isMobile || isTablet ? '1fr' : '1.1fr 1fr',
-              gap: isMobile ? '32px' : '48px',
-              padding: isMobile ? '24px 16px' : isTablet ? '36px' : '52px',
-              alignItems: 'center',
-              minHeight: isMobile ? '800px' : isTablet ? '660px' : '520px',
+              gridTemplateColumns: isMobile || isTabletAny ? '1fr' : '1.1fr 1fr',
+              gap: isMobile ? '32px' : isTabletAny ? '24px' : '48px',
+              padding: isMobile ? '24px 16px' : isTabletAny ? '36px' : '52px',
+              alignItems: isMobile || isTabletAny ? 'start' : 'center',
+              height: isMobile ? '680px' : isTabletAny ? '700px' : 'auto',
+              minHeight: isMobile ? 'unset' : isTabletAny ? 'unset' : '520px',
               position: 'relative',
               overflow: 'hidden',
             }}
@@ -684,7 +686,14 @@ export function Process() {
             </AnimatePresence>
 
             {/* ── Right: Illustration ── */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              height: isTabletAny ? '280px' : 'auto',
+              overflow: isTabletAny ? 'hidden' : 'visible',
+            }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStep}

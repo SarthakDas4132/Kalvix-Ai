@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { ScrollReveal } from '../ui/scroll-reveal.web';
 import { TextReveal } from '../ui/text-reveal.web';
@@ -131,6 +131,21 @@ export function Comparison() {
   const { isMobile, isTablet } = useBreakpoint();
   const circleSize = isMobile ? 24 : 28;
 
+  const tableRef = React.useRef<HTMLDivElement>(null);
+  const isTableInView = useInView(tableRef as any, { once: true, margin: '-100px' });
+
+  const tableVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
     <>
       <div style={{ width: '100%', color: 'var(--color-peach)', position: 'relative', zIndex: 10 }}>
@@ -162,18 +177,18 @@ export function Comparison() {
             <TextReveal
               delay={100}
               style={{
-                fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
+                fontSize: isMobile ? '30px' : isTablet ? '52px' : 'min(6.5vw, 76px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
                 fontWeight: 900,
-                lineHeight: 0.95,
+                lineHeight: 1.02,
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
-                maxWidth: '1200px',
+                maxWidth: '1300px',
                 margin: '0 auto',
               }}
             >
-              Why switch to Kalvix.ai?
+              {"Why switch to\nKalvix.ai?"}
             </TextReveal>
             <ScrollReveal delay={200}>
               <p style={{
@@ -194,23 +209,49 @@ export function Comparison() {
           {!(isMobile || isTablet) && (
             <div style={{ display: 'flex', width: '100%', marginBottom: '24px' }}>
               <div style={{ flex: 1, textAlign: 'center' }}>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 800, color: '#26091c', margin: 0 }}>
+                <TextReveal
+                  as="h3"
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '32px',
+                    fontWeight: 800,
+                    color: '#26091c',
+                    margin: 0,
+                    textAlign: 'center',
+                  }}
+                >
                   Traditional Growth Stack
-                </h3>
+                </TextReveal>
               </div>
               {/* spacer matching the zigzag separator */}
               <div style={{ width: '16px' }} />
               <div style={{ flex: 1, textAlign: 'center' }}>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '32px', fontWeight: 800, color: '#26091c', margin: 0 }}>
+                <TextReveal
+                  as="h3"
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '32px',
+                    fontWeight: 800,
+                    color: '#26091c',
+                    margin: 0,
+                    textAlign: 'center',
+                  }}
+                >
                   Kalvix AI Growth OS
-                </h3>
+                </TextReveal>
               </div>
             </div>
           )}
 
           {/* ── Split comparison panel ── */}
-          {isMobile || isTablet ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
+          <motion.div
+            ref={tableRef}
+            variants={tableVariants}
+            initial="hidden"
+            animate={isTableInView ? 'visible' : 'hidden'}
+          >
+            {isMobile || isTablet ? (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '32px' }}>
               {/* Left — Separate Tools */}
               <div
                 style={{
@@ -568,6 +609,7 @@ export function Comparison() {
               </div>
             </div>
           )}
+          </motion.div>
 
         </div>
       </section>

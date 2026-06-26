@@ -42,17 +42,6 @@ const TEAM = [
     // Cross/plus shape — expanded to fill 100x100
     maskPath: 'M32,5 L68,5 L68,32 L95,32 L95,68 L68,68 L68,95 L32,95 L32,68 L5,68 L5,32 L32,32 Z',
     image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    firstName: 'Maybe You',
-    lastName: 'Cause we are hiring',
-    role: 'SR. GRAPHIC DESIGNER',
-    sticker: '!!!!',
-    cardBg: '#bbf1b6', // Light green
-    stickerColor: '#ffe96b', // Yellow
-    // Organic blob expanded to fill 100x100
-    maskPath: 'M50,5 C65,3 82,14 86,30 C90,46 96,55 88,70 C80,85 65,95 50,93 C35,95 20,85 12,70 C4,55 10,46 14,30 C18,14 35,3 50,5 Z',
-    isHiring: true,
   }
 ];
 
@@ -105,21 +94,26 @@ export function About() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : 'repeat(4, 1fr)', gap: isMobile ? '24px' : '24px' }} className="team-grid">
-            {TEAM.map((member, idx) => (
-              <div
-                key={idx}
-                style={{
-                  backgroundColor: member.cardBg,
-                  borderRadius: '32px',
-                  padding: isMobile ? '20px 16px' : isTablet ? '24px' : '32px 20px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  position: 'relative',
-                }}
-              >
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : isTablet ? '1fr 1fr' : 'repeat(3, 1fr)', gap: isMobile ? '24px' : '24px' }} className="team-grid">
+            {TEAM.map((member, idx) => {
+              const isTabletOnly = isTablet && !isMobile;
+              return (
+                <div
+                  key={idx}
+                  style={{
+                    backgroundColor: member.cardBg,
+                    borderRadius: '32px',
+                    padding: isMobile ? '20px 16px' : isTablet ? '24px' : '32px 20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    position: 'relative',
+                    gridColumn: (isTabletOnly && idx === 0) ? '1 / span 2' : 'auto',
+                    justifySelf: (isTabletOnly && idx === 0) ? 'center' : 'stretch',
+                    width: (isTabletOnly && idx === 0) ? 'calc(50% - 12px)' : '100%',
+                  }}
+                >
                 {/* Sticker overlay */}
                 <div
                   className="badge-sticker"
@@ -216,7 +210,8 @@ export function About() {
                   )}
                 </div>
               </div>
-            ))}
+            );
+          })}
           </div>
 
         </div>

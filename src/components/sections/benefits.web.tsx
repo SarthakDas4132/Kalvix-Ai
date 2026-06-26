@@ -207,18 +207,18 @@ export function Benefits() {
             <TextReveal
               delay={100}
               style={{
-                fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
+                fontSize: isMobile ? '30px' : isTablet ? '52px' : 'min(6.5vw, 76px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
                 fontWeight: 900,
-                lineHeight: 0.95,
+                lineHeight: 1.02,
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--bg-white-pure)',
-                maxWidth: '1200px',
+                maxWidth: '1300px',
                 margin: '0 auto',
               }}
             >
-              Stop paying for five separate tools.
+              {"Stop paying for\nfive separate tools."}
             </TextReveal>
             <ScrollReveal delay={200}>
               <p
@@ -228,9 +228,9 @@ export function Benefits() {
                   fontWeight: 500,
                   color: 'var(--bg-white-pure)',
                   opacity: 0.55,
-                  maxWidth: '480px',
+                  maxWidth: '620px',
                   margin: '20px auto 0',
-                  lineHeight: 1.6,
+                  lineHeight: 1.65,
                 }}
               >
                 Kalvix.ai replaces your scheduling tool, creator marketplace, CRM, ad manager and payment platform — in one subscription.

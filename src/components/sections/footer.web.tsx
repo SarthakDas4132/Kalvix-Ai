@@ -50,7 +50,7 @@ export function Footer() {
           <div style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none', backgroundImage: 'radial-gradient(rgba(212, 160, 23, 0.4) 2px, transparent 2px)', backgroundSize: '10px 10px' }} />
         </div>
       </div>
-      <footer style={{ background: 'linear-gradient(to bottom, var(--color-yellow) 0%, var(--bg-cream) 40%, var(--color-blue) 100%)', paddingTop: '32px', zIndex: 2, position: 'relative' }}>
+      <footer style={{ background: 'linear-gradient(to bottom, var(--color-yellow) 0%, var(--bg-cream) 40%, var(--color-blue) 100%)', paddingTop: '32px', paddingBottom: isMobile ? '16px' : '24px', zIndex: 2, position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, opacity: 0.5, pointerEvents: 'none', backgroundImage: 'radial-gradient(rgba(212, 160, 23, 0.4) 2px, transparent 2px)', backgroundSize: '10px 10px' }} />
       
       {/* 1. Large Quote Request Card Container */}
@@ -205,7 +205,7 @@ export function Footer() {
           backgroundColor: 'var(--color-dark-purple)', // Dark burgundy footer
           color: 'var(--color-peach)',
           borderRadius: isMobile ? '24px' : '48px',
-          margin: isMobile ? '32px 16px 16px 16px' : '48px 24px 24px 24px',
+          margin: isMobile ? '32px 16px 0px 16px' : '48px 24px 0px 24px',
           padding: isMobile ? '48px 24px 110px 24px' : '80px 80px 60px 80px',
           minHeight: isMobile ? '500px' : '900px',
           position: 'relative',
@@ -382,7 +382,7 @@ export function Footer() {
         <div
           style={{
             position: 'absolute',
-            bottom: isMobile ? '12px' : '24px',
+            bottom: isMobile ? '6px' : '24px',
             left: isMobile ? '24px' : '80px',
             right: isMobile ? '24px' : '80px',
             display: 'flex',

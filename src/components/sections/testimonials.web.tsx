@@ -60,16 +60,18 @@ export function Testimonials() {
             <TextReveal
               delay={100}
               style={{
-                fontSize: isMobile ? '36px' : isTablet ? '64px' : 'min(12vw, 110px)',
+                fontSize: isMobile ? '30px' : isTablet ? '52px' : 'min(6.5vw, 76px)',
                 fontFamily: 'var(--font-satoshi), sans-serif',
                 fontWeight: 900,
-                lineHeight: 0.95,
+                lineHeight: 1.02,
                 letterSpacing: isMobile ? '-1.5px' : isTablet ? '-2.5px' : '-3.5px',
                 wordSpacing: '-0.05em',
                 color: 'var(--color-dark)',
+                maxWidth: '1300px',
+                margin: '0 auto',
               }}
             >
-              Real stories from beloved clients
+              {"Real stories from\nbeloved clients"}
             </TextReveal>
           </div>
 

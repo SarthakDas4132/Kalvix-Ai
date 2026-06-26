@@ -7,14 +7,14 @@ interface TextRevealProps {
   style?: CSSProperties;
   className?: string;
   delay?: number;     // initial delay (ms) before animation starts
-  stagger?: number;   // stagger duration (ms) between characters
+  stagger?: number;   // stagger duration (ms) between words
 }
 
 /**
- * Character-by-Character (Letter-by-Letter) Heading Reveal animation:
- * Each letter/symbol is placed inside its own overflow:hidden mask.
- * When in view, characters animate up sequentially from y: 100% to 0%
- * with a staggered delay, creating a beautiful wave-like cascade.
+ * Word-by-Word Heading Reveal animation:
+ * Each word is placed inside its own overflow:hidden mask.
+ * When in view, words animate up sequentially from y: 125% to 0%
+ * with a staggered delay, creating a clean, modern reveal straight up.
  */
 export function TextReveal({
   children,
@@ -22,7 +22,7 @@ export function TextReveal({
   style,
   className,
   delay = 0,
-  stagger = 20, // default 20ms stagger per character for a smooth, elegant cascade
+  stagger = 60, // default 60ms stagger per word for a snappy, premium reveal
 }: TextRevealProps) {
   const ref = useRef<HTMLElement>(null);
   // Trigger once when it's partially in view (e.g. 60px above viewport bottom)
@@ -41,15 +41,15 @@ export function TextReveal({
     },
   };
 
-  // Sliding letter mask animation properties
-  const letterVariants = {
+  // Sliding word mask animation properties
+  const wordVariants = {
     hidden: { y: '125%', opacity: 0 },
     visible: {
       y: '0%',
       opacity: 1,
       transition: {
-        duration: 0.95,
-        ease: [0.16, 1, 0.3, 1] as const, // Custom cubic-bezier matching modern Framer sites
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1] as const, // Modern Framer ease-out
       },
     },
   };
@@ -94,30 +94,39 @@ export function TextReveal({
                     style={{
                       display: 'inline-block',
                       whiteSpace: 'nowrap',
-                      marginRight: isLastWord ? '0px' : '0.24em',
+                      paddingLeft: '0.04em',
+                      paddingRight: '0.08em',
+                      marginLeft: '-0.04em',
+                      marginRight: isLastWord ? '-0.08em' : '0.16em',
                       overflow: 'hidden',
                       verticalAlign: 'bottom',
                       paddingBottom: '0.15em',
                       marginBottom: '-0.15em',
                     }}
                   >
-                    {chars.map((char, charIdx) => {
-                      // Apply pink coloring for '.ai' matches
-                      const isPink = aiIndex !== -1 && charIdx >= aiIndex && charIdx < aiIndex + 3;
+                    <motion.span
+                      variants={wordVariants}
+                      style={{
+                        display: 'inline-block',
+                      }}
+                    >
+                      {chars.map((char, charIdx) => {
+                        // Apply pink coloring for '.ai' matches
+                        const isPink = aiIndex !== -1 && charIdx >= aiIndex && charIdx < aiIndex + 3;
 
-                      return (
-                        <motion.span
-                          key={charIdx}
-                          variants={letterVariants}
-                          style={{
-                            display: 'inline-block',
-                            color: isPink ? 'var(--color-pink)' : 'inherit',
-                          }}
-                        >
-                          {char}
-                        </motion.span>
-                      );
-                    })}
+                        return (
+                          <span
+                            key={charIdx}
+                            style={{
+                              display: 'inline-block',
+                              color: isPink ? 'var(--color-pink)' : 'inherit',
+                            }}
+                          >
+                            {char}
+                          </span>
+                        );
+                      })}
+                    </motion.span>
                   </span>
                 );
               })}
@@ -128,3 +137,4 @@ export function TextReveal({
     </Comp>
   );
 }
+

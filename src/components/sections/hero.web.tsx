@@ -440,8 +440,9 @@ export function Hero() {
             className="neo-btn"
             style={{
               fontSize: isMobile ? '16px' : '18px',
-              padding: isMobile ? '12px 28px' : '16px 44px',
+              padding: isMobile ? '12px 28px' : '16px 36px',
               width: '100%',
+              whiteSpace: 'nowrap',
             }}
           >
             Get Early Access
