@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FooterIllustration } from '../ui/cartoon-illustrations.web';
+import { Link } from 'expo-router';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 
 export function Footer() {
@@ -13,6 +13,9 @@ export function Footer() {
   };
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+      return;
+    }
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -73,7 +76,11 @@ export function Footer() {
           <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
             {/* Group image + text so image centers over the text width */}
             <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
-              <FooterIllustration />
+              <img
+                src={require('../../../images/illustrations/quote_illustration.webp')}
+                alt="Need a custom quote?"
+                style={{ width: '240px', height: 'auto', objectFit: 'contain' }}
+              />
               <div style={{ textAlign: 'left' }}>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '24px' : '32px', fontWeight: 800, color: 'var(--color-dark)' }}>
                   Need a custom quote?
@@ -206,7 +213,7 @@ export function Footer() {
           color: 'var(--color-peach)',
           borderRadius: isMobile ? '24px' : '48px',
           margin: isMobile ? '32px 16px 0px 16px' : '48px 24px 0px 24px',
-          padding: isMobile ? '48px 24px 110px 24px' : '80px 80px 60px 80px',
+          padding: isMobile ? '48px 24px 180px 24px' : isTablet ? '80px 40px 180px 40px' : '80px 80px 120px 80px',
           minHeight: isMobile ? '500px' : '900px',
           position: 'relative',
           overflow: 'hidden',
@@ -281,7 +288,7 @@ export function Footer() {
               {['services', 'benefits', 'portfolio', 'process', 'reviews', 'about'].map((item) => (
                 <li key={item} style={{ lineHeight: 1 }}>
                   <a
-                    href={`#${item}`}
+                    href={`/#${item}`}
                     onClick={(e) => handleLinkClick(e, item)}
                     style={{
                       fontFamily: 'var(--font-oswald)',
@@ -347,7 +354,7 @@ export function Footer() {
         <div
           style={{
             position: 'absolute',
-            bottom: 0,
+            bottom: isMobile || isTablet ? '90px' : '50px',
             left: 0,
             right: 0,
             overflow: 'hidden',
@@ -359,9 +366,9 @@ export function Footer() {
         >
           <span
             style={{
-              fontSize: isMobile ? '20vw' : '23vw',
-              fontWeight: 900,
-              fontFamily: 'var(--font-display)',
+              fontSize: isMobile ? '18vw' : '22vw',
+              fontWeight: 700,
+              fontFamily: '"Clash Display", sans-serif',
               textTransform: 'uppercase',
               display: 'block',
               textAlign: 'center',
@@ -371,7 +378,7 @@ export function Footer() {
               background: 'linear-gradient(180deg, rgba(250, 224, 190, 0.48) 0%, rgba(250, 224, 190, 0.15) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              letterSpacing: isMobile ? '-0.05em' : '-0.06em',
+              letterSpacing: '-0.02em',
             }}
           >
             KALVIX
@@ -382,11 +389,11 @@ export function Footer() {
         <div
           style={{
             position: 'absolute',
-            bottom: isMobile ? '6px' : '24px',
+            bottom: isMobile || isTablet ? '12px' : '16px',
             left: isMobile ? '24px' : '80px',
             right: isMobile ? '24px' : '80px',
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: isMobile ? 'column' : 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
             fontSize: isMobile ? '11px' : '14px',
@@ -394,10 +401,32 @@ export function Footer() {
             color: 'var(--color-peach)',
             opacity: 0.6,
             zIndex: 2,
-            gap: '12px',
+            gap: isMobile ? '8px' : '12px',
           }}
         >
-          <div>© 2026 Kalvix.ai. All rights reserved.</div>
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap', justifyContent: isMobile ? 'center' : 'flex-start' }}>
+            <span>© 2026 Kalvix.ai. All rights reserved.</span>
+            <span>•</span>
+            <Link
+              href="/terms"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              Terms & Conditions
+            </Link>
+            <span>•</span>
+            <Link
+              href="/privacy-policy"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              Privacy Policy
+            </Link>
+          </div>
           <div>Built with passion.</div>
         </div>
 

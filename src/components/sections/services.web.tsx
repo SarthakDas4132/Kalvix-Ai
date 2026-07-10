@@ -158,7 +158,7 @@ export function Services() {
       y: 0,
       transition: {
         duration: 0.65,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as const,
       },
     },
   };
@@ -232,22 +232,28 @@ export function Services() {
             {SERVICES.map((service) => {
               const isExpanded = expandedId === service.id;
               return (
-                <motion.div
-                  key={service.id}
-                  variants={itemVariants}
-                  style={{
-                    border: 'var(--border-width) solid var(--color-dark)',
-                    borderRadius: isMobile ? '18px' : '24px',
-                    backgroundColor: isExpanded ? service.color : 'var(--bg-white-pure)',
-                    boxShadow: isExpanded
-                      ? (isMobile ? '4px 4px 0 0 var(--color-dark)' : '8px 8px 0 0 var(--color-dark)')
-                      : (isMobile ? '3px 3px 0 0 var(--color-dark)' : '4px 4px 0 0 var(--color-dark)'),
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    transition: 'background-color 0.3s ease, box-shadow 0.25s ease',
-                  }}
-                  onClick={() => toggle(service.id)}
-                >
+                 <motion.div
+                   key={service.id}
+                   variants={itemVariants}
+                   whileHover={{
+                     y: -5,
+                     boxShadow: isExpanded
+                       ? (isMobile ? '6px 6px 0 0 var(--color-dark)' : '12px 12px 0 0 var(--color-dark)')
+                       : (isMobile ? '6px 6px 0 0 var(--color-dark)' : '8px 8px 0 0 var(--color-dark)'),
+                   }}
+                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                   style={{
+                     border: 'var(--border-width) solid var(--color-dark)',
+                     borderRadius: isMobile ? '18px' : '24px',
+                     backgroundColor: isExpanded ? service.color : 'var(--bg-white-pure)',
+                     boxShadow: isExpanded
+                       ? (isMobile ? '4px 4px 0 0 var(--color-dark)' : '8px 8px 0 0 var(--color-dark)')
+                       : (isMobile ? '3px 3px 0 0 var(--color-dark)' : '4px 4px 0 0 var(--color-dark)'),
+                     overflow: 'hidden',
+                     cursor: 'pointer',
+                   }}
+                   onClick={() => toggle(service.id)}
+                 >
                   {/* ── Header Row ── */}
                   <div
                     style={{

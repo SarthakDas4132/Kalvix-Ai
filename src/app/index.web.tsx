@@ -125,10 +125,10 @@ export default function HomeScreenWeb() {
         <Services />
 
         {/* Bento Benefits Grid */}
-        <Benefits />
+        {/* <Benefits /> */}
 
         {/* Portfolio mockup cards */}
-        <Portfolio />
+        {/* <Portfolio /> */}
 
         {/* Process interactive switcher */}
         <Process />

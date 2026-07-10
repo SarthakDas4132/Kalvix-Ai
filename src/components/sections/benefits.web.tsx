@@ -248,45 +248,82 @@ export function Benefits() {
             >
               {/* Card: Publish Everywhere */}
               <BentoCard color="var(--color-yellow)">
-                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '160px', marginBottom: '8px' }}>
                   <PublishEverywhere />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '22px' : '26px', fontWeight: 700, color: 'var(--color-dark)', textAlign: 'center' }}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: isMobile ? '22px' : '26px',
+                  fontWeight: 700,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '64px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
                   Post to Every Platform at Once
                 </h3>
-                <p style={{ fontSize: isMobile ? '14px' : '15px', lineHeight: 1.5, opacity: 0.8, color: 'var(--color-dark)', textAlign: 'center', maxWidth: '340px', margin: '0 auto' }}>
+                <p style={{
+                  fontSize: isMobile ? '14px' : '15px',
+                  lineHeight: 1.5,
+                  opacity: 0.8,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  maxWidth: '340px',
+                  margin: '0 auto',
+                  minHeight: isMobile ? 'auto' : '72px',
+                }}>
                   One click to publish across Instagram, TikTok, YouTube, LinkedIn, X, Facebook and Google — no more copy-pasting between apps.
                 </p>
               </BentoCard>
 
               {/* Card: AI CRM Pipeline */}
               <BentoCard color="var(--color-purple)">
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignSelf: 'flex-start',
-                    backgroundColor: 'var(--color-dark)',
-                    color: 'var(--bg-cream)',
-                    fontFamily: 'var(--font-oswald)',
-                    fontWeight: 700,
-                    fontSize: '11px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
-                    padding: '3px 12px',
-                    borderRadius: '999px',
-                  }}
-                >
-                  AI Powered
-                </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: isMobile ? '22px' : '26px', fontWeight: 700, color: 'var(--color-dark)' }}>
-                  Your CRM, Automated by AI
-                </h3>
-                <p style={{ fontSize: isMobile ? '14px' : '15px', lineHeight: 1.5, opacity: 0.8, color: 'var(--color-dark)', maxWidth: '340px' }}>
-                  AI scores leads, writes follow-ups, and moves deals through your pipeline automatically — so your team focuses on closing, not admin.
-                </p>
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '8px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '160px', marginBottom: '8px', gap: '8px' }}>
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      backgroundColor: 'var(--color-dark)',
+                      color: 'var(--bg-cream)',
+                      fontFamily: 'var(--font-oswald)',
+                      fontWeight: 700,
+                      fontSize: '11px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      padding: '3px 12px',
+                      borderRadius: '999px',
+                    }}
+                  >
+                    AI Powered
+                  </div>
                   <AiCrmVisual />
                 </div>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: isMobile ? '22px' : '26px',
+                  fontWeight: 700,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '64px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                  Your CRM, Automated by AI
+                </h3>
+                <p style={{
+                  fontSize: isMobile ? '14px' : '15px',
+                  lineHeight: 1.5,
+                  opacity: 0.8,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  maxWidth: '340px',
+                  margin: '0 auto',
+                  minHeight: isMobile ? 'auto' : '72px',
+                }}>
+                  AI scores leads, writes follow-ups, and moves deals through your pipeline automatically — so your team focuses on closing, not admin.
+                </p>
               </BentoCard>
             </div>
 
@@ -297,55 +334,107 @@ export function Benefits() {
             >
               {/* Card: Creator discovery */}
               <BentoCard color="var(--color-green)">
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '130px', marginBottom: '16px' }}>
                   <CreatorNetworkVisual />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: 'var(--color-dark)', textAlign: 'center' }}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '22px',
+                  fontWeight: 700,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '56px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
                   Find Creators Instantly
                 </h3>
-                <p style={{ fontSize: '14px', lineHeight: 1.5, opacity: 0.8, color: 'var(--color-dark)', textAlign: 'center' }}>
+                <p style={{
+                  fontSize: '14px',
+                  lineHeight: 1.5,
+                  opacity: 0.8,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '72px',
+                }}>
                   Search 10M+ creators by niche, platform, engagement rate and audience demographics.
                 </p>
               </BentoCard>
 
               {/* Card: Analytics */}
               <BentoCard color="var(--bg-white-pure)">
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '130px', marginBottom: '16px' }}>
                   <AnalyticsVisual />
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: 'var(--color-dark)', textAlign: 'center' }}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '22px',
+                  fontWeight: 700,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '56px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
                   Quantitative Analytics
                 </h3>
-                <p style={{ fontSize: '14px', lineHeight: 1.5, opacity: 0.8, color: 'var(--color-dark)', textAlign: 'center' }}>
+                <p style={{
+                  fontSize: '14px',
+                  lineHeight: 1.5,
+                  opacity: 0.8,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '72px',
+                }}>
                   ROAS, CPM, reach, conversions — all in one unified dashboard across every channel and campaign.
                 </p>
               </BentoCard>
 
               {/* Card: Contracts & Payments */}
               <BentoCard color="var(--color-peach)">
-                {/* Icon */}
-                <div
-                  style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '16px',
-                    backgroundColor: 'var(--color-dark)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto',
-                    border: '2px solid var(--color-dark)',
-                  }}
-                >
-                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--bg-cream)" strokeWidth="2.2" strokeLinecap="round">
-                    <line x1="12" y1="1" x2="12" y2="23" />
-                    <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-                  </svg>
+                {/* Icon wrapper aligned to same height */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '130px', marginBottom: '16px' }}>
+                  <div
+                    style={{
+                      width: '56px',
+                      height: '56px',
+                      borderRadius: '16px',
+                      backgroundColor: 'var(--color-dark)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      border: '2px solid var(--color-dark)',
+                    }}
+                  >
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--bg-cream)" strokeWidth="2.2" strokeLinecap="round">
+                      <line x1="12" y1="1" x2="12" y2="23" />
+                      <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '22px', fontWeight: 700, color: 'var(--color-dark)', textAlign: 'center' }}>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '22px',
+                  fontWeight: 700,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '56px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
                   Contracts &amp; Payments
                 </h3>
-                <p style={{ fontSize: '14px', lineHeight: 1.5, opacity: 0.8, color: 'var(--color-dark)', textAlign: 'center' }}>
+                <p style={{
+                  fontSize: '14px',
+                  lineHeight: 1.5,
+                  opacity: 0.8,
+                  color: 'var(--color-dark)',
+                  textAlign: 'center',
+                  minHeight: isMobile ? 'auto' : '72px',
+                }}>
                   Sign contracts, manage collaboration deals and pay creators — no more juggling DocuSign, spreadsheets and bank transfers.
                 </p>
               </BentoCard>
@@ -439,6 +528,7 @@ export function Benefits() {
                     letterSpacing: '1px',
                     color: 'var(--color-green)',
                     marginBottom: '14px',
+                    textAlign: isMobile || isTablet ? 'left' : 'right',
                   }}
                 >
                   ✓ With Kalvix.ai
@@ -456,7 +546,9 @@ export function Benefits() {
                     key={i}
                     style={{
                       display: 'flex',
+                      flexDirection: isMobile || isTablet ? 'row' : 'row-reverse',
                       alignItems: 'center',
+                      justifyContent: isMobile || isTablet ? 'flex-start' : 'flex-end',
                       gap: '10px',
                       marginBottom: '8px',
                       fontFamily: 'var(--font-satoshi)',
@@ -467,7 +559,9 @@ export function Benefits() {
                     <div style={{ width: '16px', height: '16px', borderRadius: '50%', backgroundColor: 'var(--color-green)', border: '1.5px solid var(--color-green)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <svg viewBox="0 0 10 10" width="8" height="8"><path d="M2 5l2.5 2.5L8 3" stroke="var(--color-dark)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </div>
-                    {item}
+                    <span style={{ flex: isMobile || isTablet ? 'none' : 1, textAlign: isMobile || isTablet ? 'left' : 'right' }}>
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>

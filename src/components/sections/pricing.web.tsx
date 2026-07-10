@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { ScrollReveal } from '../ui/scroll-reveal.web';
 import { TextReveal } from '../ui/text-reveal.web';
@@ -58,6 +59,70 @@ const PLANS = [
     ]
   }
 ];
+
+function RollingDigit({ char, duration }: { char: string; duration: number }) {
+  const isDigit = /\d/.test(char);
+  if (!isDigit) {
+    return <span>{char}</span>;
+  }
+
+  const digit = parseInt(char, 10);
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  return (
+    <span
+      style={{
+        display: 'inline-block',
+        height: '1em',
+        overflow: 'hidden',
+        verticalAlign: 'bottom',
+        position: 'relative',
+      }}
+    >
+      <motion.span
+        animate={{ y: `-${digit * 10}%` }}
+        transition={{ duration: duration, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '1000%',
+        }}
+      >
+        {arr.map((val) => (
+          <span
+            key={val}
+            style={{
+              height: '10%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              lineHeight: 1,
+            }}
+          >
+            {val}
+          </span>
+        ))}
+      </motion.span>
+      {/* Invisible placeholder to reserve width in flow */}
+      <span style={{ visibility: 'hidden', pointerEvents: 'none' }}>{char}</span>
+    </span>
+  );
+}
+
+function RollingNumber({ value, duration = 0.8 }: { value: number; duration?: number }) {
+  const str = value.toString();
+  return (
+    <span style={{ display: 'inline-flex', overflow: 'hidden', alignItems: 'baseline' }}>
+      {str.split('').map((char, index) => (
+        <RollingDigit key={index} char={char} duration={duration} />
+      ))}
+    </span>
+  );
+}
 
 export function Pricing() {
   const [billingCycles, setBillingCycles] = useState<Record<string, 'monthly' | 'yearly'>>({
@@ -122,7 +187,7 @@ export function Pricing() {
                 margin: '0 auto',
               }}
             >
-              {"Pick your\nflavor"}
+              {"Scale with Kalvix AI"}
             </TextReveal>
           </div>
 
@@ -298,8 +363,8 @@ export function Pricing() {
 
                     {/* Price */}
                     <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center' }}>
-                      <span style={{ fontSize: isMobile ? '44px' : '52px', fontFamily: 'var(--font-display)', fontWeight: 900, lineHeight: 1, color: 'var(--color-dark)' }}>
-                        ${price}
+                      <span style={{ fontSize: isMobile ? '44px' : '52px', fontFamily: 'var(--font-display)', fontWeight: 900, lineHeight: 1, color: 'var(--color-dark)', display: 'inline-flex', alignItems: 'baseline' }}>
+                        $<RollingNumber value={price} duration={0.8} />
                       </span>
                       <span style={{ fontSize: '15px', fontFamily: 'var(--font-oswald)', fontWeight: 700, textTransform: 'uppercase', opacity: 0.7, marginLeft: '4px', color: 'var(--color-dark)' }}>
                         /{plan.period}

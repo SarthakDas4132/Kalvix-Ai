@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { ScrollReveal } from '../ui/scroll-reveal.web';
@@ -13,7 +13,7 @@ const TEXT_TESTIMONIALS = [
   {
     quote: "Everything feels cohesive, intentional, and us. We are obsessed with the final layouts.",
     author: "Managing Director, VentureVista",
-    color: 'var(--color-purple)',
+    color: 'var(--color-green)',
   },
   {
     quote: "The design is simple yet modern and very easy to customize. Couldn't have asked for a better team.",
@@ -25,6 +25,13 @@ const TEXT_TESTIMONIALS = [
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const { isMobile, isTablet } = useBreakpoint();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % TEXT_TESTIMONIALS.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [activeIndex]);
 
   return (
     <>
@@ -132,7 +139,8 @@ export function Testimonials() {
             </div>
           </div>
 
-          {/* Video Reviews Mockup */}
+          {/* Video Reviews Mockup - Commented out for now */}
+          {false && (
           <div style={{ display: 'grid', gridTemplateColumns: isMobile || isTablet ? '1fr' : '1fr 1fr', gap: isMobile ? '24px' : '40px' }} className="video-grid">
             
             {/* Video 1 */}
@@ -254,6 +262,7 @@ export function Testimonials() {
             </div>
 
           </div>
+          )}
 
         </div>
       </section>

@@ -99,7 +99,13 @@ const CARDS = [
     title: 'Faster Execution',
     description:
       'Generate content, launch campaigns, automate follow-ups and close deals in minutes instead of days.',
-    illustration: <IlloRocket />,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/faster_execution.png')}
+        alt="Faster Execution"
+        style={{ height: '160px', width: 'auto', objectFit: 'contain' }}
+      />
+    ),
     accentColor: 'var(--color-green)',
   },
   {
@@ -107,7 +113,13 @@ const CARDS = [
     title: 'AI Does The Heavy Lifting',
     description:
       'From captions and creatives to lead qualification and sales automation, AI works behind the scenes so your team can focus on growth.',
-    illustration: <IlloPricing />,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/ai_does_the_heavy_lifting.png')}
+        alt="AI Does The Heavy Lifting"
+        style={{ height: '160px', width: 'auto', objectFit: 'contain' }}
+      />
+    ),
     accentColor: 'var(--color-purple)',
   },
   {
@@ -115,7 +127,13 @@ const CARDS = [
     title: 'One Platform. Complete Visibility',
     description:
       'Track every post, ad, lead, conversation, deal and creator collaboration from a single dashboard.',
-    illustration: <IlloOnStop />,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/one_platform_complete_visibility.png')}
+        alt="One Platform. Complete Visibility"
+        style={{ height: '160px', width: 'auto', objectFit: 'contain' }}
+      />
+    ),
     accentColor: 'var(--color-yellow)',
   },
 ];
@@ -243,24 +261,24 @@ export function WhyUs() {
                 }}
               >
                 {/* Illustration */}
-                <motion.div
-                  whileHover={{ scale: 1.06, rotate: -2 }}
-                  transition={{ type: 'spring', stiffness: 260, damping: 18 }}
-                  style={{ marginBottom: '28px' }}
-                >
+                <div style={{ marginBottom: '28px' }}>
                   {card.illustration}
-                </motion.div>
+                </div>
 
                 {/* Title */}
                 <h3
                   style={{
                     fontFamily: 'var(--font-display)',
                     fontWeight: 700,
-                    fontSize: isMobile ? '20px' : '22px',
+                    fontSize: isMobile ? '24px' : '30px',
                     color: 'var(--color-dark)',
                     letterSpacing: '-0.5px',
                     marginBottom: '12px',
                     lineHeight: 1.2,
+                    minHeight: isMobile ? 'auto' : '90px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                 >
                   {card.title}
@@ -270,12 +288,13 @@ export function WhyUs() {
                 <p
                   style={{
                     fontFamily: 'var(--font-satoshi)',
-                    fontSize: '15px',
+                    fontSize: isMobile ? '16px' : '20px',
                     fontWeight: 500,
                     color: 'var(--color-dark)',
                     opacity: 0.65,
-                    lineHeight: 1.65,
-                    maxWidth: isMobile ? '100%' : '260px',
+                    lineHeight: 1.6,
+                    maxWidth: isMobile ? '100%' : '340px',
+                    minHeight: isMobile ? 'auto' : '120px',
                   }}
                 >
                   {card.description}

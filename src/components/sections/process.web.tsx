@@ -8,7 +8,7 @@ import { TextReveal } from '../ui/text-reveal.web';
 
 function ConnectIllustration() {
   return (
-    <svg viewBox="0 0 260 220" style={{ width: '100%', height: 'auto', maxWidth: '260px' }} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="-25 -25 310 270" style={{ width: '100%', height: '100%', maxWidth: '260px', maxHeight: '100%' }} fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Central Agenius node */}
       <circle cx="130" cy="110" r="36" fill="var(--color-yellow)" stroke="var(--color-dark)" strokeWidth="2.5" />
       <text x="130" y="106" textAnchor="middle" fontFamily="var(--font-oswald)" fontWeight="800" fontSize="10" fill="var(--color-dark)">Kalvix.ai</text>
@@ -64,7 +64,7 @@ function DiscoverIllustration() {
     { x: 150, y: 120, name: '@techsavvy', followers: '2.1M', score: 97, color: 'var(--color-yellow)' },
   ];
   return (
-    <svg viewBox="0 0 280 220" style={{ width: '100%', height: 'auto', maxWidth: '280px' }} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 -10 280 280" style={{ width: '100%', height: '100%', maxWidth: '280px', maxHeight: '100%' }} fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Search bar */}
       <rect x="10" y="0" width="260" height="32" rx="16" fill="var(--bg-white-pure)" stroke="var(--color-dark)" strokeWidth="2" />
       <text x="26" y="20" fontFamily="var(--font-oswald)" fontSize="10" fontWeight="700" fill="var(--color-dark)" opacity="0.5">Search creators by niche, platform, reach...</text>
@@ -116,7 +116,7 @@ function DiscoverIllustration() {
 
 function CampaignIllustration() {
   return (
-    <svg viewBox="0 0 280 220" style={{ width: '100%', height: 'auto', maxWidth: '280px' }} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 280 220" style={{ width: '100%', height: '100%', maxWidth: '280px', maxHeight: '100%' }} fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Main compose window */}
       <rect x="10" y="10" width="185" height="195" rx="14" fill="var(--bg-white-pure)" stroke="var(--color-dark)" strokeWidth="2.5" />
       {/* Title bar */}
@@ -185,7 +185,7 @@ function CampaignIllustration() {
 function AnalyticsIllustration() {
   const bars = [30, 48, 40, 65, 55, 80, 72, 90, 82, 95];
   return (
-    <svg viewBox="0 0 280 220" style={{ width: '100%', height: 'auto', maxWidth: '280px' }} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 280 220" style={{ width: '100%', height: '100%', maxWidth: '280px', maxHeight: '100%' }} fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Main dashboard card */}
       <rect x="10" y="10" width="260" height="200" rx="14" fill="var(--bg-white-pure)" stroke="var(--color-dark)" strokeWidth="2.5" />
       {/* Header */}
@@ -263,7 +263,7 @@ function AnalyticsIllustration() {
 
 function ScaleIllustration() {
   return (
-    <svg viewBox="0 0 280 220" style={{ width: '100%', height: 'auto', maxWidth: '280px' }} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 280 220" style={{ width: '100%', height: '100%', maxWidth: '280px', maxHeight: '100%' }} fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Rocket */}
       <g transform="translate(100, 20) rotate(-20)">
         <ellipse cx="40" cy="60" rx="22" ry="50" fill="var(--color-dark)" stroke="var(--color-dark)" strokeWidth="2" />
@@ -317,7 +317,13 @@ const STEPS = [
       'Connect WhatsApp Business',
       'Import existing leads & customers',
     ],
-    illustration: ConnectIllustration,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/connect_all_your_accounts.png')}
+        alt="Connect All Your Accounts"
+        style={{ width: 'auto', height: '100%', maxHeight: '280px', objectFit: 'contain' }}
+      />
+    ),
   },
   {
     num: 2,
@@ -333,7 +339,13 @@ const STEPS = [
       'Ad creatives & copy',
       'Content calendar',
     ],
-    illustration: DiscoverIllustration,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/create_content_campaigns.png')}
+        alt="Create Content & Campaigns"
+        style={{ width: 'auto', height: '100%', maxHeight: '280px', objectFit: 'contain' }}
+      />
+    ),
   },
   {
     num: 3,
@@ -349,7 +361,13 @@ const STEPS = [
       'Campaign scheduling',
       'Performance tracking',
     ],
-    illustration: CampaignIllustration,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/launch_across_every_channel.png')}
+        alt="Launch Across Every Channel"
+        style={{ width: 'auto', height: '100%', maxHeight: '280px', objectFit: 'contain' }}
+      />
+    ),
   },
   {
     num: 4,
@@ -365,7 +383,13 @@ const STEPS = [
       'SMS & email follow-ups',
       'AI calling workflows',
     ],
-    illustration: AnalyticsIllustration,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/turn_engagement_into_revenue.webp')}
+        alt="Turn Engagement Into Revenue"
+        style={{ width: 'auto', height: '100%', maxHeight: '280px', objectFit: 'contain' }}
+      />
+    ),
   },
   {
     num: 5,
@@ -381,7 +405,13 @@ const STEPS = [
       'Marketing attribution',
       'Growth recommendations',
     ],
-    illustration: ScaleIllustration,
+    illustration: (
+      <img
+        src={require('../../../images/illustrations/optimize_what_works.png')}
+        alt="Optimize What Works"
+        style={{ width: 'auto', height: '100%', maxHeight: '280px', objectFit: 'contain' }}
+      />
+    ),
   },
 ];
 
@@ -393,6 +423,27 @@ export function Process() {
   const isTabletAny = isTablet || isTabletLarge;
 
   useEffect(() => {
+    // Programmatically preload all illustrations into browser memory
+    const imagesToPreload = [
+      require('../../../images/illustrations/connect_all_your_accounts.png'),
+      require('../../../images/illustrations/create_content_campaigns.png'),
+      require('../../../images/illustrations/launch_across_every_channel.png'),
+      require('../../../images/illustrations/turn_engagement_into_revenue.webp'),
+      require('../../../images/illustrations/optimize_what_works.png'),
+    ];
+
+    imagesToPreload.forEach((src) => {
+      if (typeof window !== 'undefined') {
+        const img = new window.Image();
+        const resolvedSrc = typeof src === 'string' ? src : (src.default || src.uri || src);
+        if (resolvedSrc) {
+          img.src = resolvedSrc;
+        }
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
       setActiveStep((prev) => (prev % STEPS.length) + 1);
     }, 6000);
@@ -400,10 +451,17 @@ export function Process() {
   }, [activeStep]);
 
   const current = STEPS[activeStep - 1];
-  const IllustrationComponent = current.illustration;
 
   return (
     <>
+      {/* Preload images to prevent flashing on switch */}
+      <div style={{ display: 'none' }}>
+        <img src={require('../../../images/illustrations/connect_all_your_accounts.png')} alt="" />
+        <img src={require('../../../images/illustrations/create_content_campaigns.png')} alt="" />
+        <img src={require('../../../images/illustrations/launch_across_every_channel.png')} alt="" />
+        <img src={require('../../../images/illustrations/turn_engagement_into_revenue.webp')} alt="" />
+        <img src={require('../../../images/illustrations/optimize_what_works.png')} alt="" />
+      </div>
       <div style={{ width: '100%', color: 'var(--color-blue)', position: 'relative', zIndex: 10 }}>
         <div className="scallop-up-mask" style={{ position: 'absolute', bottom: 0, left: 0 }} />
       </div>
@@ -562,8 +620,8 @@ export function Process() {
               gap: isMobile ? '32px' : isTabletAny ? '24px' : '48px',
               padding: isMobile ? '24px 16px' : isTabletAny ? '36px' : '52px',
               alignItems: isMobile || isTabletAny ? 'start' : 'center',
-              height: isMobile ? '680px' : isTabletAny ? '700px' : 'auto',
-              minHeight: isMobile ? 'unset' : isTabletAny ? 'unset' : '520px',
+              height: 'auto',
+              minHeight: isMobile ? '700px' : isTabletAny ? '760px' : '520px',
               position: 'relative',
               overflow: 'hidden',
             }}
@@ -691,8 +749,8 @@ export function Process() {
               alignItems: 'center',
               justifyContent: 'center',
               width: '100%',
-              height: isTabletAny ? '280px' : 'auto',
-              overflow: isTabletAny ? 'hidden' : 'visible',
+              height: isMobile ? '220px' : isTabletAny ? '260px' : '320px',
+              overflow: 'hidden',
             }}>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -703,7 +761,7 @@ export function Process() {
                   transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
                   style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
                 >
-                  <IllustrationComponent />
+                  {current.illustration}
                 </motion.div>
               </AnimatePresence>
             </div>

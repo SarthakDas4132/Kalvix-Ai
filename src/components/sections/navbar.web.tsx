@@ -56,6 +56,10 @@ export function Navbar() {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+      setMenuOpen(false);
+      return;
+    }
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -123,7 +127,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <a
-              href="#"
+              href="/"
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -184,7 +188,7 @@ export function Navbar() {
                 {['services', 'benefits', 'portfolio', 'process', 'faq'].map((item) => (
                   <li key={item}>
                     <a
-                      href={`#${item}`}
+                      href={`/#${item}`}
                       onClick={(e) => handleNavClick(e, item)}
                       style={{
                         textDecoration: 'none',
@@ -284,7 +288,7 @@ export function Navbar() {
                           }}
                         >
                           <a
-                            href={`#${item.target}`}
+                            href={`/#${item.target}`}
                             onClick={(e) => handleNavClick(e, item.target)}
                             className="menu-link"
                             style={{

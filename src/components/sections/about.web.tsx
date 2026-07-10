@@ -2,7 +2,20 @@ import React from 'react';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { ScrollReveal } from '../ui/scroll-reveal.web';
 
-const TEAM = [
+interface TeamMember {
+  firstName: string;
+  lastName: string;
+  role: string;
+  sticker: string;
+  cardBg: string;
+  stickerColor: string;
+  maskElements?: React.ReactNode;
+  maskPath?: string;
+  image?: string;
+  isHiring?: boolean;
+}
+
+const TEAM: TeamMember[] = [
   {
     firstName: 'Zephyr',
     lastName: 'Callahan',
@@ -74,6 +87,10 @@ export function About() {
                   display: 'inline-flex',
                   marginBottom: '20px',
                   transform: 'rotate(-3deg)',
+                  fontSize: isMobile ? '16px' : '20px',
+                  padding: isMobile ? '6px 16px' : '10px 24px',
+                  borderWidth: '2.5px',
+                  boxShadow: '3px 3px 0 0 var(--color-dark)',
                 }}
               >
                 About us
@@ -90,7 +107,7 @@ export function About() {
                 margin: 0,
               }}
             >
-              We started at a kitchen table with coffee, chaos, and a shared love for bold ideas. Now we’re a small team doing big things—branding, designing, and creating work that actually makes people feel something. No fluff, no fuss, just fun, friendly, scroll-stopping creativity.
+              Founded on a shared passion for bold ideas and creative excellence, we have grown from a collaborative vision into a dedicated branding and design studio. We partner with forward-thinking organizations to craft cohesive digital experiences, distinctive visual identities, and high-impact designs that truly resonate. By combining purposeful strategy with clean, scroll-stopping execution, we deliver exceptional results without the fluff.
             </p>
           </div>
 

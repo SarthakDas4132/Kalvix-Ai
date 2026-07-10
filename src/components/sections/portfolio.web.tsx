@@ -295,37 +295,129 @@ export function Portfolio() {
             </ScrollReveal>
           </div>
 
-          {/* ── Tab selector ── */}
+          {/* ── Tab selector with Arrows ── */}
           <div style={{
             display: 'flex',
-            gap: isMobile ? '8px' : '12px',
-            flexWrap: 'wrap',
+            alignItems: 'center',
             justifyContent: 'center',
+            gap: isMobile ? '12px' : '20px',
             marginBottom: isMobile ? '24px' : '40px',
           }}>
-            {CASES.map((c) => (
-              <button
-                key={c.id}
-                onClick={() => setActiveId(c.id)}
-                style={{
-                  fontFamily: 'var(--font-oswald)',
-                  fontWeight: 700,
-                  fontSize: isMobile ? '13px' : '14px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  border: '2px solid var(--color-dark)',
-                  borderRadius: '999px',
-                  padding: isMobile ? '8px 16px' : '10px 22px',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  backgroundColor: activeId === c.id ? 'var(--color-dark)' : 'transparent',
-                  color: activeId === c.id ? 'var(--bg-cream)' : 'var(--color-dark)',
-                  boxShadow: activeId === c.id ? '3px 3px 0 0 rgba(24,26,18,0.3)' : 'none',
-                }}
-              >
-                {c.brand}
-              </button>
-            ))}
+            {/* Left Arrow Button */}
+            <button
+              onClick={() => {
+                const currentIndex = CASES.findIndex((c) => c.id === activeId);
+                const prevIndex = (currentIndex - 1 + CASES.length) % CASES.length;
+                setActiveId(CASES[prevIndex].id);
+              }}
+              aria-label="Previous Case Study"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: isMobile ? '38px' : '44px',
+                height: isMobile ? '38px' : '44px',
+                border: '2px solid var(--color-dark)',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                backgroundColor: 'var(--bg-white-pure)',
+                color: 'var(--color-dark)',
+                transition: 'all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                boxShadow: '3px 3px 0 0 var(--color-dark)',
+                flexShrink: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '5px 5px 0 0 var(--color-dark)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '3px 3px 0 0 var(--color-dark)';
+              }}
+              onMouseDown={(e) => {
+                e.currentTarget.style.transform = 'translateY(2px)';
+                e.currentTarget.style.boxShadow = '1px 1px 0 0 var(--color-dark)';
+              }}
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12" />
+                <polyline points="12 19 5 12 12 5" />
+              </svg>
+            </button>
+
+            {/* Tab selector pills */}
+            <div style={{
+              display: 'flex',
+              gap: isMobile ? '8px' : '12px',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}>
+              {CASES.map((c) => (
+                <button
+                  key={c.id}
+                  onClick={() => setActiveId(c.id)}
+                  style={{
+                    fontFamily: 'var(--font-oswald)',
+                    fontWeight: 700,
+                    fontSize: isMobile ? '13px' : '14px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px',
+                    border: '2px solid var(--color-dark)',
+                    borderRadius: '999px',
+                    padding: isMobile ? '8px 16px' : '10px 22px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    backgroundColor: activeId === c.id ? 'var(--color-dark)' : 'transparent',
+                    color: activeId === c.id ? 'var(--bg-cream)' : 'var(--color-dark)',
+                    boxShadow: activeId === c.id ? '3px 3px 0 0 rgba(24,26,18,0.3)' : 'none',
+                  }}
+                >
+                  {c.brand}
+                </button>
+              ))}
+            </div>
+
+            {/* Right Arrow Button */}
+            <button
+              onClick={() => {
+                const currentIndex = CASES.findIndex((c) => c.id === activeId);
+                const nextIndex = (currentIndex + 1) % CASES.length;
+                setActiveId(CASES[nextIndex].id);
+              }}
+              aria-label="Next Case Study"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: isMobile ? '38px' : '44px',
+                height: isMobile ? '38px' : '44px',
+                border: '2px solid var(--color-dark)',
+                borderRadius: '50%',
+                cursor: 'pointer',
+                backgroundColor: 'var(--bg-white-pure)',
+                color: 'var(--color-dark)',
+                transition: 'all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                boxShadow: '3px 3px 0 0 var(--color-dark)',
+                flexShrink: 0,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '5px 5px 0 0 var(--color-dark)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '3px 3px 0 0 var(--color-dark)';
+              }}
+              onMouseDown={(e) => {
+                e.currentTarget.style.transform = 'translateY(2px)';
+                e.currentTarget.style.boxShadow = '1px 1px 0 0 var(--color-dark)';
+              }}
+            >
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
           </div>
 
           {/* ── Active case study ── */}

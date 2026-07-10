@@ -3,8 +3,8 @@
 
 :root {
   /* Fonts */
-  --font-display: 'Clash Display', 'Inter', sans-serif;
-  --font-satoshi: 'Satoshi', sans-serif;
+  --font-display: 'Oswald', sans-serif;
+  --font-satoshi: 'Oswald', sans-serif;
   --font-oswald: 'Oswald', sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
@@ -34,7 +34,7 @@
 body {
   background-color: var(--bg-cream);
   color: var(--color-dark);
-  font-family: var(--font-satoshi), sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   overflow-x: hidden;
   overflow-y: scroll; /* Always show scrollbar track — prevents layout shift when content loads */
   scrollbar-gutter: stable; /* Reserves space for scrollbar even when not scrolling */
@@ -163,11 +163,11 @@ body {
   font-family: var(--font-oswald);
   font-weight: 700;
   text-transform: uppercase;
-  padding: 4px 12px;
-  border: 1.5px solid var(--color-dark);
-  font-size: 12px;
+  padding: 6px 16px;
+  border: 1.8px solid var(--color-dark);
+  font-size: 15px;
   transform: rotate(-3deg);
-  box-shadow: 2px 2px 0 0 var(--color-dark);
+  box-shadow: 2.5px 2.5px 0 0 var(--color-dark);
 }
 
 .badge-sticker.pink {
@@ -265,6 +265,13 @@ html, body {
   .scallop-divider-large-up {
     height: 19px;
     background-size: 65px 20px;
+  }
+
+  .badge-sticker {
+    padding: 4px 12px;
+    font-size: 13px;
+    border-width: 1.5px;
+    box-shadow: 2px 2px 0 0 var(--color-dark);
   }
 }
 
