@@ -138,9 +138,9 @@ export function Navbar() {
                 src={require('../../../assets/images/M-Auxis logo.png')}
                 alt="M-Auxis Logo"
                 style={{
-                  height: isMobile ? '34px' : '46px',
+                  height: isMobile ? '22px' : '28px',
                   width: 'auto',
-                  maxHeight: isMobile ? '34px' : '46px',
+                  maxHeight: isMobile ? '22px' : '28px',
                   objectFit: 'contain',
                   display: 'block',
                 }}
