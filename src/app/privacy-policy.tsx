@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView, Linking } from 'react-native';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function PrivacyPolicyScreen() {
@@ -13,88 +13,47 @@ export default function PrivacyPolicyScreen() {
         <View style={styles.card}>
           <Text style={styles.heading}>Privacy Policy</Text>
           <View style={styles.dateContainer}>
-            <Text style={styles.date}>Date of Effectiveness: July 1, 2026</Text>
-            <Text style={styles.date}>Date of Update: July 1, 2026</Text>
+            <Text style={styles.date}>Last Updated: July 17, 2026</Text>
           </View>
 
           <View style={styles.content}>
-            <Text style={styles.sectionTitle}>1. Introduction</Text>
             <Text style={styles.bodyText}>
-              The Kalvix ("Kalvix", "Platform", "Company", "we", "our" or "us") values your privacy. This Privacy Policy contains information concerning collecting, using, storing and protecting of your data during using our website, apps, software, APIs, dashboards, and other services. The use of the Platform means that you accept all of the terms stated in this Privacy Policy.
+              {"The Kalvix AI (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by The Kalvix AI. This policy applies specifically to the services we offer through our application, including our integrations with Meta platforms (Facebook and Instagram)."}
             </Text>
 
-            <Text style={styles.sectionTitle}>2. Information We Collect</Text>
+            <Text style={styles.sectionTitle}>1. Information We Collect</Text>
             <Text style={styles.bodyText}>
-              We collect information including the following:{"\n"}
-              • Account information (name, email, phone number, company information).{"\n"}
-              • Uploaded content (logos, brand assets, product images, video, document).{"\n"}
-              • Customer data imported to CRM or automation systems.{"\n"}
-              • Payment and billing information.{"\n"}
-              • Usage information (log files, analytics, device information, IP address).
+              {"We collect information that you provide directly to us or authorize us to access when you use our application:\n\n• Account Information: Name, email address, and basic profile details.\n• Meta Platform Data: When you connect your Facebook or Instagram accounts, we collect public profile information, Page access tokens, Instagram account IDs, and related media content necessary to provide our automated publishing and analysis services.\n• User-Generated Content: Campaign details, brand data, generated images, and textual content created or uploaded within our platform."}
             </Text>
 
-            <Text style={styles.sectionTitle}>3. How We Use Information</Text>
+            <Text style={styles.sectionTitle}>2. How We Use Your Information</Text>
             <Text style={styles.bodyText}>
-              We use information for:{"\n"}
-              • Providing and improving of our services.{"\n"}
-              • Personalization of user experience.{"\n"}
-              • Processing of payment and subscriptions.{"\n"}
-              • Enabling of integration with third-party platforms.{"\n"}
-              • Communication with the users concerning any updates, promotions and support.{"\n"}
-              • Compliance with any legal or regulatory requirements.
+              {"We use the information we collect to:\n\n• Provide, operate, and maintain our application, including scheduling and publishing posts to your connected Meta accounts.\n• Generate AI-powered content and conduct brand DNA analysis based on the parameters you provide.\n• Improve, personalize, and expand our application's functionality.\n• Understand and analyze how you use our application.\n• Communicate with you regarding updates, security alerts, and support messages."}
             </Text>
 
-            <Text style={styles.sectionTitle}>4. Information Sharing</Text>
+            <Text style={styles.sectionTitle}>3. Third-Party Data Sharing</Text>
             <Text style={styles.bodyText}>
-              We do not sell your personal information. We share your data solely in the following situations:{"\n"}
-              • With third-party service providers (payment processors, hosting partners);{"\n"}
-              • In case of compliance with legal or governmental obligations;{"\n"}
-              • To protect the rights, property, and safety of Kalvix, its users, or the general public.
+              {"We share your information only in the following specific circumstances:\n\n• AI Service Providers: We utilize third-party AI models (such as Google Gemini and OpenAI) to generate images and text. Necessary context (like brand data and campaign parameters) may be shared securely with these services strictly for content generation purposes.\n• Meta Integration: Your content and necessary authentication tokens are transmitted securely to Meta's APIs (Graph API) for publishing and campaign management purposes in accordance with Meta's Platform Terms.\n• Legal Compliance: We may disclose information if required to do so by law or in response to valid requests by public authorities.\n\nWe do not sell, rent, or trade your personal information to third parties."}
             </Text>
 
-            <Text style={styles.sectionTitle}>5. Data Security</Text>
+            <Text style={styles.sectionTitle}>4. Data Retention and Deletion (Meta App Requirement)</Text>
             <Text style={styles.bodyText}>
-              We adopt technical and organizational measures to ensure the security of your information from any illegal access, loss, misuse, or leakage. But please note that any system is vulnerable, and we cannot ensure your information safety at 100%.
+              {"We retain your data only for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy.\n\nData Deletion Instructions:\nYou have the right to request the deletion of your personal data. If you wish to revoke our app's access to your Meta account and delete your associated data, please follow these steps:\n\n1. Log in to your Facebook account and go to Settings & Privacy > Settings.\n2. Navigate to Apps and Websites in the left-hand menu.\n3. Find The Kalvix AI in the list of active apps.\n4. Click Remove and confirm the removal.\n5. To ensure all your data is entirely wiped from our servers, please send a data deletion request to legal@kalvix.ai with the subject line \"Data Deletion Request\". We will process your request within 7 days."}
             </Text>
 
-            <Text style={styles.sectionTitle}>6. User Responsibilities</Text>
+            <Text style={styles.sectionTitle}>5. Security</Text>
             <Text style={styles.bodyText}>
-              The responsibilities of users include:{"\n"}
-              • Ensuring that customer data uploaded to Kalvix is collected legally;{"\n"}
-              • Getting necessary consents for marketing communication;{"\n"}
-              • Safeguarding of login details and making regular backups of data.
+              {"We implement appropriate technical and organizational measures (including encryption and secure token storage) to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, please note that no method of transmission over the internet or electronic storage is 100% secure."}
             </Text>
 
-            <Text style={styles.sectionTitle}>7. Third-Party Integrations</Text>
+            <Text style={styles.sectionTitle}>6. Changes to This Privacy Policy</Text>
             <Text style={styles.bodyText}>
-              Kalvix can work with platforms like Meta Ads, Google Ads, Instagram, Facebook, LinkedIn, X (Twitter), TikTok, YouTube, and WhatsApp. Such integrations are governed by privacy policies of third parties.
+              {"We may update this Privacy Policy from time to time. We will notify you of any changes by updating the \"Last Updated\" date at the top of this policy. You are advised to review this Privacy Policy periodically for any changes."}
             </Text>
 
-            <Text style={styles.sectionTitle}>8. Data Retention</Text>
-            <Text style={styles.bodyText}>
-              We store user information for the period required for providing our services, complying with legal or governmental obligations, and resolving any disputes. User can ask for deleting the data according to relevant laws.
-            </Text>
-
-            <Text style={styles.sectionTitle}>9. Your Rights</Text>
-            <Text style={styles.bodyText}>
-              As per applicable laws, you may have rights to:{"\n"}
-              • Access, rectify or delete your personal data.{"\n"}
-              • Object or restrict certain processing.{"\n"}
-              • Withdrawing consent for marketing purposes.{"\n"}
-              These requests can be sent to legal@kalvix.ai.
-            </Text>
-
-            <Text style={styles.sectionTitle}>10. Amendments to this Policy</Text>
-            <Text style={styles.bodyText}>
-              This Privacy Policy may be modified from time to time by Kalvix. The modified policy will be posted on our website, and using the Platform will mean that you accept such modification.
-            </Text>
-
-            <Text style={styles.sectionTitle}>11. Contact Information</Text>
+            <Text style={styles.sectionTitle}>7. Contact Us</Text>
             <Text style={[styles.bodyText, { fontWeight: 'bold' }]}>
-              Kalvix.ai{"\n"}
-              Email: legal@kalvix.ai{"\n"}
-              Registered Office: Kalvix Technologies Pvt. Ltd., Pune, Maharashtra, India{"\n"}
-              Website: https://kalvix.ai
+              {"The Kalvix AI\nEmail: legal@kalvix.ai\nWebsite: https://kalvix.ai"}
             </Text>
           </View>
         </View>
