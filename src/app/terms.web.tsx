@@ -101,8 +101,7 @@ export default function TermsScreenWeb() {
               gap: '4px',
             }}
           >
-            <span>Effective Date: July 1, 2026</span>
-            <span>Last Updated: July 1, 2026</span>
+            <span>Last Updated: July 17, 2026</span>
           </div>
 
           <div
@@ -116,6 +115,10 @@ export default function TermsScreenWeb() {
               fontSize: isMobile ? '15px' : '16px',
             }}
           >
+            <p>
+              Welcome to The Kalvix AI (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). By accessing or using our application, website, and associated services (collectively, the &quot;Service&quot;), you agree to be bound by these Terms and Conditions (&quot;Terms&quot;). If you do not agree with any part of these Terms, you must not use our Service.
+            </p>
+
             <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <h2
                 style={{
@@ -127,10 +130,10 @@ export default function TermsScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                1. Introduction
+                1. Description of Service
               </h2>
               <p>
-                Welcome to Kalvix.ai (“Kalvix”, “Platform”, “Company”, “we”, “our”, or “us”). These Terms and Conditions (“Terms”) govern your access to and use of Kalvix.ai, including our website, applications, software, APIs, dashboards, AI tools, creator marketplace, advertising services, CRM, automation tools, analytics, payment features, and all related products and services. By accessing or using the Platform, creating an account, or subscribing to our services, you agree to be legally bound by these Terms. If you do not agree, you must stop using the Platform right away.
+                The Kalvix AI provides an AI-powered content marketing platform that enables users to generate branding materials, textual content, and imagery, and schedule/publish this content directly to connected third-party social media platforms, including Meta (Facebook and Instagram).
               </p>
             </section>
 
@@ -145,11 +148,26 @@ export default function TermsScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                2. Eligibility
+                2. User Accounts and Third-Party Integrations
               </h2>
               <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <li>You must be at least eighteen (18) years old.</li>
-                <li>If you are registering on behalf of a company, you confirm that you have the authority to bind that entity.</li>
+                <li>
+                  <strong>Account Responsibility:</strong> You are responsible for safeguarding your account credentials and for all activities that occur under your account.
+                </li>
+                <li>
+                  <strong>Meta Integration:</strong> To utilize publishing features, you must link your Facebook and/or Instagram accounts. By doing so, you agree to comply strictly with the{' '}
+                  <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                    Meta Platform Terms
+                  </a>{' '}
+                  and{' '}
+                  <a href="https://transparency.fb.com/policies/community-standards/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                    Community Standards
+                  </a>
+                  . We reserve the right to suspend your account if your linked Meta profiles are found to be violating these terms.
+                </li>
+                <li>
+                  <strong>Permissions:</strong> You grant us permission to access, store (temporarily), and transmit your Meta Page tokens and relevant media solely for the purpose of executing the publishing actions you initiate.
+                </li>
               </ul>
             </section>
 
@@ -164,35 +182,17 @@ export default function TermsScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                3. Services
+                3. Acceptable Use Policy
               </h2>
-              <p>Kalvix.ai provides AI-powered marketing and business growth solutions, including:</p>
+              <p>You agree <strong>not</strong> to use the Service to:</p>
               <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <li>AI Content Studio, Image and Video Generation</li>
-                <li>AI Copywriting, Caption and Hashtag Generation</li>
-                <li>Cross-Platform Publishing</li>
-                <li>Creator Marketplace and Influencer Discovery</li>
-                <li>CRM and Automation</li>
-                <li>Revenue Analytics and Business Intelligence Dashboard</li>
+                <li>Generate, publish, or distribute content that is illegal, defamatory, harassing, abusive, obscene, or discriminatory.</li>
+                <li>Violate any third-party intellectual property rights, copyrights, or trademarks.</li>
+                <li>Automate spam, artificially inflate engagement metrics, or manipulate Meta&apos;s algorithms.</li>
+                <li>Generate misleading information, deepfakes, or content designed to deceive the public.</li>
               </ul>
-              <p>Kalvix reserves the right to modify, suspend, or stop services at its discretion.</p>
-            </section>
-
-            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <h2
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: isMobile ? '20px' : '24px',
-                  fontWeight: 700,
-                  borderBottom: '2.5px solid var(--color-dark)',
-                  paddingBottom: '6px',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                4. Subscription and Billing
-              </h2>
-              <p>
-                Paid features require a subscription. Fees are charged in advance and renew automatically unless cancelled. Non-payment may lead to suspension or termination.
+              <p style={{ fontWeight: 700 }}>
+                Failure to adhere to this Acceptable Use Policy will result in immediate termination of your account and revocation of API access.
               </p>
             </section>
 
@@ -207,10 +207,36 @@ export default function TermsScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                5. AI Services
+                4. AI-Generated Content
+              </h2>
+              <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <li>
+                  <strong>No Guarantee of Accuracy:</strong> The Service utilizes third-party artificial intelligence models (such as Google Gemini and OpenAI). We do not guarantee the accuracy, reliability, or appropriateness of the generated content.
+                </li>
+                <li>
+                  <strong>User Liability:</strong> You are solely responsible for reviewing all AI-generated text and imagery before publishing it to your social media channels. You assume all liability and responsibility for the content you choose to publish.
+                </li>
+                <li>
+                  <strong>Intellectual Property of Outputs:</strong> While you own the rights to the specific inputs (Brand DNA) you provide, the generated outputs are provided &quot;as-is.&quot; You are responsible for ensuring that the generated outputs do not infringe on existing copyrights before commercial use.
+                </li>
+              </ul>
+            </section>
+
+            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: isMobile ? '20px' : '24px',
+                  fontWeight: 700,
+                  borderBottom: '2.5px solid var(--color-dark)',
+                  paddingBottom: '6px',
+                  alignSelf: 'flex-start',
+                }}
+              >
+                5. Intellectual Property Rights
               </h2>
               <p>
-                You understand that AI-generated outputs may have errors, need human review, and should not be considered legal, financial, medical, or professional advice.
+                Unless otherwise stated, The Kalvix AI and its original content, features, and functionality (excluding user-generated content and third-party AI models) are and will remain the exclusive property of The Kalvix AI and its licensors.
               </p>
             </section>
 
@@ -225,10 +251,33 @@ export default function TermsScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                6. User Content
+                6. Limitation of Liability
               </h2>
               <p>
-                You keep ownership of the content you upload. By uploading, you give Kalvix a limited license to operate and improve services.
+                In no event shall The Kalvix AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:
+              </p>
+              <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <li>Loss of profits, data, use, goodwill, or other intangible losses.</li>
+                <li>Actions taken by Meta (e.g., shadow-banning, account suspension, or API restriction) resulting from the content you publish using our Service.</li>
+                <li>Errors, hallucinations, or copyright infringements present in AI-generated content.</li>
+              </ul>
+            </section>
+
+            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: isMobile ? '20px' : '24px',
+                  fontWeight: 700,
+                  borderBottom: '2.5px solid var(--color-dark)',
+                  paddingBottom: '6px',
+                  alignSelf: 'flex-start',
+                }}
+              >
+                7. Termination
+              </h2>
+              <p>
+                We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms or violate Meta&apos;s Platform Terms. Upon termination, your right to use the Service will immediately cease.
               </p>
             </section>
 
@@ -243,10 +292,10 @@ export default function TermsScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                7. Intellectual Property
+                8. Changes to Terms
               </h2>
               <p>
-                Kalvix owns all rights to its software, APIs, AI models, branding, databases, and proprietary workflows. Nothing in these Terms transfers ownership.
+                We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will provide notice of any significant changes by updating the &quot;Last Updated&quot; date. Your continued use of the Service following the posting of any changes constitutes acceptance of those changes.
               </p>
             </section>
 
@@ -261,88 +310,16 @@ export default function TermsScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                8. Acceptable Use
+                9. Contact Us
               </h2>
-              <p>
-                You agree not to break laws, upload harmful content, infringe on intellectual property, reverse engineer, impersonate others, or abuse the Platform. Violations may result in immediate suspension or termination.
-              </p>
-            </section>
-
-            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <h2
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: isMobile ? '20px' : '24px',
-                  fontWeight: 700,
-                  borderBottom: '2.5px solid var(--color-dark)',
-                  paddingBottom: '6px',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                9. Advertising and Integrations
-              </h2>
-              <p>
-                Kalvix may connect with Meta Ads, Google Ads, and social platforms. Third-party providers decide on campaign approval and costs. Kalvix is not responsible for campaign performance or outages.
-              </p>
-            </section>
-
-            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <h2
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: isMobile ? '20px' : '24px',
-                  fontWeight: 700,
-                  borderBottom: '2.5px solid var(--color-dark)',
-                  paddingBottom: '6px',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                10. Limitation of Liability
-              </h2>
-              <p>
-                Kalvix is not liable for indirect, incidental, or consequential damages. Aggregate liability will not exceed the fees paid in the last 12 months.
-              </p>
-            </section>
-
-            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <h2
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: isMobile ? '20px' : '24px',
-                  fontWeight: 700,
-                  borderBottom: '2.5px solid var(--color-dark)',
-                  paddingBottom: '6px',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                11. Governing Law and Dispute Resolution
-              </h2>
-              <p>
-                These Terms are governed by the laws of India. Disputes will be under the exclusive jurisdiction of the courts in Pune, Maharashtra, India.
-              </p>
-            </section>
-
-            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <h2
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: isMobile ? '20px' : '24px',
-                  fontWeight: 700,
-                  borderBottom: '2.5px solid var(--color-dark)',
-                  paddingBottom: '6px',
-                  alignSelf: 'flex-start',
-                }}
-              >
-                12. Contact Information
-              </h2>
+              <p>If you have any questions about these Terms, please contact us at:</p>
               <p style={{ fontWeight: 700, marginTop: '4px' }}>
-                Kalvix.ai<br />
+                The Kalvix AI<br />
                 Email:{' '}
                 <a href="mailto:legal@kalvix.ai" style={{ color: 'inherit', textDecoration: 'none' }}>
                   legal@kalvix.ai
                 </a>
                 <br />
-                Registered Address: Kalvix Technologies Pvt. Ltd., Pune, Maharashtra, India<br />
                 Website:{' '}
                 <a href="https://kalvix.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                   https://kalvix.ai

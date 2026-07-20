@@ -192,39 +192,41 @@ export function Hero() {
       }}
     >
 
-      {/* ── Animated concentric ring background ────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.85 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          bottom: '-120px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '1100px',
-          height: '1100px',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      >
-        {[0, 80, 160, 240, 320, 400, 480, 560].map((inset, i) => (
-          <div
-            key={i}
-            style={{
-              position: 'absolute',
-              inset: `${inset}px`,
-              borderRadius: '50%',
-              border: '1.5px solid',
-              borderColor:
-                i < 4
-                  ? `rgba(224, 142, 216, ${0.3 - i * 0.05})`
-                  : `rgba(200, 180, 240, ${0.2 - (i - 4) * 0.03})`,
-            }}
-          />
-        ))}
-      </motion.div>
+      {/* ── Animated concentric ring background (Deactivated) ── */}
+      {false && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            bottom: '-120px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '1100px',
+            height: '1100px',
+            pointerEvents: 'none',
+            zIndex: 0,
+          }}
+        >
+          {[0, 80, 160, 240, 320, 400, 480, 560].map((inset, i) => (
+            <div
+              key={i}
+              style={{
+                position: 'absolute',
+                inset: `${inset}px`,
+                borderRadius: '50%',
+                border: '1.5px solid',
+                borderColor:
+                  i < 4
+                    ? `rgba(224, 142, 216, ${0.3 - i * 0.05})`
+                    : `rgba(200, 180, 240, ${0.2 - (i - 4) * 0.03})`,
+              }}
+            />
+          ))}
+        </motion.div>
+      )}
 
       {/* ── Main content ─────────────────────────────────────────────────── */}
       <div
@@ -480,69 +482,71 @@ export function Hero() {
 
       </div>
 
-      {/* ── Pink Radial Video Wrapper ── */}
-      <div style={{
-        width: '100%',
-        position: 'relative',
-        paddingTop: isMobile ? '40px' : '100px',
-        paddingBottom: isMobile ? '60px' : '100px',
-        overflow: 'hidden',
-        marginTop: '20px',
-      }}>
-        {/* Background Layer with fade mask */}
+      {/* ── Pink Radial Video Wrapper (Deactivated) ── */}
+      {false && (
         <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'repeating-radial-gradient(circle at center, #f8e8c1 0px, #fef8e7 12px, #eea0d9 13px, #f6cde0 24px, #f8e8c1 25px)',
-          maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 10%, black 50%, black 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 10%, black 50%, black 100%)',
-          zIndex: 0,
-        }} />
+          width: '100%',
+          position: 'relative',
+          paddingTop: isMobile ? '40px' : '100px',
+          paddingBottom: isMobile ? '60px' : '100px',
+          overflow: 'hidden',
+          marginTop: '20px',
+        }}>
+          {/* Background Layer with fade mask */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'repeating-radial-gradient(circle at center, #f8e8c1 0px, #fef8e7 12px, #eea0d9 13px, #f6cde0 24px, #f8e8c1 25px)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 10%, black 50%, black 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 10%, black 50%, black 100%)',
+            zIndex: 0,
+          }} />
 
-        {/* Circular Video Placeholder */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.78}
-          style={{
-            width: isMobile ? '280px' : isTablet ? '400px' : '520px',
-            height: isMobile ? '280px' : isTablet ? '400px' : '520px',
-            borderRadius: '50%',
-            backgroundColor: 'var(--bg-white-pure)',
-            border: 'var(--border-width) solid var(--color-dark)',
-            overflow: 'hidden',
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: isMobile ? '6px 6px 0 0 var(--color-dark)' : '12px 12px 0 0 var(--color-dark)',
-            margin: '0 auto',
-            zIndex: 2,
-          }}
-        >
-          <div style={{ position: 'absolute', inset: 0, backgroundColor: 'var(--color-dark)', opacity: 0.8, zIndex: 1 }} />
+          {/* Circular Video Placeholder */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.78}
+            style={{
+              width: isMobile ? '280px' : isTablet ? '400px' : '520px',
+              height: isMobile ? '280px' : isTablet ? '400px' : '520px',
+              borderRadius: '50%',
+              backgroundColor: 'var(--bg-white-pure)',
+              border: 'var(--border-width) solid var(--color-dark)',
+              overflow: 'hidden',
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: isMobile ? '6px 6px 0 0 var(--color-dark)' : '12px 12px 0 0 var(--color-dark)',
+              margin: '0 auto',
+              zIndex: 2,
+            }}
+          >
+            <div style={{ position: 'absolute', inset: 0, backgroundColor: 'var(--color-dark)', opacity: 0.8, zIndex: 1 }} />
 
-          <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? '8px' : '16px' }}>
-            <div style={{
-              width: isMobile ? '60px' : '80px', height: isMobile ? '60px' : '80px', borderRadius: '50%', backgroundColor: 'var(--color-pink)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'var(--border-width) solid var(--color-dark)'
-            }}>
-              <svg viewBox="0 0 24 24" width={isMobile ? "24" : "32"} height={isMobile ? "24" : "32"} fill="var(--color-dark)">
-                <path d="M8 5v14l11-7z" />
-              </svg>
+            <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: isMobile ? '8px' : '16px' }}>
+              <div style={{
+                width: isMobile ? '60px' : '80px', height: isMobile ? '60px' : '80px', borderRadius: '50%', backgroundColor: 'var(--color-pink)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'var(--border-width) solid var(--color-dark)'
+              }}>
+                <svg viewBox="0 0 24 24" width={isMobile ? "24" : "32"} height={isMobile ? "24" : "32"} fill="var(--color-dark)">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <span style={{ fontFamily: 'var(--font-satoshi)', fontSize: isMobile ? '14px' : '18px', fontWeight: 900, color: 'var(--bg-cream)', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                Watch Reel
+              </span>
             </div>
-            <span style={{ fontFamily: 'var(--font-satoshi)', fontSize: isMobile ? '14px' : '18px', fontWeight: 900, color: 'var(--bg-cream)', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              Watch Reel
-            </span>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Scallop divider */}
-        <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', zIndex: 10 }}>
-          <div className="scallop-divider-large-up" />
+          {/* Scallop divider */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', zIndex: 10 }}>
+            <div className="scallop-divider-large-up" />
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

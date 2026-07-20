@@ -9,8 +9,6 @@ interface TeamMember {
   sticker: string;
   cardBg: string;
   stickerColor: string;
-  maskElements?: React.ReactNode;
-  maskPath?: string;
   image?: string;
   isHiring?: boolean;
 }
@@ -23,15 +21,6 @@ const TEAM: TeamMember[] = [
     sticker: 'Idea Squeezer',
     cardBg: '#f9e1c3', // Light orange
     stickerColor: '#cfcbff', // Light blue
-    maskElements: (
-      // 4-leaf clover: 4 circles in diagonal 2x2 arrangement
-      <g>
-        <circle cx="34" cy="34" r="27" fill="white" />
-        <circle cx="66" cy="34" r="27" fill="white" />
-        <circle cx="34" cy="66" r="27" fill="white" />
-        <circle cx="66" cy="66" r="27" fill="white" />
-      </g>
-    ),
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
   },
   {
@@ -41,8 +30,6 @@ const TEAM: TeamMember[] = [
     sticker: 'Pixel Wizard',
     cardBg: '#fac2f8', // Pink
     stickerColor: '#bbf1b6', // Light green
-    // 12-point star filling most of 100x100
-    maskPath: 'M50,5 L56,20 L72,14 L66,30 L82,34 L70,46 L82,58 L66,62 L72,78 L56,72 L50,88 L44,72 L28,78 L34,62 L18,58 L30,46 L18,34 L34,30 L28,14 L44,20 Z',
     image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=300&q=80',
   },
   {
@@ -52,8 +39,6 @@ const TEAM: TeamMember[] = [
     sticker: 'Detail Ninja',
     cardBg: '#ccb1f5', // Purple
     stickerColor: '#f9e1c3', // Light orange
-    // Cross/plus shape — expanded to fill 100x100
-    maskPath: 'M32,5 L68,5 L68,32 L95,32 L95,68 L68,68 L68,95 L32,95 L32,68 L5,68 L5,32 L32,32 Z',
     image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80',
   }
 ];
@@ -165,7 +150,7 @@ export function About() {
                   <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                       <mask id={`mask-avatar-${idx}`}>
-                        {member.maskElements ? member.maskElements : <path d={member.maskPath} fill="white" />}
+                        <circle cx="50" cy="50" r="46" fill="white" />
                       </mask>
                     </defs>
                     {member.isHiring ? (

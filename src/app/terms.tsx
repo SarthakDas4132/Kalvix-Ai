@@ -13,78 +13,57 @@ export default function TermsScreen() {
         <View style={styles.card}>
           <Text style={styles.heading}>Terms & Conditions</Text>
           <View style={styles.dateContainer}>
-            <Text style={styles.date}>Effective Date: July 1, 2026</Text>
-            <Text style={styles.date}>Last Updated: July 1, 2026</Text>
+            <Text style={styles.date}>Last Updated: July 17, 2026</Text>
           </View>
 
           <View style={styles.content}>
-            <Text style={styles.sectionTitle}>1. Introduction</Text>
             <Text style={styles.bodyText}>
-              Welcome to Kalvix.ai (“Kalvix”, “Platform”, “Company”, “we”, “our”, or “us”). These Terms and Conditions (“Terms”) govern your access to and use of Kalvix.ai. By accessing or using the Platform, you agree to be legally bound by these Terms.
+              {"Welcome to The Kalvix AI (\"we\", \"our\", \"us\"). By accessing or using our application, website, and associated services (collectively, the \"Service\"), you agree to be bound by these Terms and Conditions (\"Terms\"). If you do not agree with any part of these Terms, you must not use our Service."}
             </Text>
 
-            <Text style={styles.sectionTitle}>2. Eligibility</Text>
+            <Text style={styles.sectionTitle}>1. Description of Service</Text>
             <Text style={styles.bodyText}>
-              • You must be at least eighteen (18) years old.{"\n"}
-              • If you register on behalf of a company, you confirm you have the authority to bind that entity.
+              {"The Kalvix AI provides an AI-powered content marketing platform that enables users to generate branding materials, textual content, and imagery, and schedule/publish this content directly to connected third-party social media platforms, including Meta (Facebook and Instagram)."}
             </Text>
 
-            <Text style={styles.sectionTitle}>3. Services</Text>
+            <Text style={styles.sectionTitle}>2. User Accounts and Third-Party Integrations</Text>
             <Text style={styles.bodyText}>
-              Kalvix.ai provides AI-powered marketing and business growth solutions, including:{"\n"}
-              • AI Content Studio, Image/Video Generation{"\n"}
-              • AI Copywriting, Caption/Hashtag Generation{"\n"}
-              • Cross-Platform Publishing{"\n"}
-              • Creator Marketplace & Influencer Discovery{"\n"}
-              • CRM, Automation, and Analytics Dashboard
+              {"• Account Responsibility: You are responsible for safeguarding your account credentials and for all activities that occur under your account.\n• Meta Integration: To utilize publishing features, you must link your Facebook and/or Instagram accounts. By doing so, you agree to comply strictly with the Meta Platform Terms and Community Standards. We reserve the right to suspend your account if your linked Meta profiles are found to be violating these terms.\n• Permissions: You grant us permission to access, store (temporarily), and transmit your Meta Page tokens and relevant media solely for the purpose of executing the publishing actions you initiate."}
             </Text>
 
-            <Text style={styles.sectionTitle}>4. Subscription and Billing</Text>
+            <Text style={styles.sectionTitle}>3. Acceptable Use Policy</Text>
             <Text style={styles.bodyText}>
-              Paid features require a subscription. Fees are charged in advance and renew automatically.
+              {"You agree not to use the Service to:\n• Generate, publish, or distribute content that is illegal, defamatory, harassing, abusive, obscene, or discriminatory.\n• Violate any third-party intellectual property rights, copyrights, or trademarks.\n• Automate spam, artificially inflate engagement metrics, or manipulate Meta's algorithms.\n• Generate misleading information, deepfakes, or content designed to deceive the public.\n\nFailure to adhere to this Acceptable Use Policy will result in immediate termination of your account and revocation of API access."}
             </Text>
 
-            <Text style={styles.sectionTitle}>5. AI Services</Text>
+            <Text style={styles.sectionTitle}>4. AI-Generated Content</Text>
             <Text style={styles.bodyText}>
-              AI-generated outputs may have errors and should not be considered professional advice.
+              {"• No Guarantee of Accuracy: The Service utilizes third-party artificial intelligence models (such as Google Gemini and OpenAI). We do not guarantee the accuracy, reliability, or appropriateness of the generated content.\n• User Liability: You are solely responsible for reviewing all AI-generated text and imagery before publishing it to your social media channels. You assume all liability and responsibility for the content you choose to publish.\n• Intellectual Property of Outputs: While you own the rights to the specific inputs (Brand DNA) you provide, the generated outputs are provided \"as-is.\" You are responsible for ensuring that the generated outputs do not infringe on existing copyrights before commercial use."}
             </Text>
 
-            <Text style={styles.sectionTitle}>6. User Content</Text>
+            <Text style={styles.sectionTitle}>5. Intellectual Property Rights</Text>
             <Text style={styles.bodyText}>
-              You keep ownership of the content you upload, granting us a limited license to operate the services.
+              {"Unless otherwise stated, The Kalvix AI and its original content, features, and functionality (excluding user-generated content and third-party AI models) are and will remain the exclusive property of The Kalvix AI and its licensors."}
             </Text>
 
-            <Text style={styles.sectionTitle}>7. Intellectual Property</Text>
+            <Text style={styles.sectionTitle}>6. Limitation of Liability</Text>
             <Text style={styles.bodyText}>
-              Kalvix owns all rights to its software, APIs, AI models, branding, and proprietary workflows.
+              {"In no event shall The Kalvix AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:\n• Loss of profits, data, use, goodwill, or other intangible losses.\n• Actions taken by Meta (e.g., shadow-banning, account suspension, or API restriction) resulting from the content you publish using our Service.\n• Errors, hallucinations, or copyright infringements present in AI-generated content."}
             </Text>
 
-            <Text style={styles.sectionTitle}>8. Acceptable Use</Text>
+            <Text style={styles.sectionTitle}>7. Termination</Text>
             <Text style={styles.bodyText}>
-              You agree not to break laws, reverse engineer, or abuse the Platform.
+              {"We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms or violate Meta's Platform Terms. Upon termination, your right to use the Service will immediately cease."}
             </Text>
 
-            <Text style={styles.sectionTitle}>9. Advertising and Integrations</Text>
+            <Text style={styles.sectionTitle}>8. Changes to Terms</Text>
             <Text style={styles.bodyText}>
-              Kalvix connects with third-party social and ad platforms. Kalvix is not responsible for campaign performance.
+              {"We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will provide notice of any significant changes by updating the \"Last Updated\" date. Your continued use of the Service following the posting of any changes constitutes acceptance of those changes."}
             </Text>
 
-            <Text style={styles.sectionTitle}>10. Limitation of Liability</Text>
-            <Text style={styles.bodyText}>
-              Kalvix is not liable for indirect, incidental, or consequential damages.
-            </Text>
-
-            <Text style={styles.sectionTitle}>11. Governing Law</Text>
-            <Text style={styles.bodyText}>
-              These Terms are governed by India laws under the exclusive jurisdiction of the Pune, Maharashtra courts.
-            </Text>
-
-            <Text style={styles.sectionTitle}>12. Contact Information</Text>
+            <Text style={styles.sectionTitle}>9. Contact Us</Text>
             <Text style={[styles.bodyText, { fontWeight: 'bold' }]}>
-              Kalvix.ai{"\n"}
-              Email: legal@kalvix.ai{"\n"}
-              Registered Address: Kalvix Technologies Pvt. Ltd., Pune, Maharashtra, India{"\n"}
-              Website: https://kalvix.ai
+              {"The Kalvix AI\nEmail: legal@kalvix.ai\nWebsite: https://kalvix.ai"}
             </Text>
           </View>
         </View>
