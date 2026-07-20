@@ -218,7 +218,7 @@ export function WhyUs() {
                   display: 'inline-block',
                 }}
               />
-              Why Kalvix.ai
+              Why Mauxis.ai
             </span>
           </motion.div>
 

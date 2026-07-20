@@ -116,7 +116,7 @@ export default function PrivacyPolicyScreenWeb() {
             }}
           >
             <p>
-              The Kalvix AI (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by The Kalvix AI. This policy applies specifically to the services we offer through our application, including our integrations with Meta platforms (Facebook and Instagram).
+              The Mauxis AI (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by The Mauxis AI. This policy applies specifically to the services we offer through our application, including our integrations with Meta platforms (Facebook and Instagram).
             </p>
 
             <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -209,9 +209,9 @@ export default function PrivacyPolicyScreenWeb() {
               <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <li>Log in to your Facebook account and go to <strong>Settings & Privacy</strong> &gt; <strong>Settings</strong>.</li>
                 <li>Navigate to <strong>Apps and Websites</strong> in the left-hand menu.</li>
-                <li>Find <strong>The Kalvix AI</strong> in the list of active apps.</li>
+                <li>Find <strong>The Mauxis AI</strong> in the list of active apps.</li>
                 <li>Click <strong>Remove</strong> and confirm the removal.</li>
-                <li>To ensure all your data is entirely wiped from our servers, please send a data deletion request to <a href="mailto:legal@kalvix.ai" style={{ color: 'inherit', fontWeight: 700 }}>legal@kalvix.ai</a> with the subject line &quot;Data Deletion Request&quot;. We will process your request within 7 days.</li>
+                <li>To ensure all your data is entirely wiped from our servers, please send a data deletion request to <a href="mailto:legal@mauxis.ai" style={{ color: 'inherit', fontWeight: 700 }}>legal@mauxis.ai</a> with the subject line &quot;Data Deletion Request&quot;. We will process your request within 7 days.</li>
               </ol>
             </section>
 
@@ -266,15 +266,15 @@ export default function PrivacyPolicyScreenWeb() {
               </h2>
               <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
               <p style={{ fontWeight: 700, marginTop: '4px' }}>
-                The Kalvix AI<br />
+                The Mauxis AI<br />
                 Email:{' '}
-                <a href="mailto:legal@kalvix.ai" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  legal@kalvix.ai
+                <a href="mailto:legal@mauxis.ai" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  legal@mauxis.ai
                 </a>
                 <br />
                 Website:{' '}
-                <a href="https://kalvix.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                  https://kalvix.ai
+                <a href="https://mauxis.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  https://mauxis.ai
                 </a>
               </p>
             </section>

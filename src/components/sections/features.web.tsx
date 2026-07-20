@@ -526,7 +526,7 @@ export function Features() {
               lineHeight: 1.6,
             }}
           >
-            Most businesses use 5–10 different tools to manage marketing and sales, Kalvix brings everything together into one intelligent growth platform.
+            Most businesses use 5–10 different tools to manage marketing and sales, Mauxis brings everything together into one intelligent growth platform.
           </p>
         </div>
 

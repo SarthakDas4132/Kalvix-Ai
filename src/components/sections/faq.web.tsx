@@ -7,53 +7,53 @@ import { TextReveal } from '../ui/text-reveal.web';
 const FAQS = [
   {
     id: 1,
-    question: "What can I do with Kalvix.ai?",
-    answer: "Kalvix is an AI-powered Growth Operating System that helps businesses create content, publish across social platforms, run Meta & Google Ads, manage leads, automate follow-ups, track sales and collaborate with influencers—all from one dashboard."
+    question: "What can I do with Mauxis.ai?",
+    answer: "Mauxis is an AI-powered Growth Operating System that helps businesses create content, publish across social platforms, run Meta & Google Ads, manage leads, automate follow-ups, track sales and collaborate with influencers—all from one dashboard."
   },
   {
     id: 2,
-    question: "Which social media platforms does Kalvix support?",
-    answer: "Kalvix supports Instagram, Facebook, LinkedIn, X (Twitter), YouTube, TikTok, Pinterest and more. You can publish, schedule and manage content across multiple platforms from a single content calendar."
+    question: "Which social media platforms does Mauxis support?",
+    answer: "Mauxis supports Instagram, Facebook, LinkedIn, X (Twitter), YouTube, TikTok, Pinterest and more. You can publish, schedule and manage content across multiple platforms from a single content calendar."
   },
   {
     id: 3,
-    question: "Can Kalvix create content using AI?",
-    answer: "Yes. Kalvix can generate images, videos, captions, hashtags, ad creatives and marketing copy using AI. Simply describe your campaign and let Kalvix create content tailored to your brand."
+    question: "Can Mauxis create content using AI?",
+    answer: "Yes. Mauxis can generate images, videos, captions, hashtags, ad creatives and marketing copy using AI. Simply describe your campaign and let Mauxis create content tailored to your brand."
   },
   {
     id: 4,
-    question: "Does Kalvix support Meta and Google Ads?",
-    answer: "Absolutely. You can create, launch and manage Meta Ads and Google Ads directly from Kalvix without navigating complex advertising dashboards. AI recommendations help optimize targeting, budgets and performance."
+    question: "Does Mauxis support Meta and Google Ads?",
+    answer: "Absolutely. You can create, launch and manage Meta Ads and Google Ads directly from Mauxis without navigating complex advertising dashboards. AI recommendations help optimize targeting, budgets and performance."
   },
   {
     id: 5,
     question: "How does the AI CRM work?",
-    answer: "Kalvix automatically captures leads from forms, ads, websites, social media and WhatsApp. Leads are organized, scored, tracked and moved through your sales pipeline with AI-powered automation."
+    answer: "Mauxis automatically captures leads from forms, ads, websites, social media and WhatsApp. Leads are organized, scored, tracked and moved through your sales pipeline with AI-powered automation."
   },
   {
     id: 6,
-    question: "Can Kalvix automate WhatsApp, SMS and follow-ups?",
-    answer: "Yes. Kalvix helps automate customer communication through WhatsApp, SMS, email and AI-powered workflows, ensuring every lead receives timely follow-ups without manual effort."
+    question: "Can Mauxis automate WhatsApp, SMS and follow-ups?",
+    answer: "Yes. Mauxis helps automate customer communication through WhatsApp, SMS, email and AI-powered workflows, ensuring every lead receives timely follow-ups without manual effort."
   },
   {
     id: 7,
-    question: "How does Influencer Marketing work on Kalvix?",
-    answer: "Businesses can discover creators based on niche, audience size, engagement, location and budget. Kalvix helps manage outreach, collaborations, contracts, payments and campaign performance from one platform."
+    question: "How does Influencer Marketing work on Mauxis?",
+    answer: "Businesses can discover creators based on niche, audience size, engagement, location and budget. Mauxis helps manage outreach, collaborations, contracts, payments and campaign performance from one platform."
   },
   {
     id: 8,
-    question: "Can I manage my sales team inside Kalvix?",
-    answer: "Yes. Kalvix includes pipeline management, sales tracking, lead assignments, activity monitoring, conversion reporting and performance dashboards to help teams close more deals."
+    question: "Can I manage my sales team inside Mauxis?",
+    answer: "Yes. Mauxis includes pipeline management, sales tracking, lead assignments, activity monitoring, conversion reporting and performance dashboards to help teams close more deals."
   },
   {
     id: 9,
     question: "Do I need multiple subscriptions for different tools?",
-    answer: "No. Kalvix combines content creation, publishing, advertising, CRM, automation, influencer marketing and analytics into one platform, reducing the need for multiple software subscriptions."
+    answer: "No. Mauxis combines content creation, publishing, advertising, CRM, automation, influencer marketing and analytics into one platform, reducing the need for multiple software subscriptions."
   },
   {
     id: 10,
-    question: "Who is Kalvix built for?",
-    answer: "Kalvix is designed for agencies, ecommerce brands, real estate businesses, healthcare providers, educational institutions, local businesses, startups and growth-focused teams looking to scale efficiently."
+    question: "Who is Mauxis built for?",
+    answer: "Mauxis is designed for agencies, ecommerce brands, real estate businesses, healthcare providers, educational institutions, local businesses, startups and growth-focused teams looking to scale efficiently."
   }
 ];
 
@@ -266,7 +266,7 @@ export function FAQ() {
                 lineHeight: 1.6,
               }}
             >
-              Our team is happy to help you understand how Kalvix can fit your business and growth goals.
+              Our team is happy to help you understand how Mauxis can fit your business and growth goals.
             </p>
             <div
               style={{

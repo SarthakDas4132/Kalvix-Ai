@@ -11,7 +11,7 @@ export default function HomeScreen() {
           <View style={styles.logoPill}>
             <Text style={styles.logoText}>K</Text>
           </View>
-          <Text style={styles.brandTitle}>Kalvix.ai</Text>
+          <Text style={styles.brandTitle}>Mauxis.ai</Text>
         </View>
 
         {/* Hero Info */}
@@ -53,7 +53,7 @@ export default function HomeScreen() {
 
         {/* Contact Info Footer */}
         <View style={styles.footer}>
-          <Text style={styles.footerText}>© 2026 Kalvix.ai Creative Agency</Text>
+          <Text style={styles.footerText}>© 2026 Mauxis.ai Creative Agency</Text>
           <Text style={styles.footerSubText}>Pune, MH • jmdsolutionbeyond@gmail.com</Text>
         </View>
       </ScrollView>

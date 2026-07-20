@@ -1,6 +1,6 @@
-# Kalvix.ai Marketing Website (v1) 👋
+# Mauxis.ai Marketing Website (v1) 👋
 
-Welcome to the **Kalvix.ai** marketing landing page codebase. This project features a universal design combining high-contrast **Neo-Brutalist** aesthetics with smooth, Framer-style scroll interactions, custom timeline stepper processes, comparison matrices, and fully responsive layouts optimized for all viewport sizes (desktop, tablet, and mobile).
+Welcome to the **Mauxis.ai** marketing landing page codebase. This project features a universal design combining high-contrast **Neo-Brutalist** aesthetics with smooth, Framer-style scroll interactions, custom timeline stepper processes, comparison matrices, and fully responsive layouts optimized for all viewport sizes (desktop, tablet, and mobile).
 
 ---
 

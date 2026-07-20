@@ -11,7 +11,7 @@ function ConnectIllustration() {
     <svg viewBox="-25 -25 310 270" style={{ width: '100%', height: '100%', maxWidth: '260px', maxHeight: '100%' }} fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Central Agenius node */}
       <circle cx="130" cy="110" r="36" fill="var(--color-yellow)" stroke="var(--color-dark)" strokeWidth="2.5" />
-      <text x="130" y="106" textAnchor="middle" fontFamily="var(--font-oswald)" fontWeight="800" fontSize="10" fill="var(--color-dark)">Kalvix.ai</text>
+      <text x="130" y="106" textAnchor="middle" fontFamily="var(--font-oswald)" fontWeight="800" fontSize="10" fill="var(--color-dark)">Mauxis.ai</text>
       <text x="130" y="120" textAnchor="middle" fontFamily="var(--font-oswald)" fontWeight="700" fontSize="9" fill="var(--color-dark)" opacity="0.6">Dashboard</text>
 
       {/* Connection lines */}
@@ -513,7 +513,7 @@ export function Process() {
                 margin: '16px auto 0',
                 lineHeight: 1.6,
               }}>
-                From your first campaign to automated lead generation and sales growth, Kalvix helps you launch, manage, and scale from one platform.
+                From your first campaign to automated lead generation and sales growth, Mauxis helps you launch, manage, and scale from one platform.
               </p>
             </ScrollReveal>
           </div>

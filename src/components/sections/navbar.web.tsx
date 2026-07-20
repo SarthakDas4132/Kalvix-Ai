@@ -153,8 +153,8 @@ export function Navbar() {
                 }}
               >
                 <img
-                  src={require('../../../assets/images/Kalvix.ai logo.png')}
-                  alt="Kalvix.ai Logo"
+                  src={require('../../../assets/images/Mauxis logo.png')}
+                  alt="Mauxis.ai Logo"
                   style={{
                     width: '200%',
                     height: '200%',
@@ -163,7 +163,7 @@ export function Navbar() {
                   }}
                 />
               </div>
-              <span>Kalvix.ai</span>
+              <span>Mauxis.ai</span>
             </a>
 
             {/* Desktop Nav Links */}

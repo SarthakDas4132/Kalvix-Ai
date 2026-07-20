@@ -16,7 +16,7 @@ const CASES = [
     tagColor: 'var(--color-dark)',
     platforms: ['IG', 'TT', 'YT'],
     challenge: 'Nova was posting manually across 3 platforms, missing peak times and spending 6+ hours a week on scheduling.',
-    result: 'Using Kalvix.ai campaign automation and creator discovery, they scaled to 7 platforms, partnered with 14 micro-influencers and tripled their reach in 60 days.',
+    result: 'Using Mauxis.ai campaign automation and creator discovery, they scaled to 7 platforms, partnered with 14 micro-influencers and tripled their reach in 60 days.',
     stats: [
       { value: '3.1M', label: 'Total Reach' },
       { value: '14', label: 'Creators Linked' },
@@ -67,7 +67,7 @@ const CASES = [
     tagColor: 'var(--color-dark)',
     platforms: ['YT', 'IG', 'LI'],
     challenge: 'Peak had ad budgets spread across Meta and Google with no unified view of ROAS, and a CRM running on spreadsheets.',
-    result: 'Kalvix.ai connected both ad accounts, auto-tracked conversions and moved leads into a structured AI CRM pipeline — cutting CAC by 38%.',
+    result: 'Mauxis.ai connected both ad accounts, auto-tracked conversions and moved leads into a structured AI CRM pipeline — cutting CAC by 38%.',
     stats: [
       { value: '−38%', label: 'Cost Per Acquisition' },
       { value: '4.8×', label: 'ROAS' },
@@ -81,7 +81,7 @@ const CASES = [
         {/* Header bar */}
         <rect x="20" y="10" width="240" height="30" rx="16" fill="var(--color-dark)" />
         <rect x="20" y="30" width="240" height="10" fill="var(--color-dark)" />
-        <text x="140" y="30" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="10" fill="var(--bg-cream)">kalvix.ai / ads-dashboard</text>
+        <text x="140" y="30" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="10" fill="var(--bg-cream)">mauxis.ai / ads-dashboard</text>
         {/* Stat pills */}
         <rect x="30" y="50" width="60" height="36" rx="10" fill="var(--color-blue)" stroke="var(--color-dark)" strokeWidth="1.5" />
         <text x="60" y="66" textAnchor="middle" fontFamily="monospace" fontWeight="800" fontSize="13" fill="var(--color-dark)">4.8×</text>
@@ -114,7 +114,7 @@ const CASES = [
     tagColor: 'var(--color-dark)',
     platforms: ['IG', 'TT', 'FB'],
     challenge: 'Midas needed to partner with luxury lifestyle creators but had no efficient way to vet, outreach, sign contracts and pay them.',
-    result: 'With Kalvix.ai creator discovery + contract + payment workflow, they signed 6 influencer deals and went live in under a week — something that used to take a month.',
+    result: 'With Mauxis.ai creator discovery + contract + payment workflow, they signed 6 influencer deals and went live in under a week — something that used to take a month.',
     stats: [
       { value: '6', label: 'Deals Signed' },
       { value: '< 1wk', label: 'Time to Go Live' },
@@ -165,7 +165,7 @@ const CASES = [
     tagColor: 'var(--color-dark)',
     platforms: ['LI', 'YT', 'X'],
     challenge: 'SolarCycle had inconsistent posting and zero analytics visibility. Their LinkedIn and YouTube lived in completely separate workflows.',
-    result: 'Kalvix.ai unified all channels, automated weekly content publishing and surfaced unified analytics — growing LinkedIn followers 4× in 90 days.',
+    result: 'Mauxis.ai unified all channels, automated weekly content publishing and surfaced unified analytics — growing LinkedIn followers 4× in 90 days.',
     stats: [
       { value: '4×', label: 'LinkedIn Growth' },
       { value: '90', label: 'Days' },
@@ -290,7 +290,7 @@ export function Portfolio() {
                 margin: '16px auto 0',
                 lineHeight: 1.6,
               }}>
-                See how teams use Kalvix.ai to grow faster, save time and run campaigns that actually convert.
+                See how teams use Mauxis.ai to grow faster, save time and run campaigns that actually convert.
               </p>
             </ScrollReveal>
           </div>

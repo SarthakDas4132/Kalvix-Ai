@@ -116,7 +116,7 @@ export default function TermsScreenWeb() {
             }}
           >
             <p>
-              Welcome to The Kalvix AI (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). By accessing or using our application, website, and associated services (collectively, the &quot;Service&quot;), you agree to be bound by these Terms and Conditions (&quot;Terms&quot;). If you do not agree with any part of these Terms, you must not use our Service.
+              Welcome to The Mauxis AI (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). By accessing or using our application, website, and associated services (collectively, the &quot;Service&quot;), you agree to be bound by these Terms and Conditions (&quot;Terms&quot;). If you do not agree with any part of these Terms, you must not use our Service.
             </p>
 
             <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -133,7 +133,7 @@ export default function TermsScreenWeb() {
                 1. Description of Service
               </h2>
               <p>
-                The Kalvix AI provides an AI-powered content marketing platform that enables users to generate branding materials, textual content, and imagery, and schedule/publish this content directly to connected third-party social media platforms, including Meta (Facebook and Instagram).
+                The Mauxis AI provides an AI-powered content marketing platform that enables users to generate branding materials, textual content, and imagery, and schedule/publish this content directly to connected third-party social media platforms, including Meta (Facebook and Instagram).
               </p>
             </section>
 
@@ -236,7 +236,7 @@ export default function TermsScreenWeb() {
                 5. Intellectual Property Rights
               </h2>
               <p>
-                Unless otherwise stated, The Kalvix AI and its original content, features, and functionality (excluding user-generated content and third-party AI models) are and will remain the exclusive property of The Kalvix AI and its licensors.
+                Unless otherwise stated, The Mauxis AI and its original content, features, and functionality (excluding user-generated content and third-party AI models) are and will remain the exclusive property of The Mauxis AI and its licensors.
               </p>
             </section>
 
@@ -254,7 +254,7 @@ export default function TermsScreenWeb() {
                 6. Limitation of Liability
               </h2>
               <p>
-                In no event shall The Kalvix AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:
+                In no event shall The Mauxis AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:
               </p>
               <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <li>Loss of profits, data, use, goodwill, or other intangible losses.</li>
@@ -314,15 +314,15 @@ export default function TermsScreenWeb() {
               </h2>
               <p>If you have any questions about these Terms, please contact us at:</p>
               <p style={{ fontWeight: 700, marginTop: '4px' }}>
-                The Kalvix AI<br />
+                The Mauxis AI<br />
                 Email:{' '}
-                <a href="mailto:legal@kalvix.ai" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  legal@kalvix.ai
+                <a href="mailto:legal@mauxis.ai" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  legal@mauxis.ai
                 </a>
                 <br />
                 Website:{' '}
-                <a href="https://kalvix.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                  https://kalvix.ai
+                <a href="https://mauxis.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  https://mauxis.ai
                 </a>
               </p>
             </section>

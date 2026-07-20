@@ -313,7 +313,7 @@ export function Hero() {
               userSelect: 'none',
             }}
           >
-            Kalvix.ai
+            Mauxis.ai
           </TextReveal>
 
           {/* Sticker 1 — left (AI-Powered) — pops in at 0.55s */}

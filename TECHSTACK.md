@@ -1,4 +1,4 @@
-# Tech Stack — Kalvix.ai Marketing Website (v1)
+# Tech Stack — Mauxis.ai Marketing Website (v1)
 
 A full reference of every technology, library, and design decision used in this project. Update this file whenever a new dependency is added or removed.
 

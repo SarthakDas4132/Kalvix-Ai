@@ -217,7 +217,7 @@ export function Services() {
                 lineHeight: 1.6,
               }}
             >
-              From content creation to customer acquisition, sales automation and creator partnerships, Kalvix brings your entire growth engine into one AI-powered platform.
+              From content creation to customer acquisition, sales automation and creator partnerships, Mauxis brings your entire growth engine into one AI-powered platform.
             </p>
           </div>
 

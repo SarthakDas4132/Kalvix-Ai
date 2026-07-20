@@ -188,7 +188,7 @@ export function Comparison() {
                 margin: '0 auto',
               }}
             >
-              {"Why switch to\nKalvix.ai?"}
+              {"Why switch to\nMauxis.ai?"}
             </TextReveal>
             <ScrollReveal delay={200}>
               <p style={{
@@ -200,7 +200,7 @@ export function Comparison() {
                 margin: '16px auto 0',
                 lineHeight: 1.6,
               }}>
-                Compare what you're paying for today vs. what Kalvix.ai gives you — in one subscription.
+                Compare what you're paying for today vs. what Mauxis.ai gives you — in one subscription.
               </p>
             </ScrollReveal>
           </div>
@@ -237,7 +237,7 @@ export function Comparison() {
                     textAlign: 'center',
                   }}
                 >
-                  Kalvix AI Growth OS
+                  Mauxis AI Growth OS
                 </TextReveal>
               </div>
             </div>
@@ -359,7 +359,7 @@ export function Comparison() {
                 </div>
               </div>
 
-              {/* Right — Kalvix.ai */}
+              {/* Right — Mauxis.ai */}
               <div
                 style={{
                   border: '2.5px solid var(--color-dark)',
@@ -372,7 +372,7 @@ export function Comparison() {
               >
                 <div style={{ padding: '8px 0 16px 0', textAlign: 'center' }}>
                   <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', fontWeight: 800, color: '#26091c', margin: 0 }}>
-                    Kalvix.ai
+                    Mauxis.ai
                   </h3>
                   <div style={{ height: '2.5px', backgroundColor: 'var(--color-dark)', marginTop: '12px' }} />
                 </div>
@@ -483,7 +483,7 @@ export function Comparison() {
                     </div>
                   </motion.div>
 
-                  {/* Right — Kalvix.ai */}
+                  {/* Right — Mauxis.ai */}
                   <motion.div
                     onHoverStart={() => setHoveredRow(i)}
                     onHoverEnd={() => setHoveredRow(null)}
