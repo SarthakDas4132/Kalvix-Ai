@@ -350,7 +350,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Giant bottom word mark "MAUXIS" - fills container width edge-to-edge like agenius reference site */}
+        {/* Giant bottom word mark "M-AUXIS" - fills container width edge-to-edge like agenius reference site */}
         <div
           style={{
             position: 'absolute',
@@ -381,11 +381,11 @@ export function Footer() {
               letterSpacing: '-0.02em',
             }}
           >
-            MAUXIS
+            M-AUXIS
           </span>
         </div>
 
-        {/* Bottom copyright and metadata info overlaid at the bottom - sits over the MAUXIS watermark */}
+        {/* Bottom copyright and metadata info overlaid at the bottom - sits over the M-AUXIS watermark */}
         <div
           style={{
             position: 'absolute',
@@ -405,7 +405,7 @@ export function Footer() {
           }}
         >
           <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap', justifyContent: isMobile ? 'center' : 'flex-start' }}>
-            <span>© 2026 Mauxis.ai. All rights reserved.</span>
+            <span>© 2026 M-Auxis. All rights reserved.</span>
             <span>•</span>
             <Link
               href="/terms"

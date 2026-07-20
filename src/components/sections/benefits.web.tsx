@@ -201,7 +201,7 @@ export function Benefits() {
                 className="badge-sticker pink"
                 style={{ display: 'inline-flex', marginBottom: '20px', transform: 'rotate(3deg)', color: 'var(--color-dark)' }}
               >
-                Why Mauxis.ai
+                Why M-Auxis
               </div>
             </ScrollReveal>
             <TextReveal
@@ -233,7 +233,7 @@ export function Benefits() {
                   lineHeight: 1.65,
                 }}
               >
-                Mauxis.ai replaces your scheduling tool, creator marketplace, CRM, ad manager and payment platform — in one subscription.
+                M-Auxis replaces your scheduling tool, creator marketplace, CRM, ad manager and payment platform — in one subscription.
               </p>
             </ScrollReveal>
           </div>
@@ -464,7 +464,7 @@ export function Benefits() {
                     marginBottom: '14px',
                   }}
                 >
-                  ✕ Without Mauxis.ai
+                  ✕ Without M-Auxis
                 </div>
                 {[
                   'Buffer / Hootsuite for scheduling',
@@ -531,7 +531,7 @@ export function Benefits() {
                     textAlign: isMobile || isTablet ? 'left' : 'right',
                   }}
                 >
-                  ✓ With Mauxis.ai
+                  ✓ With M-Auxis
                 </div>
                 {[
                   'Schedule to every platform in one click',

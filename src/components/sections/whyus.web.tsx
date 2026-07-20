@@ -218,7 +218,7 @@ export function WhyUs() {
                   display: 'inline-block',
                 }}
               />
-              Why Mauxis.ai
+              Why M-Auxis
             </span>
           </motion.div>
 

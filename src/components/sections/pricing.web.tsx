@@ -187,7 +187,7 @@ export function Pricing() {
                 margin: '0 auto',
               }}
             >
-              {"Scale with Mauxis AI"}
+              {"Scale with M-Auxis AI"}
             </TextReveal>
           </div>
 

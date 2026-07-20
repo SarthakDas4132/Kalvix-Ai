@@ -7,7 +7,7 @@ export default function TermsScreen() {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.header}>
-          <Text style={styles.brandTitle}>Mauxis.ai</Text>
+          <Text style={styles.brandTitle}>M-Auxis</Text>
         </View>
 
         <View style={styles.card}>
@@ -18,12 +18,12 @@ export default function TermsScreen() {
 
           <View style={styles.content}>
             <Text style={styles.bodyText}>
-              {"Welcome to The Mauxis AI (\"we\", \"our\", \"us\"). By accessing or using our application, website, and associated services (collectively, the \"Service\"), you agree to be bound by these Terms and Conditions (\"Terms\"). If you do not agree with any part of these Terms, you must not use our Service."}
+              {"Welcome to The M-Auxis AI (\"we\", \"our\", \"us\"). By accessing or using our application, website, and associated services (collectively, the \"Service\"), you agree to be bound by these Terms and Conditions (\"Terms\"). If you do not agree with any part of these Terms, you must not use our Service."}
             </Text>
 
             <Text style={styles.sectionTitle}>1. Description of Service</Text>
             <Text style={styles.bodyText}>
-              {"The Mauxis AI provides an AI-powered content marketing platform that enables users to generate branding materials, textual content, and imagery, and schedule/publish this content directly to connected third-party social media platforms, including Meta (Facebook and Instagram)."}
+              {"The M-Auxis AI provides an AI-powered content marketing platform that enables users to generate branding materials, textual content, and imagery, and schedule/publish this content directly to connected third-party social media platforms, including Meta (Facebook and Instagram)."}
             </Text>
 
             <Text style={styles.sectionTitle}>2. User Accounts and Third-Party Integrations</Text>
@@ -43,12 +43,12 @@ export default function TermsScreen() {
 
             <Text style={styles.sectionTitle}>5. Intellectual Property Rights</Text>
             <Text style={styles.bodyText}>
-              {"Unless otherwise stated, The Mauxis AI and its original content, features, and functionality (excluding user-generated content and third-party AI models) are and will remain the exclusive property of The Mauxis AI and its licensors."}
+              {"Unless otherwise stated, The M-Auxis AI and its original content, features, and functionality (excluding user-generated content and third-party AI models) are and will remain the exclusive property of The M-Auxis AI and its licensors."}
             </Text>
 
             <Text style={styles.sectionTitle}>6. Limitation of Liability</Text>
             <Text style={styles.bodyText}>
-              {"In no event shall The Mauxis AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:\n• Loss of profits, data, use, goodwill, or other intangible losses.\n• Actions taken by Meta (e.g., shadow-banning, account suspension, or API restriction) resulting from the content you publish using our Service.\n• Errors, hallucinations, or copyright infringements present in AI-generated content."}
+              {"In no event shall The M-Auxis AI, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:\n• Loss of profits, data, use, goodwill, or other intangible losses.\n• Actions taken by Meta (e.g., shadow-banning, account suspension, or API restriction) resulting from the content you publish using our Service.\n• Errors, hallucinations, or copyright infringements present in AI-generated content."}
             </Text>
 
             <Text style={styles.sectionTitle}>7. Termination</Text>
@@ -63,7 +63,7 @@ export default function TermsScreen() {
 
             <Text style={styles.sectionTitle}>9. Contact Us</Text>
             <Text style={[styles.bodyText, { fontWeight: 'bold' }]}>
-              {"The Mauxis AI\nEmail: legal@mauxis.ai\nWebsite: https://mauxis.ai"}
+              {"The M-Auxis AI\nEmail: legal@m-auxis.ai\nWebsite: https://m-auxis.ai"}
             </Text>
           </View>
         </View>

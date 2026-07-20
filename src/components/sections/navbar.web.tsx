@@ -153,8 +153,8 @@ export function Navbar() {
                 }}
               >
                 <img
-                  src={require('../../../assets/images/Mauxis logo.png')}
-                  alt="Mauxis.ai Logo"
+                  src={require('../../../assets/images/M-Auxis logo.png')}
+                  alt="M-Auxis logo"
                   style={{
                     width: '200%',
                     height: '200%',
@@ -163,7 +163,7 @@ export function Navbar() {
                   }}
                 />
               </div>
-              <span>Mauxis.ai</span>
+              <span>M-Auxis</span>
             </a>
 
             {/* Desktop Nav Links */}

@@ -6,7 +6,7 @@ import { TextReveal } from '../ui/text-reveal.web';
 
 const TEXT_TESTIMONIALS = [
   {
-    quote: "The team at Mauxis.ai is incredibly creative, and just fun to talk to. They totally got our brand from day one.",
+    quote: "The team at M-Auxis is incredibly creative, and just fun to talk to. They totally got our brand from day one.",
     author: "Founder, GreenSpark Innovations",
     color: 'var(--color-pink)',
   },

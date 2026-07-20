@@ -313,7 +313,7 @@ export function Hero() {
               userSelect: 'none',
             }}
           >
-            Mauxis.ai
+            M-Auxis
           </TextReveal>
 
           {/* Sticker 1 — left (AI-Powered) — pops in at 0.55s */}

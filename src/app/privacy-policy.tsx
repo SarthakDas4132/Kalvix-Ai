@@ -7,7 +7,7 @@ export default function PrivacyPolicyScreen() {
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.header}>
-          <Text style={styles.brandTitle}>Mauxis.ai</Text>
+          <Text style={styles.brandTitle}>M-Auxis</Text>
         </View>
 
         <View style={styles.card}>
@@ -18,7 +18,7 @@ export default function PrivacyPolicyScreen() {
 
           <View style={styles.content}>
             <Text style={styles.bodyText}>
-              {"The Mauxis AI (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by The Mauxis AI. This policy applies specifically to the services we offer through our application, including our integrations with Meta platforms (Facebook and Instagram)."}
+              {"The M-Auxis AI (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how your personal information is collected, used, and disclosed by The M-Auxis AI. This policy applies specifically to the services we offer through our application, including our integrations with Meta platforms (Facebook and Instagram)."}
             </Text>
 
             <Text style={styles.sectionTitle}>1. Information We Collect</Text>
@@ -38,7 +38,7 @@ export default function PrivacyPolicyScreen() {
 
             <Text style={styles.sectionTitle}>4. Data Retention and Deletion (Meta App Requirement)</Text>
             <Text style={styles.bodyText}>
-              {"We retain your data only for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy.\n\nData Deletion Instructions:\nYou have the right to request the deletion of your personal data. If you wish to revoke our app's access to your Meta account and delete your associated data, please follow these steps:\n\n1. Log in to your Facebook account and go to Settings & Privacy > Settings.\n2. Navigate to Apps and Websites in the left-hand menu.\n3. Find The Mauxis AI in the list of active apps.\n4. Click Remove and confirm the removal.\n5. To ensure all your data is entirely wiped from our servers, please send a data deletion request to legal@mauxis.ai with the subject line \"Data Deletion Request\". We will process your request within 7 days."}
+              {"We retain your data only for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy.\n\nData Deletion Instructions:\nYou have the right to request the deletion of your personal data. If you wish to revoke our app's access to your Meta account and delete your associated data, please follow these steps:\n\n1. Log in to your Facebook account and go to Settings & Privacy > Settings.\n2. Navigate to Apps and Websites in the left-hand menu.\n3. Find The M-Auxis AI in the list of active apps.\n4. Click Remove and confirm the removal.\n5. To ensure all your data is entirely wiped from our servers, please send a data deletion request to legal@m-auxis.ai with the subject line \"Data Deletion Request\". We will process your request within 7 days."}
             </Text>
 
             <Text style={styles.sectionTitle}>5. Security</Text>
@@ -53,7 +53,7 @@ export default function PrivacyPolicyScreen() {
 
             <Text style={styles.sectionTitle}>7. Contact Us</Text>
             <Text style={[styles.bodyText, { fontWeight: 'bold' }]}>
-              {"The Mauxis AI\nEmail: legal@mauxis.ai\nWebsite: https://mauxis.ai"}
+              {"The M-Auxis AI\nEmail: legal@m-auxis.ai\nWebsite: https://m-auxis.ai"}
             </Text>
           </View>
         </View>
