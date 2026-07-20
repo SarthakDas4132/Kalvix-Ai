@@ -131,39 +131,21 @@ export function Navbar() {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '4px',
                 textDecoration: 'none',
-                color: 'var(--color-dark)',
-                fontFamily: 'var(--font-satoshi), sans-serif',
-                fontWeight: 900,
-                fontSize: isMobile ? '20px' : '28px',
-                letterSpacing: '-1.5px',
               }}
             >
-              {/* Clipping wrapper removes whitespace from logo PNG */}
-              <div
+              <img
+                src={require('../../../assets/images/M-Auxis logo.png')}
+                alt="M-Auxis Logo"
                 style={{
-                  width: isMobile ? '36px' : '48px',
-                  height: isMobile ? '36px' : '48px',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
+                  height: isMobile ? '38px' : '52px',
+                  width: 'auto',
+                  maxHeight: isMobile ? '38px' : '52px',
+                  objectFit: 'contain',
+                  mixBlendMode: 'multiply',
+                  display: 'block',
                 }}
-              >
-                <img
-                  src={require('../../../assets/images/M-Auxis logo.png')}
-                  alt="M-Auxis logo"
-                  style={{
-                    width: '200%',
-                    height: '200%',
-                    objectFit: 'contain',
-                    mixBlendMode: 'multiply',
-                  }}
-                />
-              </div>
-              <span>M-Auxis</span>
+              />
             </a>
 
             {/* Desktop Nav Links */}
