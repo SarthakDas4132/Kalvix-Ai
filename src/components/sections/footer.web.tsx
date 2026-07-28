@@ -285,7 +285,8 @@ export function Footer() {
           {/* Col 2: Navigation links */}
           <div style={{ marginTop: isMobile ? '40px' : '0' }}>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px', paddingLeft: 0, margin: 0 }}>
-              {['services', 'benefits', 'portfolio', 'process', 'reviews', 'about'].map((item) => (
+              {/* Temporarily commented out: 'benefits', 'portfolio' */}
+              {['services', 'process', 'reviews', 'about'].map((item) => (
                 <li key={item} style={{ lineHeight: 1 }}>
                   <a
                     href={`/#${item}`}
@@ -411,7 +412,7 @@ export function Footer() {
               href="/terms"
               style={{
                 color: 'inherit',
-                textDecoration: 'none',
+                textDecorationLine: 'none',
               }}
             >
               Terms & Conditions
@@ -421,7 +422,7 @@ export function Footer() {
               href="/privacy-policy"
               style={{
                 color: 'inherit',
-                textDecoration: 'none',
+                textDecorationLine: 'none',
               }}
             >
               Privacy Policy
@@ -431,7 +432,7 @@ export function Footer() {
               href="/deletion-policy"
               style={{
                 color: 'inherit',
-                textDecoration: 'none',
+                textDecorationLine: 'none',
               }}
             >
               Deletion Policy
