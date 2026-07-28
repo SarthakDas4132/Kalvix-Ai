@@ -2,6 +2,7 @@ import React from 'react';
 import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { ScrollReveal } from '../ui/scroll-reveal.web';
 
+
 interface TeamMember {
   firstName: string;
   lastName: string;
@@ -9,37 +10,41 @@ interface TeamMember {
   sticker: string;
   cardBg: string;
   stickerColor: string;
-  image?: string;
+  image?: any;
   isHiring?: boolean;
+  linkedin?: string;
 }
 
 const TEAM: TeamMember[] = [
   {
-    firstName: 'Zephyr',
-    lastName: 'Callahan',
-    role: 'CEO, CREATIVE DIRECTOR',
+    firstName: 'Jayesh',
+    lastName: 'Deshmukh',
+    role: 'Founder & CEO',
     sticker: 'Idea Squeezer',
     cardBg: '#f9e1c3', // Light orange
     stickerColor: '#cfcbff', // Light blue
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
+    image: require('../../../assets/images/jayesh-deshmukh.jpg'),
+    linkedin: 'https://www.linkedin.com/in/jayesh-deshmukh-482ba4220/',
   },
   {
-    firstName: 'Leander',
-    lastName: 'Frost',
-    role: 'DESIGNER / ART DIRECTOR',
+    firstName: 'Amey',
+    lastName: 'Kadam',
+    role: 'Co-Founder & CTO',
     sticker: 'Pixel Wizard',
     cardBg: '#fac2f8', // Pink
     stickerColor: '#bbf1b6', // Light green
-    image: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=300&q=80',
+    image: require('../../../assets/images/amey-kadam.jpg'),
+    linkedin: 'https://www.linkedin.com/in/ameykadam2231/',
   },
   {
-    firstName: 'Thane',
-    lastName: 'Vesper',
-    role: 'CONTENT CREATOR',
+    firstName: 'Aditya',
+    lastName: 'Gaikwad',
+    role: 'Co-Founder & COO',
     sticker: 'Detail Ninja',
     cardBg: '#ccb1f5', // Purple
     stickerColor: '#f9e1c3', // Light orange
-    image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80',
+    image: require('../../../assets/images/aditya-gaikwad.jpg'),
+    linkedin: 'https://www.linkedin.com/in/aditya-gaikwad-08529925b/',
   }
 ];
 
@@ -206,8 +211,35 @@ export function About() {
                     </button>
                   ) : (
                     <div style={{ display: 'flex', gap: '16px', marginTop: 'auto', paddingTop: '20px' }}>
-                      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-                      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            color: 'var(--color-dark)',
+                            transition: 'transform 0.2s ease, opacity 0.2s ease',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.transform = 'scale(1.15)';
+                            e.currentTarget.style.opacity = '0.8';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'scale(1)';
+                            e.currentTarget.style.opacity = '1';
+                          }}
+                        >
+                          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                          </svg>
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>

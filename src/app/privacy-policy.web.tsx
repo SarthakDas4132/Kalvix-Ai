@@ -266,16 +266,18 @@ export default function PrivacyPolicyScreenWeb() {
               </h2>
               <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
               <p style={{ fontWeight: 700, marginTop: '4px' }}>
-                The M-Auxis AI<br />
+                JMD Solutions and Beyond<br />
                 Email:{' '}
-                <a href="mailto:legal@m-auxis.ai" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  legal@m-auxis.ai
+                <a href="mailto:support@jmdsolutionbeyond.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  support@jmdsolutionbeyond.com
                 </a>
                 <br />
                 Website:{' '}
-                <a href="https://m-auxis.ai" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                  https://m-auxis.ai
+                <a href="https://www.jmdsolutionbeyond.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  www.jmdsolutionbeyond.com
                 </a>
+                <br />
+                Contact: +91-9209552809
               </p>
             </section>
           </div>

@@ -254,8 +254,8 @@ export function Navbar() {
                   <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', padding: 0, margin: 0 }}>
                     {[
                       { label: 'Services', target: 'services' },
-                      { label: 'Benefits', target: 'benefits' },
-                      { label: 'Portfolio', target: 'portfolio' },
+                      // { label: 'Benefits', target: 'benefits' },
+                      // { label: 'Portfolio', target: 'portfolio' },
                       { label: 'Process', target: 'process' },
                       { label: 'Testimonials', target: 'reviews' },
                       { label: 'Pricing', target: 'pricing' },

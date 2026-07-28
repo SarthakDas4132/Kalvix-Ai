@@ -180,7 +180,7 @@ export function WhyUs() {
           style={{
             maxWidth: '1400px',
             margin: '0 auto',
-            padding: isMobile ? '40px 16px 0' : '60px 32px 0',
+            padding: isMobile ? '0 16px 0' : '0 32px 0',
             position: 'relative',
             zIndex: 1,
           }}

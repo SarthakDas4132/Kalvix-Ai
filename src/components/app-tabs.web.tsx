@@ -33,6 +33,9 @@ export default function AppTabs() {
           <TabTrigger name="privacy-policy" href="/privacy-policy" asChild>
             <TabButton>Privacy Policy</TabButton>
           </TabTrigger>
+          <TabTrigger name="deletion-policy" href="/deletion-policy" asChild>
+            <TabButton>Deletion Policy</TabButton>
+          </TabTrigger>
         </CustomTabList>
       </TabList>
     </Tabs>

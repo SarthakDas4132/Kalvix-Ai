@@ -4,7 +4,7 @@ import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { TextReveal } from '../ui/text-reveal.web';
 
 // Rotating words for the sub-headline typewriter effect
-const ROTATING_WORDS = ['Campaigns', 'Creators', 'Analytics', 'Contracts', 'Payments', 'Ads'];
+const ROTATING_WORDS = ['Create', 'Publish', 'Advertise', 'Convert', 'Scale'];
 
 // ── Floating sticker badge with spring pop-in ──────────────────────────────
 function StickerBadge({
@@ -192,41 +192,87 @@ export function Hero() {
       }}
     >
 
-      {/* ── Animated concentric ring background (Deactivated) ── */}
-      {false && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-          aria-hidden="true"
+
+
+      {/* ── Precise Concentric Rings Background (Matches Reference Image) ── */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          pointerEvents: 'none',
+          zIndex: 0,
+          overflow: 'hidden',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <motion.svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 2000 2000"
+          preserveAspectRatio="xMidYMid slice"
           style={{
-            position: 'absolute',
-            bottom: '-120px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '1100px',
-            height: '1100px',
-            pointerEvents: 'none',
-            zIndex: 0,
+            width: '100vw',
+            height: '100%',
+            transformOrigin: '50% 38%',
+          }}
+          animate={{
+            scale: [1, 1.015, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         >
-          {[0, 80, 160, 240, 320, 400, 480, 560].map((inset, i) => (
-            <div
-              key={i}
-              style={{
-                position: 'absolute',
-                inset: `${inset}px`,
-                borderRadius: '50%',
-                border: '1.5px solid',
-                borderColor:
-                  i < 4
-                    ? `rgba(224, 142, 216, ${0.3 - i * 0.05})`
-                    : `rgba(200, 180, 240, ${0.2 - (i - 4) * 0.03})`,
-              }}
-            />
-          ))}
-        </motion.div>
-      )}
+          <defs>
+            {/* Subtle standard deviation blur to soften the rings */}
+            <filter id="soft-blur">
+              <feGaussianBlur stdDeviation="1.8" />
+            </filter>
+
+            {/* Radial gradient mask to gradually fade rings towards the edges */}
+            <radialGradient id="radial-fade-mask" cx="50%" cy="38%" r="60%">
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.75" />
+              <stop offset="25%" stopColor="#ffffff" stopOpacity="0.65" />
+              <stop offset="55%" stopColor="#ffffff" stopOpacity="0.35" />
+              <stop offset="85%" stopColor="#ffffff" stopOpacity="0.10" />
+              <stop offset="100%" stopColor="#ffffff" stopOpacity="0.00" />
+            </radialGradient>
+
+            <mask id="hero-bg-mask">
+              <rect width="2000" height="2000" fill="url(#radial-fade-mask)" />
+            </mask>
+          </defs>
+
+          {/* Group of concentric circles using the fade mask and blur filter */}
+          <g mask="url(#hero-bg-mask)" filter="url(#soft-blur)">
+            {Array.from({ length: 32 }).map((_, idx) => {
+              const r = 90 + idx * 46; // radius starts at 90px and steps by 46px
+              const isEven = idx % 2 === 0;
+              const strokeColor = isEven ? '#f6cde0' : '#f8e8c1'; // alternating pastel pink and pastel yellow
+              const strokeOpacity = isEven ? 0.65 : 0.75;
+              
+              return (
+                <circle
+                  key={idx}
+                  cx="1000" // Center at 1000, 760 (relative to 2000x2000 viewbox -> cy=38%)
+                  cy="760"
+                  r={r}
+                  fill="none"
+                  stroke={strokeColor}
+                  strokeWidth="2.2"
+                  strokeOpacity={strokeOpacity}
+                />
+              );
+            })}
+          </g>
+        </motion.svg>
+      </div>
 
       {/* ── Main content ─────────────────────────────────────────────────── */}
       <div
@@ -365,11 +411,15 @@ export function Hero() {
             maxWidth: '760px',
             lineHeight: 1.15,
             letterSpacing: '-0.5px',
-            marginBottom: '12px',
+            marginBottom: '20px',
             textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '12px',
           }}
         >
-           Create. Advertise. Sell. Scale. Connect {' '}
+          <span>Marketing Meets Fast Growth</span>
           <span
             style={{
               color: 'var(--color-dark)',
@@ -379,7 +429,7 @@ export function Hero() {
               borderRadius: '8px',
               display: 'inline-block',
               width: isMobile ? '160px' : isTablet ? '220px' : '290px',
-              textAlign: 'left',
+              textAlign: 'center',
               borderBottom: '3px solid var(--color-dark)',
               fontStyle: 'italic',
             }}

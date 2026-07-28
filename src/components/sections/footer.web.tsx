@@ -426,6 +426,16 @@ export function Footer() {
             >
               Privacy Policy
             </Link>
+            <span>•</span>
+            <Link
+              href="/deletion-policy"
+              style={{
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              Deletion Policy
+            </Link>
           </div>
           <div>Built with passion.</div>
         </div>

@@ -115,6 +115,9 @@ export default function HomeScreenWeb() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Process interactive switcher */}
+        <Process />
+
         {/* Why Us — 3 illustrated feature cards */}
         <WhyUs />
 
@@ -129,9 +132,6 @@ export default function HomeScreenWeb() {
 
         {/* Portfolio mockup cards */}
         {/* <Portfolio /> */}
-
-        {/* Process interactive switcher */}
-        <Process />
 
         {/* Comparison Versus Table */}
         <Comparison />

@@ -531,7 +531,7 @@ export function Process() {
             {/* Connecting line behind pills */}
             <div style={{
               position: 'absolute',
-              top: isMobile ? '18px' : '24px',
+              top: isMobile ? '22.5px' : '30px',
               left: '50%',
               transform: 'translateX(-50%)',
               width: '70%',
@@ -544,7 +544,7 @@ export function Process() {
             {STEPS.map((step) => {
               const isActive = activeStep === step.num;
               const isPast = activeStep > step.num;
-              const circleSize = isMobile ? '36px' : '48px';
+              const circleSize = isMobile ? '45px' : '60px';
               return (
                 <button
                   key={step.num}
@@ -576,14 +576,14 @@ export function Process() {
                     boxShadow: isActive ? '3px 3px 0 0 rgba(24,26,18,0.3)' : 'none',
                   }}>
                     {isPast && !isActive ? (
-                      <svg viewBox="0 0 16 16" width={isMobile ? '12' : '16'} height={isMobile ? '12' : '16'}>
+                      <svg viewBox="0 0 16 16" width={isMobile ? '15' : '20'} height={isMobile ? '15' : '20'}>
                         <path d="M3 8l3.5 3.5L13 5" stroke="var(--color-dark)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     ) : (
                       <span style={{
                         fontFamily: 'var(--font-oswald)',
                         fontWeight: 800,
-                        fontSize: isMobile ? '14px' : '18px',
+                        fontSize: isMobile ? '18px' : '22px',
                         color: isActive ? 'var(--bg-cream)' : 'var(--color-dark)',
                       }}>
                         {step.num}
