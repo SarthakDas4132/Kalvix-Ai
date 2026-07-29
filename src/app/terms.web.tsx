@@ -101,7 +101,7 @@ export default function TermsScreenWeb() {
               gap: '4px',
             }}
           >
-            <span>Last Updated: July 17, 2026</span>
+            <span>Last Updated: July 29, 2026</span>
           </div>
 
           <div

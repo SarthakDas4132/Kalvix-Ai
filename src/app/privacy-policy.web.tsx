@@ -101,7 +101,7 @@ export default function PrivacyPolicyScreenWeb() {
               gap: '4px',
             }}
           >
-            <span>Last Updated: July 17, 2026</span>
+            <span>Last Updated: July 29, 2026</span>
           </div>
 
           <div
@@ -201,18 +201,49 @@ export default function PrivacyPolicyScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                4. Data Retention and Deletion (Meta App Requirement)
+                4. Data Deletion Instructions for M-Auxis
               </h2>
-              <p>We retain your data only for as long as necessary to provide our services and fulfill the purposes outlined in this Privacy Policy.</p>
-              <p style={{ fontWeight: 700 }}>Data Deletion Instructions:</p>
-              <p>You have the right to request the deletion of your personal data. If you wish to revoke our app&apos;s access to your Meta account and delete your associated data, please follow these steps:</p>
-              <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <li>Log in to your Facebook account and go to <strong>Settings & Privacy</strong> &gt; <strong>Settings</strong>.</li>
-                <li>Navigate to <strong>Apps and Websites</strong> in the left-hand menu.</li>
-                <li>Find <strong>The M-Auxis AI</strong> in the list of active apps.</li>
-                <li>Click <strong>Remove</strong> and confirm the removal.</li>
-                <li>To ensure all your data is entirely wiped from our servers, please send a data deletion request to <a href="mailto:legal@m-auxis.ai" style={{ color: 'inherit', fontWeight: 700 }}>legal@m-auxis.ai</a> with the subject line &quot;Data Deletion Request&quot;. We will process your request within 7 days.</li>
-              </ol>
+              
+              <p>
+                M-Auxis allows users to log in and connect their accounts using third-party Meta services, including Facebook, Instagram, and Meta Ads Manager. We respect your privacy and give you full control over your data.
+              </p>
+              <p>
+                If you wish to have your account and all associated data permanently deleted from M-Auxis, you can do so by following these steps:
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '8px' }}>
+                <div>
+                  <h4 style={{ fontWeight: 700, marginBottom: '6px' }}>Option 1: Complete Account &amp; Data Deletion via Email</h4>
+                  <p style={{ marginBottom: '8px' }}>
+                    To request the complete deletion of your M-Auxis account and all synced Meta data (including connected Instagram profiles, Facebook pages, and Meta Ads campaign data):
+                  </p>
+                  <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <li>
+                      Send an email to{' '}
+                      <a href="mailto:support@jmdsolutionbeyond.com" style={{ color: 'inherit', fontWeight: 700 }}>
+                        support@jmdsolutionbeyond.com
+                      </a>{' '}
+                      from the email address associated with your M-Auxis account.
+                    </li>
+                    <li>Use the subject line: &quot;Data Deletion Request&quot;.</li>
+                    <li>Briefly state that you would like your account and all associated data permanently removed from our systems.</li>
+                    <li>Our team will process your request, completely sever the connection to your Meta services, and securely delete your data within 7 business days. We will notify you once it is complete.</li>
+                  </ol>
+                </div>
+
+                <div>
+                  <h4 style={{ fontWeight: 700, marginBottom: '6px' }}>Option 2: Revoke Access via Meta (Facebook / Instagram)</h4>
+                  <p style={{ marginBottom: '8px' }}>
+                    If you wish to keep your M-Auxis account but want to disconnect our access to your Facebook, Instagram, or Meta Ads accounts:
+                  </p>
+                  <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <li>Go to your Facebook account’s <strong>Settings &amp; Privacy</strong>.</li>
+                    <li>Click on <strong>Settings</strong>, then navigate to <strong>Apps and Websites</strong> (or <strong>Business Integrations</strong> depending on your account type).</li>
+                    <li>Find <strong>M-Auxis</strong> in the list of active apps and click <strong>Remove</strong>.</li>
+                    <li>This will immediately revoke M-Auxis&apos;s access to your Meta Ads, Facebook Pages, and Instagram accounts. No new data will be synced to our systems.</li>
+                  </ol>
+                </div>
+              </div>
             </section>
 
             <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>

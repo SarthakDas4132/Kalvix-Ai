@@ -43,7 +43,7 @@ const TEAM: TeamMember[] = [
     sticker: 'Detail Ninja',
     cardBg: '#ccb1f5', // Purple
     stickerColor: '#f9e1c3', // Light orange
-    image: require('../../../assets/images/aditya-gaikwad.jpg'),
+    image: require('../../../assets/images/aditya-gaikwad.png'),
     linkedin: 'https://www.linkedin.com/in/aditya-gaikwad-08529925b/',
   }
 ];

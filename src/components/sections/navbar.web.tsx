@@ -258,7 +258,7 @@ export function Navbar() {
                       // { label: 'Portfolio', target: 'portfolio' },
                       { label: 'Process', target: 'process' },
                       { label: 'Testimonials', target: 'reviews' },
-                      { label: 'Pricing', target: 'pricing' },
+                      // { label: 'Pricing', target: 'pricing' },
                       { label: 'FAQs', target: 'faq' }
                     ].map((item, index, arr) => {
                       return (

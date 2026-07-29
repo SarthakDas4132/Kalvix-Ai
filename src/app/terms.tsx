@@ -13,7 +13,7 @@ export default function TermsScreen() {
         <View style={styles.card}>
           <Text style={styles.heading}>Terms & Conditions</Text>
           <View style={styles.dateContainer}>
-            <Text style={styles.date}>Last Updated: July 17, 2026</Text>
+            <Text style={styles.date}>Last Updated: July 29, 2026</Text>
           </View>
 
           <View style={styles.content}>

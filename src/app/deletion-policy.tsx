@@ -13,7 +13,7 @@ export default function DeletionPolicyScreen() {
         <View style={styles.card}>
           <Text style={styles.heading}>Deletion Policy</Text>
           <View style={styles.dateContainer}>
-            <Text style={styles.date}>Last Updated: July 28, 2026</Text>
+            <Text style={styles.date}>Last Updated: July 29, 2026</Text>
           </View>
 
           <View style={styles.content}>

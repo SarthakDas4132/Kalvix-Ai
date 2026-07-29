@@ -140,7 +140,7 @@ export default function HomeScreenWeb() {
         <Testimonials />
 
         {/* Pricing stack */}
-        <Pricing />
+        {/* <Pricing /> */}
 
         {/* About team list */}
         <About />

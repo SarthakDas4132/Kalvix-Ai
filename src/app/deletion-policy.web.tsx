@@ -101,7 +101,7 @@ export default function DeletionPolicyScreenWeb() {
               gap: '4px',
             }}
           >
-            <span>Last Updated: July 28, 2026</span>
+            <span>Last Updated: July 29, 2026</span>
           </div>
 
           <div
