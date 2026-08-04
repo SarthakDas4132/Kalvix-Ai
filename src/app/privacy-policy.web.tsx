@@ -134,7 +134,8 @@ export default function PrivacyPolicyScreenWeb() {
               </h2>
               <p>We collect information that you provide directly to us or authorize us to access when you use our application:</p>
               <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <li><strong>Account Information:</strong> Name, email address, and basic profile details.</li>
+                <li><strong>Account Information:</strong> Name, email address, profile picture, and login authentication identifiers obtained via Google Sign-In or Meta authentication.</li>
+                <li><strong>Google Ads API &amp; Sign-In Data:</strong> When you connect your Google Ads account, we securely store the authentication tokens. We access your connected Google Ads account structure, campaign lists, budgets, creative assets, and analytics reports.</li>
                 <li><strong>Meta Platform Data:</strong> When you connect your Facebook or Instagram accounts, we collect public profile information, Page access tokens, Instagram account IDs, and related media content necessary to provide our automated publishing and analysis services.</li>
                 <li><strong>User-Generated Content:</strong> Campaign details, brand data, generated images, and textual content created or uploaded within our platform.</li>
               </ul>
@@ -156,6 +157,7 @@ export default function PrivacyPolicyScreenWeb() {
               <p>We use the information we collect to:</p>
               <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <li>Provide, operate, and maintain our application, including scheduling and publishing posts to your connected Meta accounts.</li>
+                <li>Manage, monitor, update, and deploy advertising campaigns on Google Ads after you connect your Google account.</li>
                 <li>Generate AI-powered content and conduct brand DNA analysis based on the parameters you provide.</li>
                 <li>Improve, personalize, and expand our application&apos;s functionality.</li>
                 <li>Understand and analyze how you use our application.</li>
@@ -174,11 +176,14 @@ export default function PrivacyPolicyScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                3. Third-Party Data Sharing
+                3. Third-Party Data Sharing &amp; API Integration
               </h2>
               <p>We share your information only in the following specific circumstances:</p>
               <ul style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <li><strong>AI Service Providers:</strong> We utilize third-party AI models (such as Google Gemini and OpenAI) to generate images and text. Necessary context (like brand data and campaign parameters) may be shared securely with these services strictly for content generation purposes.</li>
+                <li>
+                  <strong>Google Ads Integration:</strong> Your credentials and authentication scopes are processed via official Google APIs using OAuth2 protocol. M-Auxis uses this access solely to read, create, and manage campaigns under your explicit instruction. We do not sell or share Google user data with external third parties.
+                </li>
                 <li>
                   <strong>Meta Integration:</strong> Your content and necessary authentication tokens are transmitted securely to Meta&apos;s APIs (Graph API) for publishing and campaign management purposes in accordance with{' '}
                   <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
@@ -201,38 +206,50 @@ export default function PrivacyPolicyScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                4. Data Deletion Instructions for M-Auxis
+                4. Data Deletion Instructions &amp; Revoking Consent
               </h2>
               
               <p>
-                M-Auxis allows users to log in and connect their accounts using third-party Meta services, including Facebook, Instagram, and Meta Ads Manager. We respect your privacy and give you full control over your data.
+                M-Auxis allows users to log in and connect their accounts using third-party services, including Google and Meta (Facebook / Instagram). We respect your privacy and give you full control over your data.
               </p>
               <p>
                 If you wish to have your account and all associated data permanently deleted from M-Auxis, you can do so by following these steps:
               </p>
-
+ 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '8px' }}>
                 <div>
                   <h4 style={{ fontWeight: 700, marginBottom: '6px' }}>Option 1: Complete Account &amp; Data Deletion via Email</h4>
                   <p style={{ marginBottom: '8px' }}>
-                    To request the complete deletion of your M-Auxis account and all synced Meta data (including connected Instagram profiles, Facebook pages, and Meta Ads campaign data):
+                    To request the complete deletion of your M-Auxis account and all synced advertising data (including connected Google Ads, Meta Ads, and associated campaigns):
                   </p>
                   <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <li>
                       Send an email to{' '}
-                      <a href="mailto:support@jmdsolutionbeyond.com" style={{ color: 'inherit', fontWeight: 700 }}>
-                        support@jmdsolutionbeyond.com
+                      <a href="mailto:support@m-auxis.com" style={{ color: 'inherit', fontWeight: 700 }}>
+                        support@m-auxis.com
                       </a>{' '}
                       from the email address associated with your M-Auxis account.
                     </li>
                     <li>Use the subject line: &quot;Data Deletion Request&quot;.</li>
                     <li>Briefly state that you would like your account and all associated data permanently removed from our systems.</li>
-                    <li>Our team will process your request, completely sever the connection to your Meta services, and securely delete your data within 7 business days. We will notify you once it is complete.</li>
+                    <li>Our team will process your request, completely sever the connection to third-party integrations, and securely delete all stored records within 7 business days. We will notify you once complete.</li>
                   </ol>
                 </div>
-
+ 
                 <div>
-                  <h4 style={{ fontWeight: 700, marginBottom: '6px' }}>Option 2: Revoke Access via Meta (Facebook / Instagram)</h4>
+                  <h4 style={{ fontWeight: 700, marginBottom: '6px' }}>Option 2: Revoking Google Ads API Permission</h4>
+                  <p style={{ marginBottom: '8px' }}>
+                    If you wish to disconnect M-Auxis access from your Google Ads account:
+                  </p>
+                  <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <li>Go to your Google Account’s <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontWeight: 700 }}>Third-party apps with account access</a> settings page.</li>
+                    <li>Find and click on <strong>M-Auxis</strong> in the list of authorized apps.</li>
+                    <li>Click <strong>Remove Access</strong> and confirm. M-Auxis will immediately lose all permissions to access or edit your Google Ads campaigns.</li>
+                  </ol>
+                </div>
+ 
+                <div>
+                  <h4 style={{ fontWeight: 700, marginBottom: '6px' }}>Option 3: Revoke Access via Meta (Facebook / Instagram)</h4>
                   <p style={{ marginBottom: '8px' }}>
                     If you wish to keep your M-Auxis account but want to disconnect our access to your Facebook, Instagram, or Meta Ads accounts:
                   </p>
@@ -240,7 +257,7 @@ export default function PrivacyPolicyScreenWeb() {
                     <li>Go to your Facebook account’s <strong>Settings &amp; Privacy</strong>.</li>
                     <li>Click on <strong>Settings</strong>, then navigate to <strong>Apps and Websites</strong> (or <strong>Business Integrations</strong> depending on your account type).</li>
                     <li>Find <strong>M-Auxis</strong> in the list of active apps and click <strong>Remove</strong>.</li>
-                    <li>This will immediately revoke M-Auxis&apos;s access to your Meta Ads, Facebook Pages, and Instagram accounts. No new data will be synced to our systems.</li>
+                    <li>This will immediately revoke M-Auxis&apos;s access to your Meta Ads, Facebook Pages, and Instagram accounts.</li>
                   </ol>
                 </div>
               </div>
@@ -297,15 +314,15 @@ export default function PrivacyPolicyScreenWeb() {
               </h2>
               <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
               <p style={{ fontWeight: 700, marginTop: '4px' }}>
-                JMD Solutions and Beyond<br />
+                M-Auxis Support Team<br />
                 Email:{' '}
-                <a href="mailto:support@jmdsolutionbeyond.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  support@jmdsolutionbeyond.com
+                <a href="mailto:support@m-auxis.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  support@m-auxis.com
                 </a>
                 <br />
                 Website:{' '}
-                <a href="https://www.jmdsolutionbeyond.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                  www.jmdsolutionbeyond.com
+                <a href="https://www.m-auxis.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  www.m-auxis.com
                 </a>
                 <br />
                 Contact: +91-9209552809

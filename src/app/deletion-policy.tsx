@@ -23,10 +23,15 @@ export default function DeletionPolicyScreen() {
 
             <Text style={styles.sectionTitle}>Option 1: Complete Account & Data Deletion via Email</Text>
             <Text style={styles.bodyText}>
-              {"To request the complete deletion of your M-Auxis account and all synced Meta data (including connected Instagram profiles, Facebook pages, and Meta Ads campaign data):\n\n1. Send an email to support@jmdsolutionbeyond.com from the email address associated with your M-Auxis account.\n2. Use the subject line: \"Data Deletion Request\".\n3. Briefly state that you would like your account and all associated data permanently removed from our systems.\n4. Our team will process your request, completely sever the connection to your Meta services, and securely delete your data within 7 business days. We will notify you once it is complete."}
+              {"To request the complete deletion of your M-Auxis account and all synced Meta data (including connected Instagram profiles, Facebook pages, and Meta Ads campaign data):\n\n1. Send an email to support@m-auxis.com from the email address associated with your M-Auxis account.\n2. Use the subject line: \"Data Deletion Request\".\n3. Briefly state that you would like your account and all associated data permanently removed from our systems.\n4. Our team will process your request, completely sever the connection to your Meta services, and securely delete your data within 7 business days. We will notify you once it is complete."}
             </Text>
 
-            <Text style={styles.sectionTitle}>Option 2: Revoke Access via Meta (Facebook / Instagram)</Text>
+            <Text style={styles.sectionTitle}>Option 2: Revoke Access via Google Ads</Text>
+            <Text style={styles.bodyText}>
+              {"If you wish to disconnect M-Auxis access from your connected Google Ads account:\n\n1. Go to your Google Account’s Third-party apps with account access settings page (https://myaccount.google.com/permissions).\n2. Find and click on M-Auxis in the list of authorized apps.\n3. Click Remove Access and confirm."}
+            </Text>
+
+            <Text style={styles.sectionTitle}>Option 3: Revoke Access via Meta (Facebook / Instagram)</Text>
             <Text style={styles.bodyText}>
               {"If you wish to keep your M-Auxis account but want to disconnect our access to your Facebook, Instagram, or Meta Ads accounts:\n\n1. Go to your Facebook account’s Settings & Privacy.\n2. Click on Settings, then navigate to Apps and Websites (or Business Integrations depending on your account type).\n3. Find M-Auxis in the list of active apps and click Remove.\n4. This will immediately revoke M-Auxis's access to your Meta Ads, Facebook Pages, and Instagram accounts. No new data will be synced to our systems."}
             </Text>

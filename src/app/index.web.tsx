@@ -6,6 +6,7 @@ import { Navbar } from '../components/sections/navbar.web';
 import { Hero } from '../components/sections/hero.web';
 import { WhyUs } from '../components/sections/whyus.web';
 import { Features } from '../components/sections/features.web';
+import { GoogleDisclosure } from '../components/sections/google-disclosure.web';
 import { Services } from '../components/sections/services.web';
 import { Benefits } from '../components/sections/benefits.web';
 import { Portfolio } from '../components/sections/portfolio.web';
@@ -123,6 +124,9 @@ export default function HomeScreenWeb() {
 
         {/* Features & Logo Marquee & Stats numbers */}
         <Features />
+
+        {/* Google Ads API Transparency and Disclosures (below the fold) */}
+        <GoogleDisclosure />
 
         {/* Accordion Services list */}
         <Services />

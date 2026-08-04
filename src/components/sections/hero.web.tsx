@@ -4,7 +4,7 @@ import { useBreakpoint } from '../../hooks/use-breakpoint';
 import { TextReveal } from '../ui/text-reveal.web';
 
 // Rotating words for the sub-headline typewriter effect
-const ROTATING_WORDS = ['Create', 'Publish', 'Advertise', 'Convert', 'Scale'];
+const ROTATING_WORDS = ['Google Ads', 'Meta Ads', 'Lead Gen', 'Smart CRM', 'AI Campaigns'];
 
 // ── Floating sticker badge with spring pop-in ──────────────────────────────
 function StickerBadge({
@@ -326,7 +326,7 @@ export function Hero() {
                   display: 'inline-block',
                 }}
               />
-              All-in-One Marketing & Creators Platform
+              AI-Powered Marketing Automation Platform
             </span>
           </motion.div>
         </div>
@@ -419,7 +419,7 @@ export function Hero() {
             gap: '12px',
           }}
         >
-          <span>Marketing Meets Fast Growth</span>
+          <span>Automate Your Campaigns</span>
           <span
             style={{
               color: 'var(--color-dark)',
@@ -467,7 +467,7 @@ export function Hero() {
             textAlign: 'center',
           }}
         >
-          Generate content, publish everywhere, launch ads, capture leads, automate follow-ups, manage sales and collaborate with creators - all from one AI-powered platform.
+          Manage Google Ads, Meta Ads, Lead Generation, CRM and AI-powered Campaign Creation from one dashboard.
         </motion.p>
 
         {/* ── 5. CTA Buttons ── */}
@@ -497,7 +497,7 @@ export function Hero() {
               whiteSpace: 'nowrap',
             }}
           >
-            Get Early Access
+            Start Free
           </button>
           <button
             onClick={handleScrollToFeatures}

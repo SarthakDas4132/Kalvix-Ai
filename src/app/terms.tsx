@@ -63,7 +63,7 @@ export default function TermsScreen() {
 
             <Text style={styles.sectionTitle}>9. Contact Us</Text>
             <Text style={[styles.bodyText, { fontWeight: 'bold' }]}>
-              {"JMD Solutions and Beyond\nEmail: support@jmdsolutionbeyond.com\nWebsite: www.jmdsolutionbeyond.com\nContact: +91-9209552809"}
+              {"M-Auxis Support\nEmail: support@m-auxis.com\nWebsite: www.m-auxis.com\nContact: +91-9209552809"}
             </Text>
           </View>
         </View>

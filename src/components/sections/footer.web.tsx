@@ -255,12 +255,12 @@ export function Footer() {
               <div style={{ fontFamily: 'var(--font-oswald)', fontWeight: 700, fontSize: isMobile ? '20px' : '24px', textTransform: 'uppercase', color: 'var(--color-peach)', letterSpacing: '0.05em', marginBottom: '8px' }}>Email</div>
               <div style={{ fontFamily: 'var(--font-satoshi)', fontSize: '16px', fontWeight: 500, color: 'var(--bg-white-pure)' }}>
                 <a 
-                  href="mailto:jmdsolutionbeyond@gmail.com" 
+                  href="mailto:support@m-auxis.com" 
                   style={{ textDecoration: 'none', color: 'inherit', transition: 'opacity 0.2s ease', opacity: 0.8 }}
                   onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
                   onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
                 >
-                  jmdsolutionbeyond@gmail.com
+                  support@m-auxis.com
                 </a>
               </div>
             </div>

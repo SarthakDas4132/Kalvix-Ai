@@ -140,7 +140,7 @@ export default function DeletionPolicyScreenWeb() {
               </p>
               <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <li>
-                  Send an email to <a href="mailto:support@jmdsolutionbeyond.com" style={{ color: 'inherit', fontWeight: 700 }}>support@jmdsolutionbeyond.com</a> from the email address associated with your M-Auxis account.
+                  Send an email to <a href="mailto:support@m-auxis.com" style={{ color: 'inherit', fontWeight: 700 }}>support@m-auxis.com</a> from the email address associated with your M-Auxis account.
                 </li>
                 <li>
                   Use the subject line: <strong>&quot;Data Deletion Request&quot;</strong>.
@@ -165,7 +165,36 @@ export default function DeletionPolicyScreenWeb() {
                   alignSelf: 'flex-start',
                 }}
               >
-                Option 2: Revoke Access via Meta (Facebook / Instagram)
+                Option 2: Revoke Access via Google Ads
+              </h2>
+              <p>
+                If you wish to disconnect M-Auxis access from your connected Google Ads account:
+              </p>
+              <ol style={{ paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <li>
+                  Go to your Google Account’s <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontWeight: 700 }}>Third-party apps with account access</a> settings page.
+                </li>
+                <li>
+                  Find and click on <strong>M-Auxis</strong> in the list of authorized apps.
+                </li>
+                <li>
+                  Click <strong>Remove Access</strong> and confirm. M-Auxis will immediately lose all API permissions to access, view, or manage your Google Ads campaigns.
+                </li>
+              </ol>
+            </section>
+
+            <section style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h2
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: isMobile ? '20px' : '24px',
+                  fontWeight: 700,
+                  borderBottom: '2.5px solid var(--color-dark)',
+                  paddingBottom: '6px',
+                  alignSelf: 'flex-start',
+                }}
+              >
+                Option 3: Revoke Access via Meta (Facebook / Instagram)
               </h2>
               <p>
                 If you wish to keep your M-Auxis account but want to disconnect our access to your Facebook, Instagram, or Meta Ads accounts:

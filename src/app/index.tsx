@@ -54,7 +54,7 @@ export default function HomeScreen() {
         {/* Contact Info Footer */}
         <View style={styles.footer}>
           <Text style={styles.footerText}>© 2026 M-Auxis Creative Agency</Text>
-          <Text style={styles.footerSubText}>Pune, MH • jmdsolutionbeyond@gmail.com</Text>
+          <Text style={styles.footerSubText}>Pune, MH • support@m-auxis.com</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

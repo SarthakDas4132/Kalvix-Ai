@@ -314,15 +314,15 @@ export default function TermsScreenWeb() {
               </h2>
               <p>If you have any questions about these Terms, please contact us at:</p>
               <p style={{ fontWeight: 700, marginTop: '4px' }}>
-                JMD Solutions and Beyond<br />
+                M-Auxis Support<br />
                 Email:{' '}
-                <a href="mailto:support@jmdsolutionbeyond.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  support@jmdsolutionbeyond.com
+                <a href="mailto:support@m-auxis.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  support@m-auxis.com
                 </a>
                 <br />
                 Website:{' '}
-                <a href="https://www.jmdsolutionbeyond.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                  www.jmdsolutionbeyond.com
+                <a href="https://www.m-auxis.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+                  www.m-auxis.com
                 </a>
                 <br />
                 Contact: +91-9209552809
