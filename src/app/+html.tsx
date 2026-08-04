@@ -10,6 +10,9 @@ export default function Html({ children }: PropsWithChildren) {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        {/* Google Search Console Ownership Verification Meta Tag */}
+        <meta name="google-site-verification" content="GaZe2LLOd5SVFLxcbguumGzTFxsuKiCajyz_1lHTOcM" />
         
         {/* Reset styles for Expo Web elements */}
         <ScrollViewStyleReset />
